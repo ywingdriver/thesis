@@ -1,0 +1,31 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Introduction}
+
+\section{Background}
+
+This thesis is part of the \textbf{daWUAP} project led by Marko Maneta aimed to create a hydrological model that predicts streamflows across the state of Montana. The \textbf{daWUAPhydroengine} is designed to be a quick and efficient model. This thesis focuses on the calibration of \textbf{daWUAPhydroengine} via a Dual State Ensemble Kalman Filter.
+
+\section{Motivation}
+\label{ch1:opts}
+
+<<Needs to be written>>
+
+\section{Design Constraints}
+
+The optimization of the parameters must be done in a way that is reasonably efficient. Since models such as \textbf{daWUAPhydroengine} can ingest and output dense raster data, for example, many simpler calibration implementations will become unwieldy because of large co-variance matrices. Furthermore, since \textbf{daWUAPhydroengine} is designed to be a quick and efficient model, it is preferable that any calibration component is similarly efficient.
+
+
+\section{Contributions}
+
+The main contribution of this thesis is a framework and implementation for model calibration. It also covers the real life case application of this framework to the \textbf{daWUAP} hydrologic engine to validate these methods. This allows major obstacles to be observed. The code is modular and, with some modification, be usable with any Bayesian model.
+
+\section{Thesis Organization}
+
+This thesis looks at hydrologic model calibration from a computer science perspective. Chapter 2 covers the theory behind Dual State Ensemble Kalman Filters. Chapter 3 contains a summary of current modeling methods. Chapter 4 introduces the mathematical model, while Chapter 5 covers the implementation of that model. Chapter 6 discusses the case study of calibrating \textbf{daWUAPhydroengine}. Chapter 7 discusses results, leaving Chapter 8 to conclude the thesis and discuss potential improvements.
+
+
