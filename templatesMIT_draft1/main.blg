@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: cover.aux
+A level-1 auxiliary file: contents.aux
+A level-1 auxiliary file: symbols.aux
+A level-1 auxiliary file: chap1.aux
+A level-1 auxiliary file: chap2.aux
+A level-1 auxiliary file: example.aux
+A level-1 auxiliary file: appa.aux
+A level-1 auxiliary file: appb.aux
+A level-1 auxiliary file: biblio.aux
+The style file: plain.bst
+Database file #1: main.bib
+Warning--I didn't find a database entry for "patterson:risc"
+Warning--I didn't find a database entry for "rad83"
+Warning--I didn't find a database entry for "ellis:bulldog"
+Warning--I didn't find a database entry for "pet87"
+Warning--I didn't find a database entry for "coutant:precision-compilers"
+Warning--I didn't find a database entry for "gib86"
+Warning--I didn't find a database entry for "thornton:cdc6600"
+Warning--I didn't find a database entry for "magenheimer:precision"
+Warning--I didn't find a database entry for "byte:i860"
+Warning--I didn't find a database entry for "colwell:vliw"
+Warning--empty booktitle in Julier1997
+You've used 8 entries,
+            2118 wiz_defined-function locations,
+            582 strings with 5695 characters,
+and the built_in function-call counts, 2519 in all, are:
+= -- 252
+> -- 95
+< -- 2
++ -- 38
+- -- 30
+* -- 194
+:= -- 425
+add.period$ -- 25
+call.type$ -- 8
+change.case$ -- 39
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 96
+empty$ -- 205
+format.name$ -- 30
+if$ -- 517
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 8
+newline$ -- 43
+num.names$ -- 16
+pop$ -- 30
+preamble$ -- 1
+purify$ -- 31
+quote$ -- 0
+skip$ -- 67
+stack$ -- 0
+substring$ -- 173
+swap$ -- 16
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 32
+warning$ -- 1
+while$ -- 27
+width$ -- 9
+write$ -- 90
+(There were 11 warnings)

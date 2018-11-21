@@ -8,6 +8,89 @@
 
 
 
-\section{Fundamentals of Bayesian Models}
+\section{The History of Kalman Filters}
 
-<<Needs to be written>>
+R.E Kalman published the article \textit{A New Approach to Linear Filtering and Prediction Problems} in 1960 \cite{Kalman1960}. Since then, the so-called "Kalman Filter" has been tested, researched, and improved extensively. Kalman's original algorithm was limited to linear systems. The development of the Extended Kalman Filter allowed Kalman Filters to operate on non-linear systems with some limitations. More recently, the Unscented Kalman Filter \cite{Julier1997} and the Ensemble Kalman Filter \cite{Evensen1994} have been developed to work on non-linear systems.
+
+\section{The Linear Kalman Filter}
+
+The original Kalman filter was created to solve problems where both a predictive sequential model and a series of observations is available. The predictive model can be represented as the linear stochastic difference equation
+\begin{large}
+\begin{equation}\label{eq:2p1}
+x_{i} = Ax_{i-1} + Bu_{i-1} + w_{i-1}
+\end{equation}
+\end{large}
+
+Where $A$ is the model matrix which serves to transform the vector $x_{i-1}$ to the current timestep, $B$ is the control matrix that transforms the control vector $u_{i}$ to account for external forces on the model, $w_{i}$ is a vector of model error, and $i$ is the timestep.
+
+An observation for any given timestep $i$ can be represented as 
+
+\begin{large}
+\begin{equation}\label{eq:2p2}
+z_{i} = Hx_{i} + v_{i}
+\end{equation}
+\end{large}
+
+where $z_{i}$ is the vector of observations, $x_{i}$ is the vector of true states, $H$ is a masking matrix, and $v_{i}$ is a vector of measurement errors. $w_{i}$ and $v_{i}$ are assumed to be independent, normally distributed random variables with probability distributions defined by
+
+\begin{large}
+\begin{equation}\label{eq:2p3}
+P(w) \sim N(0,Q)
+\end{equation}
+\begin{equation}\label{eq:2p4}
+P(v) \sim N(0,R)
+\end{equation}
+\end{large}
+
+\subsection{Algorithm}
+
+Kalman filters optimize model predictions by blending predicted states with that timestep's observations. Conveniently, the algorithm's steps are separated into \textit{prediction} and \textit{update} categories. The initial prediction algorithm \eqref{eq:2p5} obtains the current timestep's vector of states using the same equation as \eqref{eq:2p1} with the removal of the random unknown vector $w$. To track the effects of ignoring $w$ the prior error covariance matrix $P^{-}$ is calculated \eqref{eq:2p6}.
+
+\begin{table}[h]
+\caption{Prediction Equations - Discrete Kalman Filter} 
+\centering
+\begin{tabular}{c c}
+\\ [0.1ex] 
+\hline   
+Name & Equation \\
+\hline
+Model Prediction & \parbox{3cm}{\begin{equation}\label{eq:2p5} \hat{x}^{-}_{i} = A\hat{x}^{+}_{i-1} + Bu_{i-1} \end{equation}} \\
+Update Prior Covariance & \parbox{3cm}{\begin{equation}\label{eq:2p6} P^{-}_{i} = AP^{+}_{i}A^{T}+Q \end{equation}}
+\end{tabular}
+\label{tab:hresult}
+\end{table}
+
+Equation \eqref{eq:2p8} returns the updated prediction $\hat{x}^{+}_{i}$ by multiplying the innovation between the observation and the masked prediction by the kalman gain $K$, which is defined in \eqref{eq:2p7}. Finally, the error covariance matrix is updated in \eqref{eq:2p9} to reflect the more accurate nature of the updated prediction.
+
+\begin{table}[h]
+\caption{Update Equations - Discrete Kalman Filter} 
+\centering
+\begin{tabular}{c c}
+\\ [0.1ex]
+\hline
+Name & Equation \\ [0.5ex]
+\hline            
+Kalman Gain & \parbox{3cm}{\begin{equation}\label{eq:2p7}K_{i} = P^{-}_{i}H^{T}(HP^{-}_{i}H^{T} + R)^{-1} \end{equation}} \\
+Update Estimate & \parbox{3cm}{\begin{equation}\label{eq:2p8} \hat{x}^{+}_{i} = \hat{x}^{-}_{i} + K_{i}(z_{i}-H\hat{x}_{i}) \end{equation}} \\
+Update Posterior Covariance & \parbox{3cm}{\begin{equation}\label{eq:2p9}P^{+}_{i} = (I-K_{i}H)P^{-}_{i} \end{equation}}
+\end{tabular}
+\label{tab:hresult}
+\end{table}
+
+
+\section{The Whatever We call It Ensemble Kalman Filter}
+
+The Dual Ensemble Kalman Filter is a sequential data assimilation method. It can be split into four different subsections: The initial prediction phase, the parameter correction phase, the second prediction phase, and the state correction phase.
+
+\subsection{The Prediction Phase}
+
+According to Jazwinski \cite{Jazwinski1970} any discrete nonlinear stochastic model can be defined as:
+
+\begin{equation}\label{eq:gen_stoc}
+x_{t+1} = f(x_{t}, u_{t}, \theta_{t}) + \omega_{t}
+\end{equation}
+
+where $x_{t}$ is an $n$ dimensional vector representing the state variables of the model at time step $t$, $u_{t}$ is a vector of forcing data (e.g temperature or precipitation) at time step $t$, and $\theta_{t}$ is a vector of model parameters which may or may not change per time step (e.g soil beta or DDF). The non-linear function $f$ takes these variables as inputs. The error variable $\omega_{t}$ accounts for both model structural error and for any uncertainty in the forcing data. 
+
+
+

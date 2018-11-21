@@ -8,24 +8,30 @@
 
 \section{Background}
 
-This thesis is part of the \textbf{daWUAP} project led by Marko Maneta aimed to create a hydrological model that predicts streamflows across the state of Montana. The \textbf{daWUAPhydroengine} is designed to be a quick and efficient model. This thesis focuses on the calibration of \textbf{daWUAPhydroengine} via a Dual State Ensemble Kalman Filter.
+This research is part of the \textbf{daWUAP} project led by Marko Maneta. The \textbf{daWUAP} team has created a hydrological rainfall-runoff model that predicts streamflows across the state of Montana. \textbf{daWUAPhydroengine} is informed by a variety of smaller models, including a groundwater model, snow water equivalient (swe) model, and agricultural component model. Despite this complexity, \textbf{daWUAPhydroengine} is designed to be a quick and efficient model.
+
+This paper focuses on the calibration of \textbf{daWUAPhydroengine} via a Dual State Parameter Estimation Ensemble Kalman Filter. Uniquely, this filter operates on multiple high dimensional parameters represented as raster images. These raster images are both ingested and outputted by the \textbf{daWUAPhydroengine} and were previously set at a constant value. The filter aims to both calibrate and distribute these variables geospatially. 
 
 \section{Motivation}
 \label{ch1:opts}
 
-<<Needs to be written>>
+Hydrological models generate various states that are generally determined by a set of time-invariant parameters. In practice these parameters are calibrated continuously and are tweaked as soon as new observations become available. Parameter calibration techniques have recently been the subject of research \cite{Xie2010} \cite{Sorooshian1993}, although many of the earliest calibration methods are unable to account for all sources of error \cite{Evensen1994}. More recently, sequential parameter estimation through techniques such as the Ensemble Kalman Filter have been developed that can 1) simultaneously calibrate parameter and state estimates and 2) take all sources of uncertainty into account \cite{Evensen2003}.
+
+The Kalman Filter is an efficient model for continuous parameter estimation because it is a sequential data assimilation algorithm, only needing the previous timestep's state estimate, parameter estimate, and co-variance matrices to update the current timestep's state estimate, parameter estimate, and co-variance matrices. The more advanced Ensemble Kalman Filter can account for non-linearity and replaces the priori covarience matrix used in other kalman filtering methods such as the extended or unscented kalman filter with an ensemble covariance matrix, allowing for more efficient computation  of large state vectors.
+
+Research has been done on applying dual state parameter estimation ensemble Kalman filtering to hydrologic models \cite{Moradkhani2005}. Further research into the calibration of hydrologic parameters, particularly geospatial parameters, will help both inform future hydrologic models and allow for examination of the effectiveness of different  techniques that distribute geospatial parameters across a landscape.
 
 \section{Design Constraints}
 
-The optimization of the parameters must be done in a way that is reasonably efficient. Since models such as \textbf{daWUAPhydroengine} can ingest and output dense raster data, for example, many simpler calibration implementations will become unwieldy because of large co-variance matrices. Furthermore, since \textbf{daWUAPhydroengine} is designed to be a quick and efficient model, it is preferable that any calibration component is similarly efficient.
+The optimization of the parameters must be done in a way that is reasonably efficient. Since models such as \textbf{daWUAPhydroengine} ingest and output dense raster data, for example, many simpler calibration implementations will become unwieldy because of large co-variance matrices. Furthermore, since \textbf{daWUAPhydroengine} is designed to be a quick and efficient model, it is preferable that any calibration component is similarly efficient.
 
 
 \section{Contributions}
 
-The main contribution of this thesis is a framework and implementation for model calibration. It also covers the real life case application of this framework to the \textbf{daWUAP} hydrologic engine to validate these methods. This allows major obstacles to be observed. The code is modular and, with some modification, be usable with any Bayesian model.
+The main contribution of this paper is a new framework and implementation for calibration of large raster parameters via an ensemble kalman filter. It also covers the real life case application of this framework to the \textbf{daWUAP} hydrologic engine to validate these methods. This allows major obstacles to be observed. The code is modular and, with some modification, be usable with any Bayesian model.
 
 \section{Thesis Organization}
 
-This thesis looks at hydrologic model calibration from a computer science perspective. Chapter 2 covers the theory behind Dual State Ensemble Kalman Filters. Chapter 3 contains a summary of current modeling methods. Chapter 4 introduces the mathematical model, while Chapter 5 covers the implementation of that model. Chapter 6 discusses the case study of calibrating \textbf{daWUAPhydroengine}. Chapter 7 discusses results, leaving Chapter 8 to conclude the thesis and discuss potential improvements.
+Section 2 covers the theory behind a Dual State Ensemble Kalman Filter's implementation. Section 3 discusses the unique changes made to the DSKE parameter sampling methods. Section 4 covers the application of our DSEKF to \textbf{daWUAPhydroengine}.
 
 
