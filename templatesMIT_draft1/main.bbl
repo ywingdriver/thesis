@@ -1,4 +1,23 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Anderson1999}
+Jeffrey~L. Anderson, Stephen~L. Anderson, Jeffrey~L. Anderson, and Stephen~L.
+  Anderson.
+\newblock {A Monte Carlo Implementation of the Nonlinear Filtering Problem to
+  Produce Ensemble Assimilations and Forecasts}.
+\newblock {\em Monthly Weather Review}, 127(12):2741--2758, dec 1999.
+
+\bibitem{Annan2005}
+J.~D. Annan, D.~J. Lunt, J.~C. Hargreaves, and P.~J. Valdes.
+\newblock {Parameter estimation in an atmospheric GCM using the Ensemble Kalman
+  Filter}.
+\newblock {\em Nonlinear Processes in Geophysics}, 12(3):363--371, feb 2005.
+
+\bibitem{Chen2008}
+M.~Chen, S.~Liu, L.L. Tieszen, and D.Y. Hollinger.
+\newblock {An improved state-parameter analysis of ecosystem models using data
+  assimilation}.
+\newblock {\em Ecological Modelling}, 219(3-4):317--326, dec 2008.
 
 \bibitem{Evensen1994}
 Geir Evensen.
@@ -28,6 +47,12 @@ R.~E. Kalman.
 \newblock {A New Approach to Linear Filtering and Prediction Problems}.
 \newblock {\em Journal of Basic Engineering}, 82(1):35, mar 1960.
 
+\bibitem{Miller1994}
+Robert~N. Miller, Michael Ghil, and Fran{\c{c}}ois Gauthiez.
+\newblock {Advanced Data Assimilation in Strongly Nonlinear Dynamical Systems}.
+\newblock {\em Journal of the Atmospheric Sciences}, 51(8):1037--1056, apr
+  1994.
+
 \bibitem{Moradkhani2005}
 Hamid Moradkhani, Soroosh Sorooshian, Hoshin~V. Gupta, and Paul~R. Houser.
 \newblock {Dual state-parameter estimation of hydrological models using
@@ -39,6 +64,11 @@ Soroosh Sorooshian, Qingyun Duan, and Vijai~Kumar Gupta.
 \newblock {Calibration of rainfall‐runoff models: Application of global
   optimization to the Sacramento Soil Moisture Accounting Model}.
 \newblock {\em Water Resources Research}, 29(4):1185--1194, apr 1993.
+
+\bibitem{West1993}
+Mike West.
+\newblock {Mixture models, Monte Carlo, Bayesian updating, and dynamic models}.
+\newblock {\em Computing Science and Statistics}, 1993.
 
 \bibitem{Xie2010}
 Xianhong Xie and Dongxiao Zhang.

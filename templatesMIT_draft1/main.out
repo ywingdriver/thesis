@@ -9,18 +9,20 @@
 \BOOKMARK [1][-]{section.2.1}{The History of Kalman Filters}{chapter.2}% 9
 \BOOKMARK [1][-]{section.2.2}{The Linear Kalman Filter}{chapter.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.1}{Algorithm}{section.2.2}% 11
-\BOOKMARK [1][-]{section.2.3}{The Whatever We call It Ensemble Kalman Filter}{chapter.2}% 12
-\BOOKMARK [2][-]{subsection.2.3.1}{The Prediction Phase}{section.2.3}% 13
-\BOOKMARK [0][-]{chapter.3}{Example}{}% 14
-\BOOKMARK [1][-]{section.3.1}{Motivations for micro-optimization}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.2}{Description of micro-optimization}{chapter.3}% 16
-\BOOKMARK [2][-]{subsection.3.2.1}{Post Multiply Normalization}{section.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.2.2}{Block Exponent}{section.3.2}% 18
-\BOOKMARK [1][-]{section.3.3}{Integer optimizations}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.3.1}{Conversion to fixed point}{section.3.3}% 20
-\BOOKMARK [2][-]{subsection.3.3.2}{Small Constant Multiplications}{section.3.3}% 21
-\BOOKMARK [1][-]{section.3.4}{Other optimizations}{chapter.3}% 22
-\BOOKMARK [2][-]{subsection.3.4.1}{Low-level parallelism}{section.3.4}% 23
-\BOOKMARK [2][-]{subsection.3.4.2}{Pipeline optimizations}{section.3.4}% 24
-\BOOKMARK [0][-]{appendix.A}{Tables}{}% 25
-\BOOKMARK [0][-]{appendix.B}{Figures}{}% 26
+\BOOKMARK [1][-]{section.2.3}{The Dual Ensemble Kalman Filter}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.3.1}{Prediction Phase}{section.2.3}% 13
+\BOOKMARK [2][-]{subsection.2.3.2}{Parameter Correction Phase}{section.2.3}% 14
+\BOOKMARK [2][-]{subsection.2.3.3}{State Correction Phase}{section.2.3}% 15
+\BOOKMARK [0][-]{chapter.3}{Example}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Motivations for micro-optimization}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Description of micro-optimization}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.2.1}{Post Multiply Normalization}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.2}{Block Exponent}{section.3.2}% 20
+\BOOKMARK [1][-]{section.3.3}{Integer optimizations}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.1}{Conversion to fixed point}{section.3.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.2}{Small Constant Multiplications}{section.3.3}% 23
+\BOOKMARK [1][-]{section.3.4}{Other optimizations}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.4.1}{Low-level parallelism}{section.3.4}% 25
+\BOOKMARK [2][-]{subsection.3.4.2}{Pipeline optimizations}{section.3.4}% 26
+\BOOKMARK [0][-]{appendix.A}{Tables}{}% 27
+\BOOKMARK [0][-]{appendix.B}{Figures}{}% 28

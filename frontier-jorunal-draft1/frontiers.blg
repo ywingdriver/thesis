@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: frontiers.aux
+The style file: frontiersinSCNS_ENG_HUMS.bst
+Database file #1: test.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty booktitle in Julier1997
+You've used 13 entries,
+            3029 wiz_defined-function locations,
+            726 strings with 7643 characters,
+and the built_in function-call counts, 8129 in all, are:
+= -- 708
+> -- 344
+< -- 8
++ -- 160
+- -- 94
+* -- 583
+:= -- 1232
+add.period$ -- 36
+call.type$ -- 13
+change.case$ -- 96
+chr.to.int$ -- 14
+cite$ -- 27
+duplicate$ -- 551
+empty$ -- 600
+format.name$ -- 126
+if$ -- 1643
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 122
+newline$ -- 102
+num.names$ -- 52
+pop$ -- 242
+preamble$ -- 1
+purify$ -- 83
+quote$ -- 0
+skip$ -- 251
+stack$ -- 0
+substring$ -- 388
+swap$ -- 258
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 117
+warning$ -- 1
+while$ -- 58
+width$ -- 0
+write$ -- 216
+(There was 1 warning)
