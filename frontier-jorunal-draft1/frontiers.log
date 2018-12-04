@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 NOV 2018 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 NOV 2018 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -936,7 +936,7 @@ df ./logo1.eps>
 (epstopdf)             \includegraphics on input line 66.
 Package epstopdf Info: Output file is already uptodate.
 
-<./logo1-eps-converted-to.pdf, id=44, 284.06125pt x 80.3pt>
+<./logo1-eps-converted-to.pdf, id=24, 284.06125pt x 80.3pt>
 File: ./logo1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./logo1-eps-converted-to.pdf>
@@ -1022,7 +1022,7 @@ Package epstopdf Info: Source file: <logo1.eps>
 (epstopdf)             \includegraphics on input line 221.
 Package epstopdf Info: Output file is already uptodate.
 
-<logo1-eps-converted-to.pdf, id=161, 284.06125pt x 80.3pt>
+<logo1-eps-converted-to.pdf, id=140, 284.06125pt x 80.3pt>
 File: logo1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use logo1-eps-converted-to.pdf>
@@ -1042,7 +1042,7 @@ Package epstopdf Info: Source file: <logos.eps>
  logos.eps>
 (epstopdf)             \includegraphics on input line 229.
 Package epstopdf Info: Output file is already uptodate.
-<logos-eps-converted-to.pdf, id=162, 461.725pt x 101.37875pt>
+<logos-eps-converted-to.pdf, id=141, 461.725pt x 101.37875pt>
 File: logos-eps-converted-to.pdf Graphic file (type pdf)
 
 <use logos-eps-converted-to.pdf>
@@ -1071,60 +1071,39 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
 (./frontiers.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 239.
+Package rerunfilecheck Info: File `frontiers.out' has not changed.
+(rerunfilecheck)             Checksum: 0E889B04318F2A72088097EC9DEF0331;324.
 
-
-Package rerunfilecheck Warning: File `frontiers.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `frontiers.out':
-(rerunfilecheck)             Before: C721CD7FFDA05AE3E527CC77DF70D650;644
-(rerunfilecheck)             After:  0E889B04318F2A72088097EC9DEF0331;324.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12102 strings out of 492995
- 180253 string characters out of 6132704
- 329159 words of memory out of 5000000
- 15193 multiletter control sequences out of 15000+600000
- 38103 words of font info for 155 fonts, out of 8000000 for 9000
+ 12089 strings out of 492995
+ 180096 string characters out of 6132704
+ 329158 words of memory out of 5000000
+ 15188 multiletter control sequences out of 15000+600000
+ 37984 words of font info for 153 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  60i,9n,94p,1587b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.3.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.3.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-dis
-t/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2017/texmf-dist/font
-s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/t
-imes/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8
-a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on frontiers.pdf (6 pages, 340231 bytes).
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on frontiers.pdf (6 pages, 339649 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
- 46 named destinations out of 1000 (max. 500000)
- 29792 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 29752 words of extra memory for PDF output out of 29859 (max. 10000000)
 

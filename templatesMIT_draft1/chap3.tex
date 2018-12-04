@@ -1,0 +1,49 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Kernel Smoothing Improvments}
+
+
+
+\section{Moving Window}
+
+The old equation for the evolution of priori parameters is:
+
+\begin{equation}\label{eq:dekf_thetaminus}
+\theta_{t+1}^{i-} = a\theta_{t}^{i+} + (1-a)\bar{\theta}_{t}^{+} + \tau_{t}^{i}
+\end{equation}
+\begin{equation}\label{eq:dekf_tau}
+\tau_{t}^{i} = N(0, h^{2}V_{t})
+\end{equation}
+\begin{equation}\label{eq:dekf_V}
+V_{t} = var(\theta_{t+1})
+\end{equation}
+
+Here is a draft of the hierarchical evolution:
+
+\begin{equation}\label{eq:dekf_thetanew}
+{}_{c}\theta_{t+1}^{i-} = \alpha_{t}^{i-}\bar{G}_{t} + (1-\alpha_{t}^{i-}){}_{c}\bar{\theta}_{t}^{+} + \tau_{t}^{i}
+\end{equation}
+\begin{equation}\label{eq:dekf_tau_2}
+\tau_{t}^{i} = N(0, h^{2}V_{t})
+\end{equation}
+\begin{equation}\label{eq:dekf_G}
+\bar{G} = \bar{\theta}_{t}^{+}
+\end{equation}
+\begin{equation}\label{eq:dekf_V_2}
+V_{t} = var(\bar{G_{t}})
+\end{equation}
+\begin{equation}\label{eq:dekf_V_3}
+\alpha_{t+1}^{i-} = a\alpha_{t}^{i+} + (1-a)\bar{\alpha}_{t}^{+} + \delta{t}^{i}
+\end{equation}
+\begin{equation}\label{eq:dekf_V_4}
+\delta_{t} = N(0, h^{2}{}_{\alpha}V_{t})
+\end{equation}
+\begin{equation}\label{eq:dekf_V_5}
+{}_{\alpha}V_{t} = var(\theta_{t+1})
+\end{equation}
+
+Where initial $\alpha$, $m$, and $n$ are variables choosable by the user.
