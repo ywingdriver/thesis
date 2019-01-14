@@ -1,0 +1,60 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Discussion}
+
+Currently, Prof. Johnson and Prof. Maneta and I are working on a way to combine a Hierarchical regression techinique with this Kalman filter. We believe that this will allow us to switch from the interpolation scheme shown earlier in this paper to a scheme where catchments are used as parameter zones.
+
+\section{Hierarchical Kalman Filter}
+
+The old equation for the evolution of priori parameters is:
+
+\begin{equation}\label{eq:dekf_thetaminus}
+\theta_{t+1}^{i-} = a\theta_{t}^{i+} + (1-a)\bar{\theta}_{t}^{+} + \tau_{t}^{i}
+\end{equation}
+\begin{equation}\label{eq:dekf_tau}
+\tau_{t}^{i} = N(0, h^{2}V_{t})
+\end{equation}
+\begin{equation}\label{eq:dekf_V}
+V_{t} = var(\theta_{t+1})
+\end{equation}
+
+Here is a draft of the hierarchical evolution:
+
+\begin{equation}\label{eq:dekf_thetanew}
+\theta_{t+1}^{i-} = \alpha_{t}^{i-}C_{t}^{i} + (1-\alpha_{t}^{i-})G_{t}^{i} + \tau_{t}^{i}
+\end{equation}
+\begin{equation}
+C_{t}^{i} = a\theta_{t}^{i+} + (1-a)\bar{\theta}_{t}^{+}
+\end{equation}
+\begin{equation}
+G_{t}^{i} = a \bar{\theta}_{t}^{i+} + (1-a)\bar{\bar{\theta}}_{t}^{+}
+\end{equation}
+
+\begin{equation}\label{eq:dekf_tau_2}
+\tau_{t}^{i} = N(0, h^{2}V_{t})
+\end{equation}
+
+\begin{equation}\label{eq:dekf_V_2}
+V_{t} = \alpha_{t}^{i-} var(h^{2}\theta_{t+1}) + (1-\alpha_{t}^{i-}) var(h^{2}G_{t}^{i})
+\end{equation}
+\begin{equation}\label{eq:dekf_V_3}
+\alpha_{t+1}^{i-} = a\alpha_{t}^{i+} + (1-a)\bar{\alpha}_{t}^{+} + \delta_{t}^{i}
+\end{equation}
+\begin{equation}\label{eq:dekf_V_4}
+\delta_{t} = N(0, h^{2}{}_{\alpha}V_{t})
+\end{equation}
+\begin{equation}\label{eq:dekf_V_5}
+{}_{\alpha}V_{t} = var(\alpha_{t})
+\end{equation}
+
+Where initial $\alpha$, $m$, and $n$ are variables choosable by the user. This is a work in progress.
+
+
+\chapter{Conclusion}
+
+In conclusion, this Dual Ensemble Kalman Filter was sucessfully implemented on a hydrologic model. The resulting parameters do lead to better estimation of hydrologic components. Although these results are good, we hope to eventually implement an innovative new Hierarchical Kalman filter that will calibrate parameters at the catchment level.
+
