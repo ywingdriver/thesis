@@ -7,7 +7,7 @@ frontier, elsarticle) and none of them represent the final template that will be
 used. The folder *templatesMIT_draft2_winter2019* currently holds the most up-to-date
 paper.
 
-#### Instructions for viewing the most up-to-date version of my paper ####
+#### Instructions for viewing the most up-to-date version of my paper: ####
 + Look at **templatesMIT_draft2_winter2019/main.pdf**
 
 #### Inspirations for my paper outline: ####
@@ -19,6 +19,11 @@ paper.
 
 ### Title ###
 ### Abstract ###
+```
+To Do:
++ Show rough draft to  Prof. Maneta/Prof. Johnson
+```
+
 ### Table of Contents ###
 
 ### Symbols ###
