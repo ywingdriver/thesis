@@ -1,6 +1,6 @@
 # PAPER OUTLINE AS OF FEB 4, 2019 #
 
-####Inspirations for my paper outline:####
+#### Inspirations for my paper outline: ####
 + http://www.instruction.greenriver.edu/mcvay/B100/general_format_for_writing_a_sci.htm
 + https://www.sciencedirect.com/science/article/pii/S0304380008003530#aep-section-id27
 + https://www.sciencedirect.com/science/article/pii/S0309170804001605#sec3
@@ -53,7 +53,7 @@ To Do:
   3. Write rough draft
 ```
 
-### Comparison of DEnKF and DEnHKF results (?)###
+### Comparison of DEnKF and DEnHKF results (?) ###
 
 ```
 To Do:
