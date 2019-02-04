@@ -10,14 +10,13 @@
 ### Table of Contents ###
 
 ### Symbols ###
-
-#### Todo: ####
-+ Add more references
-+ Run rough draft past Prof. Maneta/Prof. Johnson
-### Introduction ###
-
 ```
-#### Todo: ####
+To Do:
++ Ask if I need this page at all
+```
+### Introduction ###
+```
+To Do:
 + Add more references
 + Run rough draft past Prof. Maneta/Prof. Johnson
 ```
@@ -30,7 +29,7 @@
   + State Correction Phase
 
 ```
-#### Todo: ####
+To Do:
 + Add more references
 + Run rough draft past Prof. Maneta/Prof. Johnson
 ```
@@ -40,22 +39,24 @@
 + **Observation Data**
 
 ```
-#### Todo: ####
+To Do:
 + Write rough draft of this section
 ```
 
 ### Results/Analysis ###
 
-#### Todo: ####
+```
+To Do:
 + Get a good run of the model in so there are actual results to analize
   1. Tune parameters
   2. Run model over 10 years
   3. Write rough draft
+```
 
 ### Comparison of DEnKF and DEnHKF results (?)###
 
 ```
-#### Todo: ####
+To Do:
 + Recover DEnKF results from machine learning final project
 + finish *Results/Analysis*
 + write rough draft
@@ -64,7 +65,7 @@
 ### Summary ###
 
 ```
-#### Todo: ####
+To Do:
 + finish *Results/Analysis*
 + write rough draft
 ```
