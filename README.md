@@ -16,10 +16,11 @@
 + Run rough draft past Prof. Maneta/Prof. Johnson
 ### Introduction ###
 
+```
 #### Todo: ####
 + Add more references
 + Run rough draft past Prof. Maneta/Prof. Johnson
-
+```
 
 ### The Hierarchical Dual Ensemble Kalman Filter Method ###
 + **General Dynamic Model and Observations**
@@ -28,16 +29,20 @@
   + Parameter Correction Phase
   + State Correction Phase
 
+```
 #### Todo: ####
 + Add more references
 + Run rough draft past Prof. Maneta/Prof. Johnson
+```
 
 ### Application of DEnHKF to Hydrologic Model ###
 + **daWUAPhydroengine**
 + **Observation Data**
 
+```
 #### Todo: ####
 + Write rough draft of this section
+```
 
 ### Results/Analysis ###
 
@@ -49,16 +54,20 @@
 
 ### Comparison of DEnKF and DEnHKF results (?)###
 
+```
 #### Todo: ####
 + Recover DEnKF results from machine learning final project
 + finish *Results/Analysis*
 + write rough draft
+```
 
 ### Summary ###
 
+```
 #### Todo: ####
 + finish *Results/Analysis*
 + write rough draft
+```
 
 ### Acknowledgments ###
 
