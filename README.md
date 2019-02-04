@@ -90,3 +90,18 @@ To Do:
 ### Acknowledgments ###
 
 ### References ###
+
+
+### Appendix A: DEnKF Method ###
+
+```
+To Do:
++ run past Prof. Maneta/Prof. Johnson
+```
+
+### Appendix B: daWUAPhydroengine ###
+
+```
+To Do:
++ rewrite this, currently Prof. Maneta's writing
+```
