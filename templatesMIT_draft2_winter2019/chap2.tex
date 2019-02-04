@@ -4,10 +4,11 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter{Methods}
+\chapter{The Hierarchical Dual Ensemble Kalman Filter Method}
 
 
-\section{The Hierarchical Dual Ensemble Kalman Filter}
+\section{General Dynamic Model and Observations}
+
 
 A generic dynamic model can be defined as one more more discrete nonlinear stochastic processes\cite{Chen2008}:
 
@@ -26,6 +27,8 @@ z_{t} = h(x_{t}, \theta_{t}) + \delta_{t}
 Where the $x_{t}$ vector represents the true state, $\theta_{t}$ represents the true parameters, $h(.)$ is a function that determines the relationship between observation and state vectors, and $\delta_{t}$ represents observation error. $\delta_{t}$ is Gaussian and independent of $\varepsilon_{t}$.
 
 The Dual Hierarchical State Ensemble Kalman Filter can be split into three subsections: The prediction phase, the parameter correction phase, and the state correction phase. 
+
+\section{DEnHKF Method}
 
 \subsection{Prediction Phase}
 

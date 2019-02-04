@@ -1,0 +1,112 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Methods}
+
+
+\section{The Dual Ensemble Kalman Filter}
+
+According to Jazwinski \cite{Jazwinski1970} any discrete nonlinear stochastic-dynamic model can be defined as:
+
+\begin{equation}\label{eq:gen_stoc}
+x_{t+1} = f(x_{t}, u_{t}, \theta_{t}) + \varepsilon_{t}
+\end{equation}
+
+where $x_{t}$ is an $n$ dimensional vector representing the state variables of the model at time step $t$, $u_{t}$ is a vector of forcing data (e.g temperature or precipitation) at time step $t$, and $\theta_{t}$ is a vector of model parameters which may or may not change per time step (e.g \textit{soil beta }or \textit{DDF}). The non-linear function $f$ takes these variables as inputs. The noise variable $\varepsilon_{t}$ accounts for both model structural error and for any uncertainty in the forcing data.
+
+A state's observation vector $z_{t}$ can be defined as
+
+\begin{equation}\label{eq:gen_obs}
+z_{t} = h(x_{t}, \theta_{t}) + \delta_{t}
+\end{equation}
+
+Where the $x_{t}$ vector represents the true state, $\theta_{t}$ represents the true parameters, $h(.)$ is a function that determines the relationship between observation and state vectors, and $\delta_{t}$ represents observation error. $\delta_{t}$ is Gaussian and independent of $\varepsilon_{t}$.
+
+The Dual State Ensemble Kalman Filter can be split into three subsections: The prediction phase, the parameter correction phase, and the state correction phase. 
+
+\subsection{Prediction Phase}
+
+In a Dual Ensemble Kalman filter, each ensemble member \textit{i} is represented by a stochastic model similar to \eqref{eq:gen_stoc}. The modified equation is as follows:
+
+\begin{equation}\label{eq:dekf_predict}
+x_{t+1}^{i-} = f(x_{t}^{i+}, u_{t}^{i}, \theta^{i-}_{t}) + \omega_{t}, \quad i=1,...,n
+\end{equation}
+
+Where $n$ is the total number of ensembles. The $-/+$ superscripts denote corrected ($+$) and uncorrected ($-$) values. Note that $\theta^{i-}_{t}$'s $t$ superscript does not necessarily denote that $\theta$ is time variant but rather indicates that parameter values change as they are filtered over time. The noise term $\omega_{t}$ accounts for model error and will hereafter be excluded from the state equation.
+
+Errors in the forcing data are accounted for through the perturbation the forcing data vector $u_{t}$ with random noise $\zeta_{t}^{i}$ to generate a unique variable $u_{t}^{i}$ for each ensemble. $\zeta_{t}^{i}$ is drawn from a normal distribution with a covarience matrix $Q_{t}^{i}$.
+
+\begin{equation}\label{eq:dekf_u}
+u_{t+1}^{i} = u_{t} + \zeta_{t}^{i}, \quad \zeta_{t}^{i} \sim N(0,Q_{t}^{i}) 
+\end{equation}
+
+To generate the priori parameters $\theta^{i-}_{t+1}$ an evolution of the parameters similar to the evolution of the state variables must be implemented. To accomplish this the kernel smoothing technique developed by West \cite{West1993} and implemented by Liu \cite{Liu2000} is used. Legacy implementations of parameter evolution added a small perturbation sampled from $N(0,\Sigma^{\theta}_{t})$, where $\Sigma^{\theta}_{t}$ represents the covariance matrix of $\theta$ at timestep $t$. This legacy method of evolution resulted in overly disposed parameter samples and the loss of continuity between two consecutive points in time \cite{Liu2000} \cite{Chen2008}. Kernel smoothing has been used effectively to solve this problem in previous Dual Ensemble Kalman filter implementations \cite{Moradkhani2005} and similar models \cite{Chen2008}.
+
+\begin{equation}\label{eq:dekf_thetaminus}
+\theta_{t+1}^{i-} = a\theta_{t}^{i+} + (1-a)\bar{\theta}_{t}^{+} + \tau_{t}^{i}
+\end{equation}
+\begin{equation}\label{eq:dekf_tau}
+\tau_{t}^{i} = N(0, h^{2}V_{t})
+\end{equation}
+ 
+Where $\bar{\theta}_{t}^{+}$ is the mean of the parameters with respect to the ensembles, $V_{t} = var(\theta_{t}^{i+})$, $a$ is a shrinkage factor between (0,1) of the kernel location, and $h$ is a smoothing factor. $h$ is defined by $\sqrt{1-a1/2}$, while $a$ is generally between (.45,.49). Note that $h$ and $a$ tend to vary per model and optimal values for these parameters are generally found via experimentation  \cite{Moradkhani2005}  \cite{Anderson1999} \cite{Annan2005} \cite{Chen2008}.
+
+\subsection{Parameter Correction Phase}
+
+In an Ensemble Kalman Filter, observations are perturbed to reflect model error. Therefore, the variable $z_{t+1}^{i}$ is defined as follows:
+
+\begin{equation}\label{eq:dekf_obs}
+z_{t+1}^{i} = z_{t+1} + \eta_{t+1}^{i},\quad \eta_{t+1}^{i} = N(0,R_{t+1})
+\end{equation}
+
+Where $z_{t+1}$ is an observation vector defined by \eqref{eq:gen_obs} and $\eta_{t+1}^{i}$ is a random perturbation drawn from a normal distribution with covarience matrix $R_{t+1}$. A set of state predictions that can be related to the observations are generated by running the priori state vector through the function $h(.)$:
+
+\begin{equation}\label{eq:dekf_pred}
+\hat{y}_{t+1}^{i} = h(x_{t+1}^{i-}, \theta_{t+1}^{i-})
+\end{equation}
+
+The parameter update equation is similar to the update equation of the linear Kalman filter $\hat{x}^{+}_{t} = \hat{x}^{-}_{t} + K_{t}(z_{t}-H\hat{x}_{t})$. Notably,  parameters are corrected in lieu of the states:
+
+\begin{equation}\label{eq:dekf_param_update}
+\theta_{t+1}^{i+} = \theta_{t+1}^{i-} + K_{t+1}^{\theta}(z_{t+1}^{i}-\hat{y}_{t+1}^{i})
+\end{equation}
+
+To facilitate this, $K_{t+1}^{\theta}$ is defined as
+
+\begin{equation}\label{eq:dekf_param_k}
+K_{t+1}^{\theta} = \frac{\Sigma^{\theta,\hat{y}}_{t+1}}{\Sigma^{\hat{y},\hat{y}}_{t+1} + R_{t+1}}
+\end{equation}
+
+where $\Sigma^{\theta,\hat{y}}_{t+1}$ is the cross covariance of $\theta_{t+1}$ and $\hat{y}_{t+1}$, $\Sigma^{\hat{y},\hat{y}}_{t+1}$ is the covarience of $\hat{y}_{t+1}$, and $R_{t+1}$ is the observation error matrix from \eqref{eq:dekf_obs}. 
+
+\subsection{State Correction Phase}
+
+After $\theta_{t+1}^{i+}$ has been calculated the model is run again \eqref{eq:dekf_predict} with the $\theta_{t+1}^{i+}$ replacing $\theta_{t+1}^{i-}$.
+
+\begin{equation}\label{eq:dekf_predict_2}
+x_{t+1}^{i-} = f(x_{t}^{i+}, u_{t}^{i}, \theta^{i+}_{t}), \quad i=1,...,n
+\end{equation}
+
+After a new state vector is generated it is re-run through \eqref{eq:dekf_pred} with the new parameter vector:
+
+\begin{equation}\label{eq:dekf_pred_2}
+\hat{y}_{t+1}^{i} = h(x_{t+1}^{i-}, \theta_{t+1}^{i+})
+\end{equation}
+
+The corrected state vector is then run through the state update equation
+
+\begin{equation}\label{eq:dekf_state_update}
+x_{t+1}^{i+} = x_{t+1}^{i-} + K_{t+1}^{x}(z_{t+1}^{i}-\hat{y}_{t+1}^{i})
+\end{equation}
+ 
+\begin{equation}\label{eq:dekf_param_k}
+K_{t+1}^{x} = \frac{\Sigma^{x,\hat{y}}_{t+1}}{\Sigma^{\hat{y},\hat{y}}_{t+1} + R_{t+1}}
+\end{equation}
+
+where $\Sigma^{x,\hat{y}}_{t+1}$ is the cross covariance of $x_{t+1}$ and $\hat{y}_{t+1}$.
+
+
+

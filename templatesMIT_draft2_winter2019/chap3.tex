@@ -4,11 +4,9 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter{Results}
+\chapter{Application of DEnHKF to Hydrologic Model}
 
-
-
-\section{Implementation for daWUAPhydroengine}
+\section{daWUAPhydroengine}
 
 The \textbf{daWUAPhydroengine} hydrologic model is designed to be implemented in any geographic location. For this study it was utilized to model streamflows throughout the state of Montana. \textbf{daWUAPhydroengine} takes precipitation, minimum temperatures, and maximum temperatures as inputs and outputs streamflow data along with some additional states such as snow water equivalent. Since Montana is such a large geographical area sections of the landscape differ in various ways (soil composition, forestation, etc.) To account for this, a series of geospatially distributed raster parameters are calibrated by the filter. Since each parameter is corrected by model state predictions and observations raster images were separated into distinct theissen raster regions, each with an observation point at its center.
 
@@ -101,4 +99,7 @@ Each run involved 100-200 ensembles and took anywhere from 20 hours to 2 days to
 \end{figure} 
 
 \ref{fig:cali} display stream observations compared to two instances of \textbf{daWUAPhydroengine}, one using the calibrated parameters and one using the default parameters. Both models were started without spun up parameters (e.g both models started with 0 for each streamflow and have to converge with the real world.) Note how much more successful the calibrated model behaves.
+
+
+\section{Observation Data}
 

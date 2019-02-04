@@ -1,0 +1,114 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+
+\bibitem[{Anderson et~al.(1999)Anderson, Anderson, Anderson, and
+  Anderson}]{Anderson1999}
+Anderson, J.~L., Anderson, S.~L., Anderson, J.~L., and Anderson, S.~L. (1999).
+\newblock {A Monte Carlo Implementation of the Nonlinear Filtering Problem to
+  Produce Ensemble Assimilations and Forecasts}.
+\newblock \emph{Monthly Weather Review} 127, 2741--2758.
+\newblock \doi{10.1175/1520-0493(1999)127<2741:AMCIOT>2.0.CO;2}
+\bibAnnoteFile{Anderson1999}
+
+\bibitem[{Annan et~al.(2005)Annan, Lunt, Hargreaves, and Valdes}]{Annan2005}
+Annan, J.~D., Lunt, D.~J., Hargreaves, J.~C., and Valdes, P.~J. (2005).
+\newblock {Parameter estimation in an atmospheric GCM using the Ensemble Kalman
+  Filter}.
+\newblock \emph{Nonlinear Processes in Geophysics} 12, 363--371.
+\newblock \doi{10.5194/npg-12-363-2005}
+\bibAnnoteFile{Annan2005}
+
+\bibitem[{Chen et~al.(2008)Chen, Liu, Tieszen, and Hollinger}]{Chen2008}
+Chen, M., Liu, S., Tieszen, L., and Hollinger, D. (2008).
+\newblock {An improved state-parameter analysis of ecosystem models using data
+  assimilation}.
+\newblock \emph{Ecological Modelling} 219, 317--326.
+\newblock \doi{10.1016/J.ECOLMODEL.2008.07.013}
+\bibAnnoteFile{Chen2008}
+
+\bibitem[{Evensen(1994)}]{Evensen1994}
+Evensen, G. (1994).
+\newblock {Sequential data assimilation with a nonlinear quasi-geostrophic
+  model using Monte Carlo methods to forecast error statistics}.
+\newblock \emph{Journal of Geophysical Research} 99, 10143.
+\newblock \doi{10.1029/94JC00572}
+\bibAnnoteFile{Evensen1994}
+
+\bibitem[{Evensen(2003)}]{Evensen2003}
+Evensen, G. (2003).
+\newblock {The Ensemble Kalman Filter: Theoretical formulation and practical
+  implementation}.
+\newblock \emph{Ocean Dynamics} 53, 343--367.
+\newblock \doi{10.1007/s10236-003-0036-9}
+\bibAnnoteFile{Evensen2003}
+
+\bibitem[{Jazwinski(1970)}]{Jazwinski1970}
+Jazwinski, A.~H. (1970).
+\newblock {Stochastic Processes and Filtering.}
+\newblock \emph{Mathematics in Science and Enginerring}
+\bibAnnoteFile{Jazwinski1970}
+
+\bibitem[{Julier and Uhlmann(1997)}]{Julier1997}
+Julier, S.~J. and Uhlmann, J.~K. (1997).
+\newblock {New extension of the Kalman filter to nonlinear systems}
+  (International Society for Optics and Photonics), vol. 3068, 182.
+\newblock \doi{10.1117/12.280797}
+\bibAnnoteFile{Julier1997}
+
+\bibitem[{Kalman(1960)}]{Kalman1960}
+Kalman, R.~E. (1960).
+\newblock {A New Approach to Linear Filtering and Prediction Problems}.
+\newblock \emph{Journal of Basic Engineering} 82, 35.
+\newblock \doi{10.1115/1.3662552}
+\bibAnnoteFile{Kalman1960}
+
+\bibitem[{Miller et~al.(1994)Miller, Ghil, and Gauthiez}]{Miller1994}
+Miller, R.~N., Ghil, M., and Gauthiez, F. (1994).
+\newblock {Advanced Data Assimilation in Strongly Nonlinear Dynamical Systems}.
+\newblock \emph{Journal of the Atmospheric Sciences} 51, 1037--1056.
+\newblock \doi{10.1175/1520-0469(1994)051<1037:ADAISN>2.0.CO;2}
+\bibAnnoteFile{Miller1994}
+
+\bibitem[{Moradkhani et~al.(2005)Moradkhani, Sorooshian, Gupta, and
+  Houser}]{Moradkhani2005}
+Moradkhani, H., Sorooshian, S., Gupta, H.~V., and Houser, P.~R. (2005).
+\newblock {Dual state-parameter estimation of hydrological models using
+  ensemble Kalman filter}.
+\newblock \emph{Advances in Water Resources} 28, 135--147.
+\newblock \doi{10.1016/j.advwatres.2004.09.002}
+\bibAnnoteFile{Moradkhani2005}
+
+\bibitem[{Sorooshian et~al.(1993)Sorooshian, Duan, and Gupta}]{Sorooshian1993}
+Sorooshian, S., Duan, Q., and Gupta, V.~K. (1993).
+\newblock {Calibration of rainfall‐runoff models: Application of global
+  optimization to the Sacramento Soil Moisture Accounting Model}.
+\newblock \emph{Water Resources Research} 29, 1185--1194.
+\newblock \doi{10.1029/92WR02617}
+\bibAnnoteFile{Sorooshian1993}
+
+\bibitem[{West(1993)}]{West1993}
+West, M. (1993).
+\newblock {Mixture models, Monte Carlo, Bayesian updating, and dynamic models}.
+\newblock \emph{Computing Science and Statistics} \doi{10.1002/ange.200802345}
+\bibAnnoteFile{West1993}
+
+\bibitem[{Xie and Zhang(2010)}]{Xie2010}
+Xie, X. and Zhang, D. (2010).
+\newblock {Data assimilation for distributed hydrological catchment modeling
+  via ensemble Kalman filter}.
+\newblock \emph{Advances in Water Resources} 33, 678--690.
+\newblock \doi{10.1016/J.ADVWATRES.2010.03.012}
+\bibAnnoteFile{Xie2010}
+
+\end{thebibliography}
