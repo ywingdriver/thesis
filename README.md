@@ -1,9 +1,21 @@
-# PAPER OUTLINE AS OF FEB 4, 2019 #
+# Academic Paper README #
+
+## Summary ##
+This README covers the current outline of my academic paper, which I am currently
+writing in LaTex. There are quite a few different templates being used here (MIT,
+frontier, elsarticle) and none of them represent the final template that will be
+used. The folder *templatesMIT_draft2_winter2019* currently holds the most up-to-date
+paper.
+
+#### Instructions for viewing the most up-to-date version of my paper ####
++ Look at **templatesMIT_draft2_winter2019/main.pdf**
 
 #### Inspirations for my paper outline: ####
 + http://www.instruction.greenriver.edu/mcvay/B100/general_format_for_writing_a_sci.htm
 + https://www.sciencedirect.com/science/article/pii/S0304380008003530#aep-section-id27
 + https://www.sciencedirect.com/science/article/pii/S0309170804001605#sec3
+
+## PAPER OUTLINE AS OF FEB 4, 2019 ##
 
 ### Title ###
 ### Abstract ###
