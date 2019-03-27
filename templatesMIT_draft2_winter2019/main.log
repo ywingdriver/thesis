@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 FEB 2019 10:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 MAR 2019 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,17 +584,19 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 49.
 
 LaTeX Warning: Label `eq:hdekf_param_k' multiply defined.
 
-) (./chap3.aux) (./chap4.aux) (./apx_dekf.aux
+) (./chap3.aux) (./chap4.aux
 
-LaTeX Warning: Label `eq:dekf_thetaminus' multiply defined.
+LaTeX Warning: Label `tab:t_params' multiply defined.
 
-
-LaTeX Warning: Label `eq:dekf_tau' multiply defined.
-
+) (./chap5.aux) (./apx_dekf.aux
 
 LaTeX Warning: Label `eq:dekf_param_k' multiply defined.
 
-) (./apx_daw.aux) (./biblio.aux))
+) (./apx_daw.aux) (./apx_daw_marko.aux
+
+LaTeX Warning: Label `eq:linearsystem' multiply defined.
+
+) (./biblio.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
@@ -695,10 +697,10 @@ Chapter 1.
 
 
 
-])
+]
 Underfull \vbox (badness 1675) has occurred while \output is active []
 
- [6]
+ [6])
 [7]
 \openout2 = `chap2.aux'.
 
@@ -708,11 +710,11 @@ Underfull \vbox (badness 1675) has occurred while \output is active []
 
 ]
 Chapter 2.
-[9] [10]
-Underfull \vbox (badness 4108) has occurred while \output is active []
+[9]
 
- [11]
-[12]) [13]
+LaTeX Warning: Reference `apx:A' on page 10 undefined on input line 35.
+
+[10] [11] [12]) [13]
 \openout2 = `chap3.aux'.
 
  (./chap3.tex [14
@@ -721,98 +723,102 @@ Underfull \vbox (badness 4108) has occurred while \output is active []
 
 ]
 Chapter 3.
-<stations.png, id=251, 847.66183pt x 599.4301pt>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 13.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 25.
+
+
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+ [15]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 36.
+
+
+Overfull \hbox (45.47298pt too wide) in paragraph at lines 38--46
+[][]
+ []
+
+<elevation.png, id=282, 3520.15125pt x 2489.3pt>
+File: elevation.png Graphic file (type png)
+ <use elevation.png>
+Package pdftex.def Info: elevation.png used on input line 50.
+(pdftex.def)             Requested size: 411.93767pt x 291.29631pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 60.
+
+<stations.png, id=284, 847.66183pt x 599.4301pt>
 File: stations.png Graphic file (type png)
  <use stations.png>
-Package pdftex.def Info: stations.png used on input line 19.
+Package pdftex.def Info: stations.png used on input line 72.
 (pdftex.def)             Requested size: 411.93767pt x 291.29948pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+) [16] [17 <./elevation.png> <./stations.png>]
+\openout2 = `chap4.aux'.
+
+ (./chap4.tex [18
+
+
+
+]
+Chapter 4.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 24.
+               Default added (so using `tbp') on input line 11.
 
 
-Overfull \hbox (45.47298pt too wide) in paragraph at lines 26--34
+Overfull \hbox (45.47298pt too wide) in paragraph at lines 13--21
 [][]
  []
 
-
-Underfull \vbox (badness 1163) has occurred while \output is active []
-
- [15]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 39.
-
-
-Underfull \vbox (badness 1371) has occurred while \output is active []
-
- [16 <./stations.png>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 53.
-
-<elevation.png, id=266, 3520.15125pt x 2489.3pt>
-File: elevation.png Graphic file (type png)
- <use elevation.png>
-Package pdftex.def Info: elevation.png used on input line 68.
-(pdftex.def)             Requested size: 411.93767pt x 291.29631pt.
-
-<max_wat.png, id=267, 3520.15125pt x 2489.3pt>
+[19] <max_wat.png, id=314, 3520.15125pt x 2489.3pt>
 File: max_wat.png Graphic file (type png)
  <use max_wat.png>
-Package pdftex.def Info: max_wat.png used on input line 75.
+Package pdftex.def Info: max_wat.png used on input line 31.
 (pdftex.def)             Requested size: 411.93767pt x 291.29631pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<soil_beta.png, id=268, 3520.15125pt x 2489.3pt>
+<soil_beta.png, id=315, 3520.15125pt x 2489.3pt>
 File: soil_beta.png Graphic file (type png)
  <use soil_beta.png>
-Package pdftex.def Info: soil_beta.png used on input line 82.
+Package pdftex.def Info: soil_beta.png used on input line 38.
 (pdftex.def)             Requested size: 411.93767pt x 291.29631pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17 <./elevation.png>] <param.png, id=279, 3011.25pt x 1003.75pt>
+[20 <./max_wat.png>] <param.png, id=326, 3011.25pt x 1003.75pt>
 File: param.png Graphic file (type png)
 
 <use param.png>
-Package pdftex.def Info: param.png used on input line 91.
+Package pdftex.def Info: param.png used on input line 47.
 (pdftex.def)             Requested size: 411.93767pt x 137.30768pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<cali.png, id=281, 2264.46pt x 631.35875pt>
+ <cali.png, id=328, 2264.46pt x 631.35875pt>
 File: cali.png Graphic file (type png)
  <use cali.png>
-Package pdftex.def Info: cali.png used on input line 100.
+Package pdftex.def Info: cali.png used on input line 56.
 (pdftex.def)             Requested size: 411.93767pt x 114.85352pt.
 
+[21 <./soil_beta.png> <./param.png>]) [22 <./cali.png>]
+\openout2 = `chap5.aux'.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18 <./max_wat.png>]) [19 <./soil_beta.png>] [20 <./param.png> <./cali.png>]
-\openout2 = `chap4.aux'.
-
- (./chap4.tex
-Chapter 4.
-[21
-
-
-
-] [22]
+ (./chap5.tex
 Chapter 5.
 ) [23
+
+
 
 ]
 \openout2 = `apx_dekf.aux'.
@@ -823,6 +829,10 @@ Chapter 5.
 
 ]
 Appendix A.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 9.
+
 [25] [26]) [27]
 \openout2 = `apx_daw.aux'.
 
@@ -833,28 +843,70 @@ Appendix A.
 ]
 Appendix B.
 
-LaTeX Warning: Citation `Bergstrom1995' on page 29 undefined on input line 12.
+LaTeX Warning: Citation `Bergstrom1995' on page 29 undefined on input line 10.
 
 
-LaTeX Warning: Citation `Bergstrom1973' on page 29 undefined on input line 12.
+LaTeX Warning: Citation `Bergstrom1973' on page 29 undefined on input line 10.
 
 
-LaTeX Warning: Citation `Chow1988' on page 29 undefined on input line 12.
+LaTeX Warning: Citation `Chow1988' on page 29 undefined on input line 10.
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 12.
+
+
+LaTeX Warning: Citation `Bergstrom1995' on page 29 undefined on input line 14.
+
+
+LaTeX Warning: Citation `Bergstrom1973' on page 29 undefined on input line 14.
+
+[29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+[31]
+Overfull \hbox (2.58868pt too wide) in paragraph at lines 80--81
+ []\T1/cmr/bx/n/12 Percolation and runoff gen-er-a-tion[] \T1/cmr/m/n/12 Ex-ces
+s wa-ter in the top-soil and in two ground-
+ []
+
+[32] [33]
+Underfull \vbox (badness 4391) has occurred while \output is active []
+
+ [34])
+[35]
+\openout2 = `apx_daw_marko.aux'.
+
+ (./apx_daw_marko.tex [36
+
+
+
+]
+Appendix C.
+
+LaTeX Warning: Citation `Bergstrom1995' on page 37 undefined on input line 12.
+
+
+LaTeX Warning: Citation `Bergstrom1973' on page 37 undefined on input line 12.
+
+
+LaTeX Warning: Citation `Chow1988' on page 37 undefined on input line 12.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 14.
 
 
-LaTeX Warning: Citation `Bergstrom1995' on page 29 undefined on input line 16.
+LaTeX Warning: Citation `Bergstrom1995' on page 37 undefined on input line 16.
 
 
-LaTeX Warning: Citation `Bergstrom1973' on page 29 undefined on input line 16.
+LaTeX Warning: Citation `Bergstrom1973' on page 37 undefined on input line 16.
 
-[29] [30]
+[37] [38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
+ [39]
 Overfull \hbox (2.58868pt too wide) in paragraph at lines 80--81
  []\T1/cmr/bx/n/12 Percolation and runoff gen-er-a-tion[] \T1/cmr/m/n/12 Ex-ces
 s wa-ter in the top-soil and in two ground-
@@ -863,30 +915,30 @@ s wa-ter in the top-soil and in two ground-
 
 Underfull \vbox (badness 2253) has occurred while \output is active []
 
- [32]
+ [40]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
+ [41]
 Underfull \vbox (badness 7540) has occurred while \output is active []
 
- [34])
-[35]
+ [42])
+[43]
 \openout2 = `biblio.aux'.
 
- (./biblio.tex (./main.bbl [36
+ (./biblio.tex (./main.bbl [44
 
 
 
-] [37])) [38]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
+] [45])) [46]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
  (./main.aux (./contents.aux)
-(./chap1.aux) (./chap2.aux) (./chap3.aux) (./chap4.aux) (./apx_dekf.aux)
-(./apx_daw.aux) (./biblio.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
+(./chap1.aux) (./chap2.aux) (./chap3.aux) (./chap4.aux) (./chap5.aux)
+(./apx_dekf.aux) (./apx_daw.aux) (./apx_daw_marko.aux) (./biblio.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1709160F3EFADB293FFD2A913B22CF85;1470.
+(rerunfilecheck)             Checksum: D850EFE01AEB8210167592529A004DEA;1592.
 
 
 LaTeX Warning: There were undefined references.
@@ -894,14 +946,14 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 81.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
  ) 
 Here is how much of TeX's memory you used:
- 17249 strings out of 492995
- 328465 string characters out of 6132704
- 372534 words of memory out of 5000000
- 20399 multiletter control sequences out of 15000+600000
- 19239 words of font info for 50 fonts, out of 8000000 for 9000
+ 17319 strings out of 492995
+ 329413 string characters out of 6132704
+ 374312 words of memory out of 5000000
+ 20407 multiletter control sequences out of 15000+600000
+ 19548 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,15n,41p,10383b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -922,10 +974,10 @@ e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 exmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf
 -dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (38 pages, 3307904 bytes).
+Output written on main.pdf (46 pages, 3328819 bytes).
 PDF statistics:
- 554 PDF objects out of 1000 (max. 8388607)
- 474 compressed objects within 5 object streams
- 161 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 654 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 207 named destinations out of 1000 (max. 500000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

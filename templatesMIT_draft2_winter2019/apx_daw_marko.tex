@@ -7,78 +7,80 @@
 
 \chapter{daWUAPhydroengine}
 
-daWUAPhydroengine is a hydrologic system that couples a rainfall-runoff model to a routing component that simulates streamflows inside a regional stream network. An HBV model \cite{Bergstrom1995, Bergstrom1973} was modified to simulate hydrologic processes like snowmelt, evapotranspiration, and infiltration at the subcatchment level and transform the resulting precipitation into runoff and streamflow. This streamflow is then routed via the Muskingum-Cunge routing algorithm \cite{Chow1988}. Below is a description of the implementation of those algorithms.
+REWRITE THIS
+
+The hydrologic system is simulated using a rainfall-runoff model coupled to a routing component that simulates streamflows in the regional stream network. We adapted the HBV model \cite{Bergstrom1995, Bergstrom1973} to simulate subcatchment-scale hydrologic processes (snowmelt, evapotranspiration, infiltration) and to transform precipitation into runoff and streamflow. Runoff that reaches the channel is routed through the stream network using the Muskingum-Cunge routing algorithm \cite{Chow1988}. In this appendix we provide here a description of the implementation of the algorithms.
 
 \subsection{Rainfall Runoff component}
 
-The HBV model \cite{Bergstrom1995, Bergstrom1973} contains a mixture of raster-based and vector-based operations. Raster-based operations utilize spatially distributed data drawn from meteorological databases (precipitation and temperature data.)  The raster grid is also used to calculate snow accumulation, melt, and soil processes. These are informed both by input from the meteorological databases and by a series of spatially distributed parameters, such as potential evapotranspiration. Vector-based operations increase computational efficiency through the use of polygons Uniform hydrologic response units (HRUs) are implemented to aggregate runoff production over these polygons.
+The HVB model \cite{Bergstrom1995, Bergstrom1973} is implemented as a mixture of gridded and vector-based operations to leverage the distributed nature of raster meteorological datasets while simultaneously taking advantage of the reduced computational burden of operating over polygons that aggregate runoff production over uniform hydrologic response units (HRUs).
+
+Snowpack accumulation and melt and soil processes are calculated over the uniform raster grid imposed by the meteorological inputs (precipitation, air temperature, and potential evapotranspiration). In the next two paragraphs subscript $i$ indicates that the variable or parameter is spatially distributed and is represented at grid point $i$. Superscript $t$ indicates that the variable is dynamic and its value is represented at time step $t$. Variables with no script or superscript indicate that the variable is spatially constant or time invariant.
 
 \paragraph{Precipitation and snowpack processes}     
 
-To determine the amount of precipitation that becomes snowfall and which amount becomes rainfall, minimum and maximum temperature data are compared to a critical temperature threshold $Tc$.
+
+Precipitation is partitioned between snowfall and rainfall using minimum and maximum daily air temperatures and a critical temperature threshold $Tc$ that determines the the snow-rain transition:
 
 \begin{align}
-Snow_j^t &= \left\{
+Snow_i^t &= \left\{
         \begin{array}{ll}
-        P_j^t &  Tmax_j^t < Tc_j \\  
-        P_j^t * \frac{Tc_j - Tmin_j^t}{Tmax_j^t - Tmin_j^t} & Tmin_j^t < Tc_j < Tmax_j^t \\
-        0 &  Tmin_j^t > Tc_j \\
+        P_i^t &  Tmax_i^t < Tc_i \\  
+        P_i^t * \frac{Tc_i - Tmin_i^t}{Tmax_i^t - Tmin_i^t} & Tmin_i^t < Tc_i < Tmax_i^t \\
+        0 &  Tmin_i^t > Tc_i \\
         \end{array}
 \right.\\
-Rain_j^t &= P_j^t - Snow_j^t     
+Rain_i^t &= P_i^t - Snow_i^t     
 \end{align}
-\noindent Where variables and parameters with a subscript $j$ are spatially distributed and are at gridpoint $j$ and variables and parameters with a superscript $t$ are time-dynamic. $P$ is precipitation (\si{\milli\metre\per\day}), $Tmax$ is maximum air temperature, $Tmin$ is minimum air temperature (\si{\degreeCelsius}), $Rain$ is liquid precipitation and $Snow$ is snowfall (\si{\milli\metre\per\day}). Snowfall during day $t$ contributes to the snow water equivalent ($SWE$, (\si{\milli\metre})) of the snowpack:
+\noindent where $P$ is precipitation (\si{\milli\metre\per\day}), $T_{max}$ and $T_{min}$ are maximum and minimum air temperature (\si{\degreeCelsius}), $Rain$ is liquid precipitation and $Snow$ is snowfall at pixel $i$ during time step $t$ (\si{\milli\metre\per\day}). Snowfall during day $t$ contributes to the snow water equivalent ($SWE$, (\si{\milli\metre})) of the snowpack:
 
 \begin{equation}
-SWE_i^t = SWE_i^{t-1} + Snow_j^t \Delta t
+SWE_i^t = SWE_i^{t-1} + Snow_i^t \Delta t
 \end{equation}
 
-A degree day model is utilized to simulate snowpack melt. Snowpack begins to melt when the average air temperature exceeds air temperature threshold $Tm$.
+The snowpack melt process is simulated using a degree day factor model occurs when average air temperature exceeds a air temperature threshold ($Tm$):
 
 \begin{align}
-Melt_j^t &= ddf_j * (Tav_j^t - Tm_j)  ]\text{ for } Tav_j^t > Tm_j \\
-Rain_j^t &= P_j^t - Snow_j^t     
+Melt_i^t &= ddf_i * (Tav_i^t - Tm_i)  ]\text{ for } Tav_i^t > Tm_i \\
+Rain_i^t &= P_i^t - Snow_i^t     
 \end{align}
 
-\noindent Where $Melt$ is the amount of water output from the snowpack (\si{\milli\metre\per\day}), $Tav$ is average air temperature over the time step (\si{\degreeCelsius}), and $ddf$ is the degree day factor (\si{\milli\metre\per\day\per\degreeCelsius}). $ddf$ is an empirical parameter controlling the snowmelt rate per degree of air temperature above temperature threshold $Tm$. 
-
-Melt from the snowpack at time $t$ is subtracted from the snowpack storage ($SWE$) and added to the amount of ponded water:
+\noindent where $Melt$ is the amount of water output from the snowpack (\si{\milli\metre\per\day}), $Tav$ is average air temperature over the time step (\si{\degreeCelsius}), and $ddf$ is the degree day factor (\si{\milli\metre\per\day\per\degreeCelsius}), an empirical parameter that represents the snowmelt rate per degree of air temperature above $Tm$. Any melt form the snowpack during time $t$ is subtracted from the snowpack storage ($SWE$) and added to the amount of water ponded in the surface:
 
 \begin{align}
-Pond_j^t &= Pond_j^{t-1} + (Melt_j^t + Rain_j^t)\Delta t \\
-SWE_j^t &= SWE_j^t - Melt_j^t \Delta t   
+Pond_i^t &= Pond_i^{t-1} + (Melt_i^t + Rain_i^t)\Delta t \\
+SWE_i^t &= SWE_i^t - Melt_i^t \Delta t   
 \end{align}
 
-\noindent Where $Pond$ (\si{\milli\metre}) represents liquid water ponding at the surface.
+\noindent where $Pond$ (\si{\milli\metre}) is liquid water available on the surface to infiltrate or produce runoff.
 
 \paragraph{Soil processes} 
-
-Ponded water either infiltrates into the soil and is placed in the soil system or is added to the topsoil compartment where it generates speedy runoff. The fraction of ponded water that infiltrates is an exponential function of the relative water storage in the soil:
-
-\begin{align}
-\Delta SM_j^t &= Pond_j^t * \left(1 - \frac{SM_j^t}{FC_j^t} \right)^\beta \\
-\end{align}
-
-\noindent where $SM$ (\si{\milli\metre}) is the amount of water in the soil compartment and $FC$ (\si{\milli\metre}) is the maximum amount of water soil can hold before water starts percolating to the groundwater system. $beta$ (dimensionless) is an empirical parameter. Actual evapotranspiration ($AET$, \si{\milli\metre\per\day}) is calculated at the same time. Actual evapotranspiration reduces the amount of water storage in the soil and is also controlled by the degree of saturation of the soil (ration of $SM$ to $FC$).
+Recharge into the soil system occurs when liquid water ponding the surface infiltrates into the soil. Ponded water that is not infiltrated increases the topsoil compartment that generates fast runoff. The fraction of ponded water that infiltrates into the soil is a exponential function of the relative water storage in the soil:
 
 \begin{align}
-AET_j^t &= PET_j^t * \left(\frac{SM_j^t}{FC_j * LP_j} \right)^l  \\
+\Delta SM_i^t &= Pond_i^t * \left(1 - \frac{SM_i^t}{FC_i^t} \right)^\beta \\
 \end{align}
 
-\noindent where $PET$ is potential evapotranspiration (\si{\milli\metre\per\day})) and $l$ (dimensionless) is an empirical  parameter. Infiltration and actual evapotranspiration control soil water storage dynamics and the amount of surface water that generates fast runoff:
+\noindent where $SM$ (\si{\milli\metre}) is the amount of water in the soil compartment, $FC$ (\si{\milli\metre}) is the maximum amount of water soil can hold before water starts percolating to the groundwater system, and $beta$ (dimensionless) is an empirical parameter. Simultaneously, actual evapotranspiration ($AET$, \si{\milli\metre\per\day}) reduces the amount of water storage in the soil and is also controlled by the degree of saturation of the soil (ration of $SM$ to $FC$).
 
 \begin{align}
-SM_j^t &= SM_j^{t} + \Delta SM_j^t - AET_j^t \Delta t\\
-OVL_j^t &= Pond_j^t - \Delta SM_j^t
+AET_i^t &= PET_i^t * \left(\frac{SM_i^t}{FC_i * LP_i} \right)^l  \\
 \end{align}
 
-\noindent where $OVL$ (\si{\milli\metre}) is water that recharges the near-surface runoff-generating compartment.
+\noindent where $PET$ is potential evapotranspiration (\si{\milli\metre\per\day})) and $l$ is an empirical dimensionless parameter. Infiltration and actual evapotranspiration control the dynamics of water storage in the soil and amount of surface water that generates fast runoff:
+
+\begin{align}
+SM_i^t &= SM_i^{t} + \Delta SM_i^t - AET_i^t \Delta t\\
+OVL_i^t &= Pond_i^t - \Delta SM_i^t
+\end{align}
+
+\noindent where $OVL$ (\si{\milli\metre}) is water that recharges the upper (near-surface) runoff-generating compartment.
 
 \paragraph{Percolation and runoff generation}
 Excess water in the topsoil and in two groundwater compartments generate outflow that represent fast and intermediate runoff and baseflow. These processes are implemented at the HRU level. For this, calculations about overland flow generation and soil moisture performed at the grid level are averaged over subwatersheds representing HRUs. Spatial arithmetic averaging soil water storage over all grid cells $i$ contained within a given HRU $j$ is represented using angle brackets $<.>$. The mass balance and percolation of water from the soil upper to the soil lower zone is implemented as:
 
 \begin{align}
-Rech_j^t &= <OVL_j^t>_j + <max(SM_j^t - FC_j, 0)>_j\\
+Rech_j^t &= <OVL_i^t>_j + <max(SM_i^t - FC_i, 0)>_j\\
 SUZ_j^t &= SUZ_j^{t-1} + Rech_j^t + Pond_j^t - Q0_j^t\Delta t - Q1_j\Delta t - PERC_j\\
 SLZ_j^t &= SLZ_j^{t-1} + PERC_j - Q2 \Delta t
 \end{align}

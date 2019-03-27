@@ -25,6 +25,12 @@ Geir Evensen.
   model using Monte Carlo methods to forecast error statistics}.
 \newblock {\em Journal of Geophysical Research}, 99(C5):10143, may 1994.
 
+\bibitem{HendricksFranssen2008}
+H.~J. {Hendricks Franssen} and W.~Kinzelbach.
+\newblock {Real-time groundwater flow modeling with the Ensemble Kalman Filter:
+  Joint estimation of states and parameters and the filter inbreeding problem}.
+\newblock {\em Water Resources Research}, 44(9), sep 2008.
+
 \bibitem{Jazwinski1970}
 Andrew~H. Jazwinski.
 \newblock {Stochastic Processes and Filtering.}
@@ -47,6 +53,19 @@ Fang Liu and Fang Liu.
   Computation}.
 \newblock 2000.
 
+\bibitem{Liu2007}
+Yuqiong Liu and Hoshin~V. Gupta.
+\newblock {Uncertainty in hydrologic modeling: Toward an integrated data
+  assimilation framework}.
+\newblock {\em Water Resources Research}, 43(7), jul 2007.
+
+\bibitem{Mariani2005}
+Stefano Mariani and Alberto Corigliano.
+\newblock {Impact induced composite delamination: state and parameter
+  identification via joint and dual extended Kalman filters}.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  194(50-52):5242--5272, dec 2005.
+
 \bibitem{Miller1994}
 Robert~N. Miller, Michael Ghil, and Fran{\c{c}}ois Gauthiez.
 \newblock {Advanced Data Assimilation in Strongly Nonlinear Dynamical Systems}.
@@ -63,6 +82,47 @@ Hamid Moradkhani, Soroosh Sorooshian, Hoshin~V. Gupta, and Paul~R. Houser.
 Jason~W. Osborne.
 \newblock {Advantages of hierarchical linear modeling. Osborne, Jason W.}
 \newblock {\em Research {\&} Evaluation}, 7(1), 2000.
+
+\bibitem{Reichle2008}
+Rolf~H. Reichle.
+\newblock {Data assimilation methods in the Earth sciences}.
+\newblock {\em Advances in Water Resources}, 31(11):1411--1418, nov 2008.
+
+\bibitem{Sorooshian1980}
+Soroosh Sorooshian and John~A. Dracup.
+\newblock {Stochastic parameter estimation procedures for hydrologie
+  rainfall-runoff models: Correlated and heteroscedastic error cases}.
+\newblock {\em Water Resources Research}, 16(2):430--442, apr 1980.
+
+\bibitem{Sorooshian1993}
+Soroosh Sorooshian, Qingyun Duan, and Vijai~Kumar Gupta.
+\newblock {Calibration of rainfall‐runoff models: Application of global
+  optimization to the Sacramento Soil Moisture Accounting Model}.
+\newblock {\em Water Resources Research}, 29(4):1185--1194, apr 1993.
+
+\bibitem{Troch2003}
+Peter~A. Troch, Claudio Paniconi, and Dennis McLaughlin.
+\newblock {Catchment-scale hydrological modeling and data assimilation}.
+\newblock {\em Advances in Water Resources}, 26(2):131--135, feb 2003.
+
+\bibitem{Vrugt2005}
+Jasper~A. Vrugt, Cees G.~H. Diks, Hoshin~V. Gupta, Willem Bouten, and
+  Jacobus~M. Verstraten.
+\newblock {Improved treatment of uncertainty in hydrologic modeling: Combining
+  the strengths of global optimization and data assimilation}.
+\newblock {\em Water Resources Research}, 41(1), jan 2005.
+
+\bibitem{Wagener2006}
+Thorsten Wagener and Howard~S. Wheater.
+\newblock {Parameter estimation and regionalization for continuous
+  rainfall-runoff models including uncertainty}.
+\newblock {\em Journal of Hydrology}, 320(1-2):132--154, mar 2006.
+
+\bibitem{Wen2006}
+Xian-Huan Wen and Wen~H. Chen.
+\newblock {Real-Time Reservoir Model Updating Using Ensemble Kalman Filter With
+  Confirming Option}.
+\newblock {\em SPE Journal}, 11(04):431--442, dec 2006.
 
 \bibitem{West1993}
 Mike West.
