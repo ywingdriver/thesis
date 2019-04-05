@@ -5,9 +5,10 @@
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
 
-\chapter{daWUAPhydroengine}
+\chapter{The Hydrologic Model}
+\label{chap:daWUAPhydroengine}
 
-daWUAPhydroengine is a hydrologic system that couples a rainfall-runoff model to a routing component that simulates streamflows inside a regional stream network. An HBV model \cite{Bergstrom1995, Bergstrom1973} was modified to simulate hydrologic processes like snowmelt, evapotranspiration, and infiltration at the subcatchment level and transform the resulting precipitation into runoff and streamflow. This streamflow is then routed via the Muskingum-Cunge routing algorithm \cite{Chow1988}. Below is a description of the implementation of those algorithms.
+The hydrologic model is a hydrologic system that couples a rainfall-runoff model to a routing component that simulates streamflows inside a regional stream network. An HBV model \cite{Bergstrom1995, Bergstrom1973} was modified to simulate hydrologic processes like snowmelt, evapotranspiration, and infiltration at the subcatchment level and transform the resulting precipitation into runoff and streamflow. This streamflow is then routed via the Muskingum-Cunge routing algorithm \cite{Chow1988}. Below is a description of the implementation of those algorithms.
 
 \subsection{Rainfall Runoff component}
 
@@ -53,13 +54,13 @@ SWE_j^t &= SWE_j^t - Melt_j^t \Delta t
 
 \paragraph{Soil processes} 
 
-Ponded water either infiltrates into the soil and is placed in the soil system or is added to the topsoil compartment where it generates speedy runoff. The fraction of ponded water that infiltrates is an exponential function of the relative water storage in the soil:
+Ponded water either infiltrates into the soil and is either placed in the soil system or is added to the topsoil compartment where it generates speedy runoff. The fraction of ponded water that infiltrates is an exponential function of the relative water storage already in the soil:
 
 \begin{align}
 \Delta SM_j^t &= Pond_j^t * \left(1 - \frac{SM_j^t}{FC_j^t} \right)^\beta \\
 \end{align}
 
-\noindent where $SM$ (\si{\milli\metre}) is the amount of water in the soil compartment and $FC$ (\si{\milli\metre}) is the maximum amount of water soil can hold before water starts percolating to the groundwater system. $beta$ (dimensionless) is an empirical parameter. Actual evapotranspiration ($AET$, \si{\milli\metre\per\day}) is calculated at the same time. Actual evapotranspiration reduces the amount of water storage in the soil and is also controlled by the degree of saturation of the soil (ration of $SM$ to $FC$).
+\noindent where $SM$ (\si{\milli\metre}) is the amount of water in the soil compartment and $FC$ (\si{\milli\metre}) is the maximum amount of water the soil compartment can hold before water starts percolating to the groundwater system. $beta$ (dimensionless) is an empirical parameter. Actual evapotranspiration ($AET$, \si{\milli\metre\per\day}) is calculated at the same time. Actual evapotranspiration reduces the amount of water storage in the soil and is also controlled by the degree of saturation of the soil (ration of $SM$ to $FC$).
 
 \begin{align}
 AET_j^t &= PET_j^t * \left(\frac{SM_j^t}{FC_j * LP_j} \right)^l  \\
@@ -74,7 +75,10 @@ OVL_j^t &= Pond_j^t - \Delta SM_j^t
 
 \noindent where $OVL$ (\si{\milli\metre}) is water that recharges the near-surface runoff-generating compartment.
 
-\paragraph{Percolation and runoff generation}
+\paragraph{Groundwater Compartments and runoff generation}
+The groundwater system is comprised of two ground-water compartments that generate outflow. The top compartment's outflow represents both immediate runoff and fast runoff. The lower compartment's outflow represents baseflow. These processes are performed at the HRU level, which means that overland flow and soil moisture values, which are represented over the raster grid, are averaged over subwatersheds representing HRUs. Spatial arithmetic averaging soil water storage over all grid cells $i$ contained within a given HRU $j$ is represented using angle brackets $<.>$. 
+
+
 Excess water in the topsoil and in two groundwater compartments generate outflow that represent fast and intermediate runoff and baseflow. These processes are implemented at the HRU level. For this, calculations about overland flow generation and soil moisture performed at the grid level are averaged over subwatersheds representing HRUs. Spatial arithmetic averaging soil water storage over all grid cells $i$ contained within a given HRU $j$ is represented using angle brackets $<.>$. The mass balance and percolation of water from the soil upper to the soil lower zone is implemented as:
 
 \begin{align}

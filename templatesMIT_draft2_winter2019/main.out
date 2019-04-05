@@ -8,16 +8,14 @@
 \BOOKMARK [2][-]{subsection.2.2.3}{State Correction Phase}{section.2.2}% 8
 \BOOKMARK [0][-]{chapter.3}{Application of DEnHKF to Hydrologic Model}{}% 9
 \BOOKMARK [1][-]{section.3.1}{daWUAPhydroengine}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.2}{Observation Data}{chapter.3}% 11
-\BOOKMARK [0][-]{chapter.4}{Results/Analysis}{}% 12
-\BOOKMARK [0][-]{chapter.5}{Comparison of DEnKF and DEnHKF results}{}% 13
-\BOOKMARK [0][-]{appendix.A}{The Dual Ensemble Kalman Filter}{}% 14
-\BOOKMARK [1][-]{subsection.A.0.1}{Prediction Phase}{appendix.A}% 15
-\BOOKMARK [2][-]{subsection.A.0.2}{Parameter Correction Phase}{subsection.A.0.1}% 16
-\BOOKMARK [2][-]{subsection.A.0.3}{State Correction Phase}{subsection.A.0.1}% 17
-\BOOKMARK [0][-]{appendix.B}{daWUAPhydroengine}{}% 18
-\BOOKMARK [1][-]{subsection.B.0.1}{Rainfall Runoff component}{appendix.B}% 19
-\BOOKMARK [2][-]{subsection.B.0.2}{Routing component}{subsection.B.0.1}% 20
-\BOOKMARK [0][-]{appendix.C}{daWUAPhydroengine}{}% 21
-\BOOKMARK [1][-]{subsection.C.0.1}{Rainfall Runoff component}{appendix.C}% 22
-\BOOKMARK [2][-]{subsection.C.0.2}{Routing component}{subsection.C.0.1}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{Input Data}{section.3.1}% 11
+\BOOKMARK [2][-]{subsection.3.1.2}{Calibrated Parameters}{section.3.1}% 12
+\BOOKMARK [1][-]{section.3.2}{Observation Data}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.3}{Catchment Data and Hierarchical Groups}{chapter.3}% 14
+\BOOKMARK [0][-]{appendix.A}{The Dual Ensemble Kalman Filter}{}% 15
+\BOOKMARK [1][-]{subsection.A.0.1}{Prediction Phase}{appendix.A}% 16
+\BOOKMARK [2][-]{subsection.A.0.2}{Parameter Correction Phase}{subsection.A.0.1}% 17
+\BOOKMARK [2][-]{subsection.A.0.3}{State Correction Phase}{subsection.A.0.1}% 18
+\BOOKMARK [0][-]{appendix.B}{The Hydrologic Model}{}% 19
+\BOOKMARK [1][-]{subsection.B.0.1}{Rainfall Runoff component}{appendix.B}% 20
+\BOOKMARK [2][-]{subsection.B.0.2}{Routing component}{subsection.B.0.1}% 21

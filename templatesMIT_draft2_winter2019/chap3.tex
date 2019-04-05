@@ -8,7 +8,7 @@
 
 \section{daWUAPhydroengine}
 
-The \textbf{daWUAPhydroengine} hydrologic dynamic model is used to test the viability of the DEnHKF method.  \textbf{daWUAPhydroengine} takes streamflow and subbasin parameters, precipitation, minimum temperatures, and maximum temperatures as inputs and outputs streamflow data along with some additional states such as snow water equivalent. \textbf{daWUAPhydroengine} was designed to be implemented in any geographic location. For this study it was utilized to model streamflows throughout the state of Montana.
+The hydrologic model is used to test the viability of the DEnHKF method. The hydrologic model takes streamflow parameters, subbasin parameters, precipitation, minimum temperatures, and maximum temperatures as inputs and outputs streamflow data along with some additional states such as snow water equivalent. The hydrologic model was designed to be implemented in any geographic location. For this study it was utilized to model streamflows throughout the state of Montana.
 
 \begin{table}[]
 \caption{States} 
@@ -20,8 +20,11 @@ swe         & Snow Water Equivalent  (in $mm^{3}$) & 45012
 \label{tab:states}
 \end{table}
 
-Configuring \textbf{daWUAPhydroengine} to model streamflows throughout Montana is advantageous because it allows for the calibration of a very large number of spatially distributed, high dimensional parameters. These parameters span the entirety of Montana, which covers an area of 380,800 $km^{2}$. Montana's large geographical coverage is diverse and the terrain differs in various ways (soil composition, forestation, etc.)
+For the purposes of this study configuring the hydrologic model to model streamflows throughout Montana is advantageous because it allows for the calibration of a very large number of spatially distributed, high dimensional parameters. These parameters can be expected to vary significantly across the entirety of Montana, a state which covers an area of 380,800 $km^{2}$, sports diverse terrain, and is comprised of 3 HUC4 zones.
 
+\subsection{Input Data}
+
+The hydrologic model takes rasterized precipitation data and temperature data from meteorological databases as input. This data can be utilized as forcing data in the ensemble kalman filter framework.
 \begin{table}[]
 \caption{Forcing Data} 
 \begin{tabular}{lll}
@@ -33,28 +36,34 @@ precipitation      & Amount of rainfall for timestep & 45012
 \label{tab:u_params}
 \end{table}
 
+\subsection{Calibrated Parameters}
+
+The hydrologic model utilizes a HBV rainfall-runoff component and a Muskingum-Cunge routing component. The HBV component includes a precipitation and snowpack process that utilizes the empirical parameter $ddf$ (degree day factor), a soil process that utilizes the empirical parameters $aet\_lp$, $soil\_beta$, and $soil\_max\_wat$ (evapo-transpiration, immediate runoff, and topsoil storage capacity), and a runoff generation process that utilizes the empirical parameters $ck0$, $ck1$, $ck2$, $hl1$, and $perc$, all of which control various aspects of groundwater percolation and runoff. The Muskingum-Cunge routing component utilizes $e$ and $K$, which control wave dispersion and wave celerity respectively. To learn more about the hydrologic model and the parameters that control it refer to \autoref{chap:daWUAPhydroengine}.
+
 \begin{table}[]
 \caption{Calibrated Parameters} 
 \begin{tabular}{lll}
 Parameter ($\theta$) & Purpose                                                    & Dimensions  \\ \hline
-ddf                  & Controls Rate of Snowfall                                        & 45012 \\
-aet\_lp              & Controls AET                                                      & 45012 \\
-soil\_beta           & Controls portion of ponded water that goes into soil storage & 45012 \\
-soil\_max\_wat       & Controls soil maximum water capacity & 45012
+$ddf$                  & Degree Day Factor                                        & 331 \\
+$aet\_lp$              & Potential Evapo-Transpiration                                                      & 331 \\
+$soil\_beta$           & Portion of ponded water that goes into soil storage & 331 \\
+$soil\_max\_wat$       & Soil compartment maximum water capacity & 331 \\
+$ck0$       & Immediate runoff & 330 \\
+$ck1$      & Fast runoff & 330 \\
+$ck2$       & Groundwater runoff & 330 \\
+$hl1$       & Groundwater water storage threshold & 330 \\
+$perc$       & Groundwater peculation & 330 \\
+$K$       & Wave celerity & 330 \\
+$e$       & Wave dispersion & 330 \\
 \end{tabular}
 \label{tab:t_params}
 \end{table}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.95\textwidth]{elevation}
-    \caption{Elevation throughout Montana}
-    \label{fig:elevation}
-\end{figure}
+
 
 \section{Observation Data}
 
-A Kalman Filter relies on one or more observed states for correction. Accordingly, observations were obtained for streamflows across Montana and snowfall across Montana. For streamflow, USGS streamflow data was collected at 86 sites. Each observed site was paired with the closest simulated \textbf{daWUAPhydroengine} stream outlet within a 2.5 mile cutoff. For snowfall, SNOWTEL sites monitored by the Natural Resources Conservation Service (NRCS) were used. 90 stations were chosen and matched to specific pixels in \textbf{daWUAPhydroengine}'s raster files.
+A Kalman Filter relies on one or more observed states for correction. Accordingly, observations were obtained for streamflows across Montana and snowfall across Montana. For streamflow, USGS streamflow data was collected at 86 sites. Each observed site was paired with the closest simulated stream outlet within a 2.5 mile cutoff. For snowfall, SNOWTEL sites monitored by the Natural Resources Conservation Service (NRCS) were used \ref{fig:stations}. 90 stations were chosen and matched to specific pixels in the hydrologic model's raster files.
 
 
 \begin{table}[]
@@ -72,4 +81,22 @@ swe         & NRCS & 90
     \includegraphics[width=0.95\textwidth]{stations}
     \caption{all SWE stations plotted against modeled streamflows}
     \label{fig:stations}
+\end{figure}
+
+\section{Catchment Data and Hierarchical Groups}
+
+The hydrologic model uses HUC8 data to separate Montana into 330 watersheds \ref{fig:huc8}. Each watershed is associated with one of each type of parameter from Table \ref{tab:t_params}. These 330 watersheds fall into 3 larger HUC4 zones that were utilized to classify each watershed into a hierarchical zone \ref{fig:huc4}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{huc8}
+    \caption{Subbasins - HUC8 polygons}
+    \label{fig:huc8}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{huc4}
+    \caption{Montana's 3 HUC4 zones rendered onto the raster grid.}
+    \label{fig:huc4}
 \end{figure}

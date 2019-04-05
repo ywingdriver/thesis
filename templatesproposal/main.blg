@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: contents.aux
+A level-1 auxiliary file: chap1.aux
+A level-1 auxiliary file: chap2.aux
+A level-1 auxiliary file: chap3.aux
+A level-1 auxiliary file: chap4.aux
+A level-1 auxiliary file: chap5.aux
+A level-1 auxiliary file: apx_dekf.aux
+A level-1 auxiliary file: apx_daw.aux
+A level-1 auxiliary file: biblio.aux
+The style file: plain.bst
+Database file #1: main.bib
+Warning--I didn't find a database entry for "Bergstrom1995"
+Warning--I didn't find a database entry for "Bergstrom1973"
+Warning--I didn't find a database entry for "Chow1988"
+Warning--empty booktitle in Julier1997
+Warning--empty journal in Liu2000
+You've used 22 entries,
+            2118 wiz_defined-function locations,
+            674 strings with 8310 characters,
+and the built_in function-call counts, 7023 in all, are:
+= -- 697
+> -- 320
+< -- 2
++ -- 126
+- -- 104
+* -- 562
+:= -- 1202
+add.period$ -- 67
+call.type$ -- 22
+change.case$ -- 118
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 244
+empty$ -- 535
+format.name$ -- 104
+if$ -- 1413
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 22
+newline$ -- 113
+num.names$ -- 44
+pop$ -- 87
+preamble$ -- 1
+purify$ -- 96
+quote$ -- 0
+skip$ -- 174
+stack$ -- 0
+substring$ -- 467
+swap$ -- 29
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 88
+warning$ -- 2
+while$ -- 71
+width$ -- 24
+write$ -- 241
+(There were 5 warnings)

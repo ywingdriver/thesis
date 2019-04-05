@@ -1,4 +1,4 @@
-\contentsline {section}{\numberline {0.1}Abstract}{1}{section.0.1}
+\contentsline {section}{\numberline {0.1}Abstract}{2}{section.0.1}
 \contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
 \contentsline {chapter}{\numberline {2}The Hierarchical Dual Ensemble Kalman Filter Method}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}General Dynamic Model and Observations}{9}{section.2.1}
@@ -9,22 +9,17 @@
 \contentsline {subsection}{\numberline {2.2.3}State Correction Phase}{12}{subsection.2.2.3}
 \contentsline {chapter}{\numberline {3}Application of DEnHKF to Hydrologic Model}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}daWUAPhydroengine}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Input Data}{16}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Calibrated Parameters}{16}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Observation Data}{16}{section.3.2}
-\contentsline {chapter}{\numberline {4}Results/Analysis}{19}{chapter.4}
-\contentsline {chapter}{\numberline {5}Comparison of DEnKF and DEnHKF results}{23}{chapter.5}
-\contentsline {chapter}{\numberline {A}The Dual Ensemble Kalman Filter}{25}{appendix.A}
-\contentsline {subsection}{\numberline {A.0.1}Prediction Phase}{25}{subsection.A.0.1}
-\contentsline {subsection}{\numberline {A.0.2}Parameter Correction Phase}{26}{subsection.A.0.2}
-\contentsline {subsection}{\numberline {A.0.3}State Correction Phase}{27}{subsection.A.0.3}
-\contentsline {chapter}{\numberline {B}daWUAPhydroengine}{29}{appendix.B}
-\contentsline {subsection}{\numberline {B.0.1}Rainfall Runoff component}{29}{subsection.B.0.1}
-\contentsline {paragraph}{Precipitation and snowpack processes}{29}{section*.14}
-\contentsline {paragraph}{Soil processes}{31}{section*.15}
-\contentsline {paragraph}{Percolation and runoff generation}{32}{section*.16}
-\contentsline {subsection}{\numberline {B.0.2}Routing component}{33}{subsection.B.0.2}
-\contentsline {chapter}{\numberline {C}daWUAPhydroengine}{37}{appendix.C}
-\contentsline {subsection}{\numberline {C.0.1}Rainfall Runoff component}{37}{subsection.C.0.1}
-\contentsline {paragraph}{Precipitation and snowpack processes}{38}{section*.17}
-\contentsline {paragraph}{Soil processes}{39}{section*.18}
-\contentsline {paragraph}{Percolation and runoff generation}{40}{section*.19}
-\contentsline {subsection}{\numberline {C.0.2}Routing component}{42}{subsection.C.0.2}
+\contentsline {section}{\numberline {3.3}Catchment Data and Hierarchical Groups}{17}{section.3.3}
+\contentsline {chapter}{\numberline {A}The Dual Ensemble Kalman Filter}{21}{appendix.A}
+\contentsline {subsection}{\numberline {A.0.1}Prediction Phase}{21}{subsection.A.0.1}
+\contentsline {subsection}{\numberline {A.0.2}Parameter Correction Phase}{22}{subsection.A.0.2}
+\contentsline {subsection}{\numberline {A.0.3}State Correction Phase}{23}{subsection.A.0.3}
+\contentsline {chapter}{\numberline {B}The Hydrologic Model}{25}{appendix.B}
+\contentsline {subsection}{\numberline {B.0.1}Rainfall Runoff component}{25}{subsection.B.0.1}
+\contentsline {paragraph}{Precipitation and snowpack processes}{25}{section*.10}
+\contentsline {paragraph}{Soil processes}{27}{section*.11}
+\contentsline {paragraph}{Groundwater Compartments and runoff generation}{28}{section*.12}
+\contentsline {subsection}{\numberline {B.0.2}Routing component}{30}{subsection.B.0.2}
