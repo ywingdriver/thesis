@@ -38,7 +38,7 @@ precipitation      & Amount of rainfall for timestep & 45012
 
 \subsection{Calibrated Parameters}
 
-The hydrologic model utilizes a HBV rainfall-runoff component and a Muskingum-Cunge routing component. The HBV component includes a precipitation and snowpack process that utilizes the empirical parameter $ddf$ (degree day factor), a soil process that utilizes the empirical parameters $aet\_lp$, $soil\_beta$, and $soil\_max\_wat$ (evapo-transpiration, immediate runoff, and topsoil storage capacity), and a runoff generation process that utilizes the empirical parameters $ck0$, $ck1$, $ck2$, $hl1$, and $perc$, all of which control various aspects of groundwater percolation and runoff. The Muskingum-Cunge routing component utilizes $e$ and $K$, which control wave dispersion and wave celerity respectively. To learn more about the hydrologic model and the parameters that control it refer to \autoref{chap:daWUAPhydroengine}.
+The hydrologic model utilizes a HBV rainfall-runoff component and a Muskingum-Cunge routing component. The HBV component includes a precipitation and snowpack process that utilizes the empirical parameter $ddf$ (degree day factor), a soil process that utilizes the empirical parameters $aet\_lp$, $soil\_beta$, and $soil\_max\_wat$ (evapo-transpiration, immediate runoff, and topsoil storage capacity), and a runoff generation process that utilizes the empirical parameters $ck0$, $ck1$, $ck2$, $hl1$, and $perc$, all of which control various aspects of groundwater percolation and runoff. The Muskingum-Cunge routing component utilizes $e$ and $K$, which control wave dispersion and wave celerity respectively. To learn more about the hydrologic model, its algorithms, and the parameters that control it refer to \autoref{chap:daWUAPhydroengine}.
 
 \begin{table}[]
 \caption{Calibrated Parameters} 
@@ -85,7 +85,7 @@ swe         & NRCS & 90
 
 \section{Catchment Data and Hierarchical Groups}
 
-The hydrologic model uses HUC8 data to separate Montana into 330 watersheds \ref{fig:huc8}. Each watershed is associated with one of each type of parameter from Table \ref{tab:t_params}. These 330 watersheds fall into 3 larger HUC4 zones that were utilized to classify each watershed into a hierarchical zone \ref{fig:huc4}.
+The hydrologic model uses HUC8 data to separate Montana into 330 watersheds \ref{fig:huc8}. Each watershed is associated with one of each type of parameter from Table \ref{tab:t_params}. These 330 watersheds fall into 3 larger HUC4 zones that were utilized to classify each watershed into one of 3 hierarchical zones \ref{fig:huc4}.
 
 \begin{figure}[h]
     \centering

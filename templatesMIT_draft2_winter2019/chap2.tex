@@ -32,7 +32,7 @@ The Dual Hierarchical State Ensemble Kalman Filter can be split into three subse
 
 \subsection{Prediction Phase}
 
-Just as in a standard Dual Ensemble Kalman filter (see \autoref{apx:A} for the Dual Ensemble Kalman Filter methods as implemented by Moradkhani et al.), each ensemble member \textit{i} is represented by a stochastic model similar to \eqref{eq:gen_stoc}. The modified equation is as follows:
+Just as in a standard Dual Ensemble Kalman filter (see \autoref{chap:dekf} for the Dual Ensemble Kalman Filter methods as implemented by Moradkhani et al.), each ensemble member \textit{i} is represented by a stochastic model similar to \eqref{eq:gen_stoc}. The modified equation is as follows:
 
 \begin{equation}\label{eq:hdekf_predict}
 x_{t+1}^{i-} = f(x_{t}^{i+}, u_{t}^{i}, \theta^{i-}_{t}) + \omega_{t}, \quad i=1,...,n
@@ -46,7 +46,7 @@ Errors in the model design are accounted for through the perturbation the forcin
 u_{t+1}^{i} = u_{t} + \zeta_{t}^{i}, \quad \zeta_{t}^{i} \sim N(0,Q_{t}^{i}) 
 \end{equation}
 
-\subsubsection{Hierarchical Parameter Perturbation}
+\subsubsection{Legacy Parameter Perturbation}
 
 To generate the priori parameters $\theta^{i-}_{t+1}$ an evolution of the parameters similar to the evolution of the state variables must be implemented. Legacy implementations of parameter evolution added a small perturbation sampled from $N(0,\Sigma^{\theta}_{t})$, where $\Sigma^{\theta}_{t}$ represents the covariance matrix of $\theta$ at timestep $t$. This legacy method of evolution resulted in overly dispersed parameter samples and the loss of continuity between two consecutive points in time \cite{Liu2000} \cite{Chen2008}. To overcome this the kernel smoothing technique developed by West \cite{West1993} and implemented by Liu \cite{Liu2000} has been used effectively in previous Dual Ensemble Kalman filter implementations \cite{Moradkhani2005} and similar models \cite{Chen2008}.
 
@@ -59,21 +59,39 @@ To generate the priori parameters $\theta^{i-}_{t+1}$ an evolution of the parame
 
 Where $\bar{\theta}_{t}^{+}$ is the mean of the parameters with respect to the ensembles, $V_{t} = var(\theta_{t}^{i+})$, $a$ is a shrinkage factor between (0,1) of the kernel location, and $h$ is a smoothing factor. $h$ may be defined as $\sqrt{1-a^{2}}$, while $a$ may fall between (.45,.49)  \cite{Chen2008}. Note that $h$ and $a$ tend to vary per model and optimal values for these parameters are generally found via experimentation  \cite{Moradkhani2005}  \cite{Anderson1999} \cite{Annan2005} \cite{Chen2008}.
 
-In a Hierarchical Duel Ensemble Kalman Filter, parameter perturbation is accomplished using a hierarchical algorithm. For a simple overview of hierarchical models refer to Osborne \cite{Osborne2000}. First, ensembles are placed into a series of groups $G_{g}$ based on shared characteristics (spatial or otherwise.) Algorithms \eqref{eq:hdekf_thetaminus_old} and \eqref{eq:hdekf_tau_old} are then updated to conform to the hierarchical model structure:
+\subsubsection{Hierarchical Parameter Perturbation}
+
+In a standard hierarchical linear regression, a value $y$ contained in set of related values $J_{g}, j=1,...,n$ contained in hierarchical group $g$ can be expressed through the linear equation
+
+\begin{equation}\label{eq:hiearch_standard}
+y_{j,g} = \alpha_{g} * x + \beta_{g}, \quad \alpha_{g} \sim N( \mu_{\alpha}, \sigma_{\alpha} ), \quad \beta_{g} \sim N( \mu_{\beta} , \sigma_{\beta} )
+\end{equation}
+
+where $\alpha$ and $\beta$ are determined to be hierarchically related properties drawn from their respective normal distributions. For a simple overview of hierarchical models refer to Osborne \cite{Osborne2000}, while \cite{Gelman2013} is a more in-depth reference.
+
+In a Hierarchical Duel Ensemble Kalman Filter, parameter perturbation has been modified to have properties of a hierarchical linear regressive system. First, ensembles are placed into a series of groups $G_{g}$ based on shared characteristics (spatial or otherwise.) Algorithms \eqref{eq:hdekf_thetaminus_old} and \eqref{eq:hdekf_tau_old} are then updated to conform to the hierarchical structure described in \eqref{eq:hiearch_standard}:
 
 \begin{equation}\label{eq:hdekf_theta}
-\theta_{t+1}^{i-,g} = a \bar{\theta}_{t,g}^{+} + (1-a)\braket{\theta}_{t,g}^{i+} + \tau_{t,g}^{i}
+\theta_{t+1,g}^{i-} = a G_{t,g}^{i} + (1-a)\bar{\theta}_{t,g}^{+} + \tau_{t,g}^{i}
+\end{equation}
+
+%%\begin{equation}\label{eq:hdekf_theta}
+%%\theta_{t+1}^{i-,g} = a \bar{\theta}_{t,g}^{+} + (1-a)\braket{\theta}_{t,g}^{i+} + \tau_{t,g}^{i}
+%%\end{equation}
+
+\begin{equation}\label{eq:hdekf_tau}
+G_{t,g}^{i} = N( \mu_{\theta}, \sigma_{\theta} )
 \end{equation}
 
 \begin{equation}\label{eq:hdekf_tau}
-\tau_{t,g}^{i} = N(0, h^{2}V_{t,g}^{i})
+\tau_{t}^{i} = N(0, h^{2}V_{t,g}^{i})
 \end{equation}
 
-\begin{equation}\label{eq:hddekf_V}
-V_{t}^{i} = a * var(\theta_{t,g}) + (1-a) var(\theta_{t}^{i-})
-\end{equation}
+%%\begin{equation}\label{eq:hddekf_V}
+%%V_{t}^{i} = a * var(\theta_{t,g}) + (1-a) var(\theta_{t}^{i-})
+%%\end{equation}
 
-Where $a \bar{\theta}_{t,g}^{+}$ is the mean over all ensembles for all members of group $g$, $\braket{\theta}_{t,g}$ is the mean of all members in ensemble $i$, group $g$, $var(\theta_{t,g})$ is the variance over the ensembles for all members of group $g$, and $var(\theta_{t}^{i-})$ is the variance of all members in ensemble $i$, group $g$.
+Where $\bar{\theta}_{t,g}^{i+}$ is the mean over all ensembles for all members of group $g$, $G_{t,g}^{i}$ is a vector of parameters re-sampled from the mean and standard deviation of $\theta_{t+1,g}^{i-}$, and $V_{g,t}$ is the variance matrix with respect to the ensembles of all members of group $g$.
 
 \subsection{Parameter Correction Phase}
 

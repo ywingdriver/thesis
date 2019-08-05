@@ -1,0 +1,151 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{The Hierarchical Dual Ensemble Kalman Filter Method}
+
+
+\section{General Dynamic Model and Observations}
+
+
+A generic dynamic model can be defined as one more more discrete nonlinear stochastic processes\cite{Chen2008}:
+
+\begin{equation}\label{eq:gen_stoc}
+\mathbf{x_{t+1}} = f(\mathbf{x_{t}}, \mathbf{u_{t}}, \mathbf{\theta_{t}}) + \varepsilon_{\mathbf{t}}
+\end{equation}
+
+where $\mathbf{x_{t}}$ is an $n$ dimensional vector representing the state variables of the model at time step $\mathbf{t}$, $\mathbf{u_{t}}$ is a vector of forcing data (e.g temperature or precipitation) at time step $\mathbf{t}$, and $\mathbf{\theta_{t}}$ is a vector of model parameters which may or may not change per time step (e.g soil beta - $\beta$ or degree day factor -  \textit{DDF}). The non-linear function $f$ takes these variables as inputs and returns the updated state vector at the next timestep $\mathbf{x_{t+1}}$. The noise variable $\varepsilon_{\mathbf{t}}$ accounts for both model structural error and for any uncertainty in the forcing data.
+
+A state's observation vector $\mathbf{z_{t}}$ can be defined as
+
+\begin{equation}\label{eq:gen_obs}
+\mathbf{z_{t}} = h(\mathbf{x_{t}}, \mathbf{\theta_{t}}) + \delta_{\mathbf{t}}
+\end{equation}
+
+Where the $\mathbf{x_{t}}$ vector represents the true state, $\mathbf{\theta_{t}}$ represents the true parameters, $h(.)$ is a function that determines the relationship between observation and state vectors, and $\delta_{\mathbf{t}}$ represents observation error. $\delta_{\mathbf{t}}$ is Gaussian and independent of $\varepsilon_{\mathbf{t}}$.
+
+The Dual Hierarchical State Ensemble Kalman Filter can be split into three subsections: The prediction phase, the parameter correction phase, and the state correction phase. 
+
+\section{DEnHKF Method}
+
+\subsection{Prediction Phase}
+
+Just as in a standard Dual Ensemble Kalman filter \cite{Moradkhani2005}, each ensemble member $\mathbf{i}$ is represented by a stochastic model similar to \eqref{eq:gen_stoc}. The modified equation is as follows:
+
+\begin{equation}\label{eq:hdekf_predict}
+\mathbf{x_{t+1}^{i-}} = f(\mathbf{x_{t}^{i+}}, \mathbf{u_{t}^{i}}, \mathbf{\theta^{i-}_{t}}) + \omega_{\mathbf{t}}, \quad \mathbf{i}=1,...,n
+\end{equation}
+
+Where $n$ is the total number of ensembles. The $-/+$ superscripts denote filtered ($+$) and uncorrected ($-$) values. Note that $\mathbf{\theta^{i-}_{t}}$'s $\mathbf{t}$ subscript does not necessarily denote that $\theta$ is time dependent when implemented in the standalone model but rather indicates that parameter values change as they are filtered over time. The noise term $\omega_{t}$ accounts for model error and will hereafter be excluded from the state equation since all error is included in forcing data, see below \cite{Evensen1997}.
+
+Errors in the model design and process noise are accounted for through the perturbation the forcing data vector $\mathbf{u_{t}}$ with random noise $\zeta_{\mathbf{t}}^{\mathbf{i}}$ to generate a unique vector $\mathbf{u_{t}^{i}}$ for each ensemble \cite{Moradkhani2005}, \cite{Chen2008}. $\zeta_{t}^{i}$ is drawn from a normal distribution with a covarience matrix $Q_{\mathbf{t}}^{\mathbf{i}}$.
+
+\begin{equation}\label{eq:hdekf_u}
+\mathbf{u_{t+1}^{i}} = \mathbf{u_{t}} + \zeta_{t}^{i}, \quad \zeta_{t}^{i} \sim N(0,Q_{t}^{i}) 
+\end{equation}
+
+\subsubsection{Parameter Perturbation}
+
+To generate the apriori parameters $\mathbf{\theta^{i-}_{t+1}}$, an evolution of the parameters similar to the evolution of the state variables must be implemented. Implementations of parameter evolution in \cite{TodiniESzollosi-NagyA1976} added a small perturbation sampled from $N(0,\Sigma^{\theta}_{t})$, where $\Sigma^{\theta}_{t}$ represents the covariance matrix of $\theta$ at timestep $t$. This legacy method of evolution resulted in overly dispersed parameter samples and the loss of continuity between two consecutive points in time \cite{Liu2000} \cite{Chen2008}. To overcome this the kernel smoothing technique developed by West \cite{West1993} and implemented by Liu \cite{Liu2000} has been used effectively in previous Dual Ensemble Kalman filter implementations \cite{Moradkhani2005} and similar models \cite{Chen2008}.
+
+\begin{equation}\label{eq:hdekf_thetaminus_old}
+\mathbf{\theta_{t+1}^{i-}} = a\mathbf{\theta_{t}^{i+}} + (1-a)\mathbf{\bar{\theta}_{t}^{+}} + \mathbf{\tau_{t}^{i}}
+\end{equation}
+\begin{equation}\label{eq:hdekf_tau_old}
+\mathbf{\tau_{t}^{i}} = N(0, h^{2}V_{t})
+\end{equation}
+
+Where $\mathbf{\bar{\theta}_{t}^{+}}$ is the mean of the parameters with respect to the ensembles, $V_{t} = var(\mathbf{\theta_{t}^{i+}})$, $a$ is a shrinkage factor between (0,1) of the kernel location, and $h$ is a smoothing factor. $h$ may be defined as $\sqrt{1-a^{2}}$. In previous research $a$ values chosen between (.45,.49) have been shown to be optimal \cite{Chen2008}, but note that $h$ and $a$ tend to vary per model and optimal values for these parameters are generally found via experimentation  \cite{Moradkhani2005}  \cite{Anderson1999} \cite{Annan2005} \cite{Chen2008}.
+
+\subsubsection{Hierarchical Parameter Perturbation}
+
+In a standard hierarchical linear regression, a value $y$ and its predictor variables $\alpha$ and $\beta$ are contained in vectors $\mathbf{g_{y}}$, $\mathbf{g_{\alpha}}$, and $\mathbf{g_{\beta}}$ respectively, all of which are of size $N, j=1,...,n$. Vectors $g_{\alpha}$ and $g_{\beta}$ have a mean and standard deviation of $\mu_{\alpha}, \sigma_{\alpha}$ and $\mu_{\beta} , \sigma_{\beta}$ respectively.
+
+\begin{equation}\label{eq:hiearch_standard}
+y_{j,g} = \alpha_{g} x_{j,g} + \beta_{g}, \quad \alpha_{g} \sim N( \mu_{\alpha}, \sigma_{\alpha} ), \quad \beta_{g} \sim N( \mu_{\beta} , \sigma_{\beta} )
+\end{equation}
+
+where $\alpha$ and $\beta$ are determined to be hierarchically related properties drawn from their respective normal distributions. For a simple overview of hierarchical models refer to Osborne \cite{Osborne2000}, while \cite{Gelman2013} is a more in-depth reference.
+
+In a Hierarchical Duel Ensemble Kalman Filter, parameter perturbation has been modified to have properties of a hierarchical linear regressive system. First, members of $\theta$ are sorted into a series of group vectors $G$. Each member $j$ of a group vector $G_{g}$, where $g$ is the specific group number, is related to other members through shared hierarchical characteristics (spatial or otherwise.) Algorithms \eqref{eq:hdekf_thetaminus_old} and \eqref{eq:hdekf_tau_old} are then updated to conform to the hierarchical structure described in \eqref{eq:hiearch_standard}:
+
+\begin{equation}\label{eq:hdekf_theta}
+\mathbf{\theta_{t+1,g}^{i-}} = a G_{t,g}^{i} + (1-a)\mathbf{\bar{\theta}_{t,g}^{+}} + \mathbf{\tau_{t,g}^{i}}
+\end{equation}
+
+%%\begin{equation}\label{eq:hdekf_theta}
+%%\theta_{t+1}^{i-,g} = a \bar{\theta}_{t,g}^{+} + (1-a)\braket{\theta}_{t,g}^{i+} + \tau_{t,g}^{i}
+%%\end{equation}
+
+\begin{equation}\label{eq:hdekf_tau}
+G_{t,g}^{i} = N( \mu_{\theta}, \sigma_{\theta} )
+\end{equation}
+
+\begin{equation}\label{eq:hdekf_tau}
+\mathbf{\tau_{t}^{i}} = N(0, h^{2}V_{t,g}^{i})
+\end{equation}
+
+%%\begin{equation}\label{eq:hddekf_V}
+%%V_{t}^{i} = a * var(\theta_{t,g}) + (1-a) var(\theta_{t}^{i-})
+%%\end{equation}
+
+Where $\mathbf{\bar{\theta}_{t,g}^{i+}}$ is the mean over all ensembles for all members of group $g$, $\mu_{\theta}$ and $\sigma_{\theta}$ are the grand mean and grand standard deviation respectively of all ensembles and points in group $\mathbf{\theta_{t,g}^{+}}$ (for clarity, the calculation of the grand mean and grand standard deviation returns a scalar value for each), and $V_{g,t}$ is the variance matrix with respect to the ensembles of all members of group $g$.
+
+\subsection{Parameter Correction Phase}
+
+In an Ensemble Kalman Filter, observations are perturbed to reflect model error. To accomplish this $n$ unique perturbations are created. Therefore, the variable $\mathbf{z_{t+1}^{i}}$ is defined as follows:
+
+\begin{equation}\label{eq:hdekf_obs}
+\mathbf{z_{t+1}^{i}} = \mathbf{z_{t+1}} + \mathbf{\eta_{t+1}^{i}},\quad \mathbf{\eta_{t+1}^{i}} = N(0,R_{t+1})
+\end{equation}
+
+Where $z_{t+1}$ is an observation vector defined by \eqref{eq:gen_obs} and $\eta_{t+1}^{i}$ is a random perturbation drawn from a normal distribution with covarience matrix $R_{t+1}$. A set of state predictions that can be related to the observations are generated by running the apriori state vector through the function $h(.)$:
+
+\begin{equation}\label{eq:hdekf_pred}
+\mathbf{\hat{y}_{t+1}^{i}} = h(\mathbf{x_{t+1}^{i-}}, \mathbf{\theta_{t+1}^{i-}})
+\end{equation}
+
+The parameter update equation is similar to the update equation of the linear Kalman filter $\mathbf{x^{+}_{t}} = \mathbf{x^{-}_{t}} + K_{t}(\mathbf{z_{t}}-H\mathbf{\hat{x}_{t}})$, with $\mathbf{\hat{y}_{t+1}^{i}}$ serving the same purpose as $H\mathbf{\hat{x}_{t}}$. However, unlike the linear kalman filter,  parameters are corrected in lieu of the states in the first correction phase:
+
+\begin{equation}\label{eq:hdekf_param_update}
+\theta_{t+1}^{i+} = \theta_{t+1}^{i-} + K_{t+1}^{\theta}(z_{t+1}^{i}-\hat{y}_{t+1}^{i})
+\end{equation}
+
+To facilitate this, $K_{t+1}^{\theta}$ is defined as
+
+\begin{equation}\label{eq:hdekf_param_k}
+K_{t+1}^{\theta} = \Sigma^{\theta,\hat{y}}_{t+1}(\Sigma^{\hat{y},\hat{y}}_{t+1} + R_{t+1})^{-1}
+\end{equation}
+
+where $\Sigma^{\theta,\hat{y}}_{t+1}$ is the cross covariance of $\theta_{t+1}$ and $\hat{y}_{t+1}$, $\Sigma^{\hat{y},\hat{y}}_{t+1}$ is the covarience of $\hat{y}_{t+1}$, and $R_{t+1}$ is the observation error matrix from \eqref{eq:hdekf_obs}. 
+
+\subsection{State Correction Phase}
+
+After $\theta_{t+1}^{i+}$ has been calculated the model is run again \eqref{eq:hdekf_predict} with the $\theta_{t+1}^{i+}$ replacing $\theta_{t+1}^{i-}$.
+
+\begin{equation}\label{eq:hdekf_predict_2}
+x_{t+1}^{i-} = f(x_{t}^{i+}, u_{t}^{i}, \theta^{i+}_{t}), \quad i=1,...,n
+\end{equation}
+
+After a new state vector is generated it is re-run through \eqref{eq:hdekf_pred} with the new parameter vector:
+
+\begin{equation}\label{eq:hdekf_pred_2}
+\hat{y}_{t+1}^{i} = h(x_{t+1}^{i-}, \theta_{t+1}^{i+})
+\end{equation}
+
+The corrected state vector is then run through the state update equation
+
+\begin{equation}\label{eq:hdekf_state_update}
+x_{t+1}^{i+} = x_{t+1}^{i-} + K_{t+1}^{x}(z_{t+1}^{i}-\hat{y}_{t+1}^{i})
+\end{equation}
+ 
+\begin{equation}\label{eq:hdekf_param_k}
+K_{t+1}^{x} = \Sigma^{x,\hat{y}}_{t+1}(\Sigma^{\hat{y},\hat{y}}_{t+1} + R_{t+1})^{-1}
+\end{equation}
+
+where $\Sigma^{x,\hat{y}}_{t+1}$ is the cross covariance of $x_{t+1}$ and $\hat{y}_{t+1}$.
+
+
+

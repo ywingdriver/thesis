@@ -5,57 +5,52 @@ A level-1 auxiliary file: contents.aux
 A level-1 auxiliary file: chap1.aux
 A level-1 auxiliary file: chap2.aux
 A level-1 auxiliary file: chap3.aux
-A level-1 auxiliary file: chap4.aux
-A level-1 auxiliary file: chap5.aux
 A level-1 auxiliary file: apx_dekf.aux
 A level-1 auxiliary file: apx_daw.aux
 A level-1 auxiliary file: biblio.aux
 The style file: plain.bst
 Database file #1: main.bib
-Warning--I didn't find a database entry for "Bergstrom1995"
-Warning--I didn't find a database entry for "Bergstrom1973"
-Warning--I didn't find a database entry for "Chow1988"
 Warning--empty booktitle in Julier1997
 Warning--empty journal in Liu2000
-You've used 22 entries,
+You've used 26 entries,
             2118 wiz_defined-function locations,
-            674 strings with 8310 characters,
-and the built_in function-call counts, 7023 in all, are:
-= -- 697
-> -- 320
+            692 strings with 8993 characters,
+and the built_in function-call counts, 8214 in all, are:
+= -- 802
+> -- 399
 < -- 2
-+ -- 126
-- -- 104
-* -- 562
-:= -- 1202
-add.period$ -- 67
-call.type$ -- 22
-change.case$ -- 118
++ -- 158
+- -- 132
+* -- 639
+:= -- 1421
+add.period$ -- 80
+call.type$ -- 26
+change.case$ -- 143
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 244
-empty$ -- 535
-format.name$ -- 104
-if$ -- 1413
+cite$ -- 28
+duplicate$ -- 291
+empty$ -- 619
+format.name$ -- 132
+if$ -- 1650
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 22
-newline$ -- 113
-num.names$ -- 44
-pop$ -- 87
+int.to.str$ -- 26
+missing$ -- 27
+newline$ -- 133
+num.names$ -- 52
+pop$ -- 121
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 118
 quote$ -- 0
-skip$ -- 174
+skip$ -- 199
 stack$ -- 0
-substring$ -- 467
-swap$ -- 29
+substring$ -- 487
+swap$ -- 33
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 102
 warning$ -- 2
-while$ -- 71
-width$ -- 24
-write$ -- 241
-(There were 5 warnings)
+while$ -- 79
+width$ -- 28
+write$ -- 282
+(There were 2 warnings)

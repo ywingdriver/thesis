@@ -4,9 +4,10 @@
 \contentsline {section}{\numberline {2.1}General Dynamic Model and Observations}{9}{section.2.1}
 \contentsline {section}{\numberline {2.2}DEnHKF Method}{10}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Prediction Phase}{10}{subsection.2.2.1}
-\contentsline {subsubsection}{Hierarchical Parameter Perturbation}{10}{section*.2}
+\contentsline {subsubsection}{Legacy Parameter Perturbation}{10}{section*.2}
+\contentsline {subsubsection}{Hierarchical Parameter Perturbation}{11}{section*.3}
 \contentsline {subsection}{\numberline {2.2.2}Parameter Correction Phase}{12}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}State Correction Phase}{12}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}State Correction Phase}{13}{subsection.2.2.3}
 \contentsline {chapter}{\numberline {3}Application of DEnHKF to Hydrologic Model}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}daWUAPhydroengine}{15}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Input Data}{16}{subsection.3.1.1}
@@ -19,7 +20,7 @@
 \contentsline {subsection}{\numberline {A.0.3}State Correction Phase}{23}{subsection.A.0.3}
 \contentsline {chapter}{\numberline {B}The Hydrologic Model}{25}{appendix.B}
 \contentsline {subsection}{\numberline {B.0.1}Rainfall Runoff component}{25}{subsection.B.0.1}
-\contentsline {paragraph}{Precipitation and snowpack processes}{25}{section*.10}
-\contentsline {paragraph}{Soil processes}{27}{section*.11}
-\contentsline {paragraph}{Groundwater Compartments and runoff generation}{28}{section*.12}
-\contentsline {subsection}{\numberline {B.0.2}Routing component}{30}{subsection.B.0.2}
+\contentsline {paragraph}{Precipitation and snowpack processes}{25}{section*.11}
+\contentsline {paragraph}{Soil processes}{27}{section*.12}
+\contentsline {paragraph}{Groundwater Compartments and runoff generation}{28}{section*.13}
+\contentsline {subsection}{\numberline {B.0.2}Routing component}{29}{subsection.B.0.2}
