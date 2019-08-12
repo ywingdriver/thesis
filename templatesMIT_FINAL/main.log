@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 AUG 2019 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  12 AUG 2019 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -580,48 +580,343 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 49.
 
-(./main.aux (./contents.aux) (./chap1.aux) (./chap2.aux
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries-extra/glossaries-extra
+.sty
+Package: glossaries-extra 2017/05/10 v1.15 (NLCT)
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+)
+\XKV@depth=\count177
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count178
+)
+\@glsxtr@docdefval=\count179
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2017/01/19 v4.29 (NLCT)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2016/07/31 v2.04 (NLCT)
+\@glsmfirst=\toks23
+\@glsmrest=\toks24
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2016/07/28 v2.27 (NLCT)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count180
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2016/07/28 v2.27 (NLCT)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count181
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count182
+\FP@xia=\count183
+\FP@xib=\count184
+\FP@xfa=\count185
+\FP@xfb=\count186
+\FP@rega=\count187
+\FP@regb=\count188
+\FP@regs=\count189
+\FP@times=\count190
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count191
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks25
+\@dtl@tmpcount=\count192
+\dtl@tmplength=\skip61
+\dtl@sortresult=\count193
+\@dtl@numgrpsepcount=\count194
+\@dtl@datatype=\count195
+\dtl@codeA=\count196
+\dtl@codeB=\count197
+\@dtl@foreach@level=\count198
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/base/glossaries-compat
+ible-307.sty
+Package: glossaries-compatible-307 2017/01/19 v4.29 (NLCT)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2017/03/25 v1.3.4 (NLCT) Track Languages
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries-english/glossaries-eng
+lish.ldf
+File: glossaries-english.ldf 2014/11/23 v1.0
+)
+\gls@level=\count199
+\@gls@tmpb=\toks26
+\gls@tmplen=\skip62
+\glskeylisttok=\toks27
+\glslabeltok=\toks28
+\glsshorttok=\toks29
+\glslongtok=\toks30
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/styles/glossary-hypern
+av.sty
+Package: glossary-hypernav 2017/01/19 v4.29 (NLCT)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/styles/glossary-list.s
+ty
+Package: glossary-list 2017/01/19 v4.29 (NLCT)
+\glslistdottedwidth=\skip63
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/styles/glossary-long.s
+ty
+Package: glossary-long 2017/01/19 v4.29 (NLCT)
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip64
+\LTright=\skip65
+\LTpre=\skip66
+\LTpost=\skip67
+\LTchunksize=\count266
+\LTcapwidth=\dimen172
+\LT@head=\box56
+\LT@firsthead=\box57
+\LT@foot=\box58
+\LT@lastfoot=\box59
+\LT@cols=\count267
+\LT@rows=\count268
+\c@LT@tables=\count269
+\c@LT@chunks=\count270
+\LT@p@ftn=\toks31
+)
+\glsdescwidth=\skip68
+\glspagelistwidth=\skip69
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/styles/glossary-super.
+sty
+Package: glossary-super 2017/01/19 v4.29 (NLCT)
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count271
+\ST@wd=\dimen173
+\ST@rightskip=\skip70
+\ST@leftskip=\skip71
+\ST@parfillskip=\skip72
+\ST@pageleft=\dimen174
+\ST@headht=\dimen175
+\ST@tailht=\dimen176
+\ST@pagesofar=\dimen177
+\ST@pboxht=\dimen178
+\ST@lineht=\dimen179
+\ST@stretchht=\dimen180
+\ST@prevht=\dimen181
+\ST@toadd=\dimen182
+\ST@dimen=\dimen183
+\ST@pbox=\box60
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/styles/glossary-tree.s
+ty
+Package: glossary-tree 2017/01/19 v4.29 (NLCT)
+\glstreeindent=\skip73
+))
+\glsxtrresourcecount=\count272
+\glsshortpltok=\toks32
+\glslongpltok=\toks33
+)
+\@input{symbols.aux}
+\openout2 = `symbols.aux'.
+
+(./symbols.tex) (./main.aux (./contents.aux) (./chap1.aux) (./chap2.aux
 
 LaTeX Warning: Label `eq:hdekf_tau' multiply defined.
 
 
 LaTeX Warning: Label `eq:hdekf_param_k' multiply defined.
 
-) (./chap3.aux) (./chap4.aux) (./apx_daw.aux) (./apx_daw_marko.aux
+) (./chap3.aux) (./chap4.aux
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `1' multiply defined.
+
+
+LaTeX Warning: Label `sub@1' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `1' multiply defined.
+
+
+LaTeX Warning: Label `sub@1' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `1' multiply defined.
+
+
+LaTeX Warning: Label `sub@1' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+) (./apx_daw.aux) (./apx_daw_marko.aux
 
 LaTeX Warning: Label `eq:linearsystem' multiply defined.
 
 ) (./biblio.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count177
-\scratchdimen=\dimen172
-\scratchbox=\box56
-\nofMPsegments=\count178
-\nofMParguments=\count179
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count180
-\MPscratchDim=\dimen173
-\MPnumerator=\count181
-\makeMPintoPDFobject=\count182
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count273
+\scratchdimen=\dimen184
+\scratchbox=\box61
+\nofMPsegments=\count274
+\nofMParguments=\count275
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count276
+\MPscratchDim=\dimen185
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
+\everyMPtoPDFconversion=\toks35
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -641,6 +936,12 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+)
+Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/translator/dicts/translato
@@ -650,28 +951,30 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2017/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/05/19 v2.7g siunitx: Abbreviated units
 )
-\AtBeginShipoutBox=\box57
-Package hyperref Info: Link coloring ON on input line 58.
+\AtBeginShipoutBox=\box62
+Package hyperref Info: Link coloring ON on input line 64.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count183
+\c@section@level=\count279
 )
-LaTeX Info: Redefining \ref on input line 58.
-LaTeX Info: Redefining \pageref on input line 58.
-LaTeX Info: Redefining \nameref on input line 58.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-\c__siunitx_mathsf_int=\count184
+\c__siunitx_mathsf_int=\count280
 <<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-\c__siunitx_mathtt_int=\count185
+\c__siunitx_mathtt_int=\count281
 <<ot1tt.cmap>> [1
+
+
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 \openout2 = `contents.aux'.
@@ -683,61 +986,41 @@ LaTeX Info: Redefining \nameref on input line 58.
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
-) [4]
+ [4]) [5
+
+
+]
 \openout2 = `chap1.aux'.
 
- (./chap1.tex
-Chapter 1.
-
-LaTeX Warning: Citation `Maneta2008' on page 5 undefined on input line 5.
-
-
-LaTeX Warning: Citation `Maneta2008' on page 5 undefined on input line 5.
-
-
-LaTeX Warning: Citation `Montero2016' on page 5 undefined on input line 5.
-
-
-LaTeX Warning: Citation `Jakeman1993' on page 5 undefined on input line 5.
-
-
-LaTeX Warning: Citation `Maneta2008' on page 5 undefined on input line 5.
-
-[5
+ (./chap1.tex [6
 
 
 
 ]
+Chapter 1.
+[7]
 Underfull \vbox (badness 5652) has occurred while \output is active []
 
- [6]
+ [8]
 Overfull \hbox (4.47443pt too wide) in paragraph at lines 15--16
 []\T1/cmr/m/n/12 Chapter 2 cov-ers the meth-ods be-hind the Dual State Hi-er-ar
 -chi-cal En-sem-ble Kalman
  []
 
-) [7]
+) [9]
 \openout2 = `chap2.aux'.
 
- (./chap2.tex [8
+ (./chap2.tex [10
 
 
 
 ]
 Chapter 2.
-[9]
-
-LaTeX Warning: Citation `Evensen1997' on page 10 undefined on input line 41.
-
-
-LaTeX Warning: Citation `TodiniESzollosi-NagyA1976' on page 10 undefined on inp
-ut line 51.
-
-
+[11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
-[11] [12] [13]) [14]
+ [12]
+[13] [14] [15]) [16]
 \openout2 = `chap3.aux'.
 
  (./chap3.tex
@@ -749,7 +1032,7 @@ LaTeX Warning: No positions in optional float specifier.
 
 Underfull \vbox (badness 1231) has occurred while \output is active []
 
- [15
+ [17
 
 
 
@@ -762,12 +1045,12 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 44.
 
-[16]
+[18]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 70.
 
-<stations.png, id=339, 847.66183pt x 599.4301pt>
+<stations.png, id=403, 847.66183pt x 599.4301pt>
 File: stations.png Graphic file (type png)
  <use stations.png>
 Package pdftex.def Info: stations.png used on input line 82.
@@ -776,7 +1059,7 @@ Package pdftex.def Info: stations.png used on input line 82.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./images/huc8.png, id=344, 847.66183pt x 599.4301pt>
+<./images/huc8.png, id=408, 847.66183pt x 599.4301pt>
 File: ./images/huc8.png Graphic file (type png)
  <use ./images/huc8.png>
 Package pdftex.def Info: ./images/huc8.png used on input line 93.
@@ -785,7 +1068,7 @@ Package pdftex.def Info: ./images/huc8.png used on input line 93.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./images/huc4.png, id=345, 847.66183pt x 599.4301pt>
+<./images/huc4.png, id=409, 847.66183pt x 599.4301pt>
 File: ./images/huc4.png Graphic file (type png)
  <use ./images/huc4.png>
 Package pdftex.def Info: ./images/huc4.png used on input line 100.
@@ -795,34 +1078,34 @@ Package pdftex.def Info: ./images/huc4.png used on input line 100.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2762) has occurred while \output is active []
 
- [17]
+ [19]
 Underfull \vbox (badness 3536) has occurred while \output is active []
 
- [18 <./stations.png>]
+ [20 <./stations.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19 <./images/huc8.png>] [20 <./images/huc4.png>]) [21]
+ [21 <./images/huc8.png>] [22 <./images/huc4.png>]) [23]
 \openout2 = `chap4.aux'.
 
- (./chap4.tex [22
+ (./chap4.tex [24
 
 
 
 ]
 Chapter 4.
-[23]
-
-LaTeX Warning: Citation `Maneta2008' on page 24 undefined on input line 17.
-
-<./images/bad_gw.png, id=392, 462.528pt x 346.896pt>
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 15.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [25]
+<./images/bad_gw.png, id=460, 462.528pt x 346.896pt>
 File: ./images/bad_gw.png Graphic file (type png)
  <use ./images/bad_gw.png>
 Package pdftex.def Info: ./images/bad_gw.png used on input line 23.
 (pdftex.def)             Requested size: 212.47287pt x 159.35707pt.
 
-<./images/good_gw.png, id=393, 462.528pt x 346.896pt>
+<./images/good_gw.png, id=461, 462.528pt x 346.896pt>
 File: ./images/good_gw.png Graphic file (type png)
 
 <use ./images/good_gw.png>
@@ -831,20 +1114,410 @@ Package pdftex.def Info: ./images/good_gw.png used on input line 29.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24 <./images/bad_gw.png> <./images/good_gw.png>]
+ [26 <./images/bad_gw.png> <./images/good_gw.png>]
+<./images/smallds_str_state_241.png, id=472, 642.4pt x 481.8pt>
+File: ./images/smallds_str_state_241.png Graphic file (type png)
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 45.
+<use ./images/smallds_str_state_241.png>
+Package pdftex.def Info: ./images/smallds_str_state_241.png used on input line 
+51.
+(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+
+<./images/smallds_str_state_244.png, id=473, 642.4pt x 481.8pt>
+File: ./images/smallds_str_state_244.png Graphic file (type png)
+
+<use ./images/smallds_str_state_244.png>
+Package pdftex.def Info: ./images/smallds_str_state_244.png used on input line 
+56.
+(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+
+<./images/smallds_str_state_248.png, id=474, 642.4pt x 481.8pt>
+File: ./images/smallds_str_state_248.png Graphic file (type png)
+
+<use ./images/smallds_str_state_248.png>
+Package pdftex.def Info: ./images/smallds_str_state_248.png used on input line 
+61.
+(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+ [27 <./images/smallds_str_state_241.png> <./images/smallds_str_state_244.png> 
+<./images/smallds_str_state_248.png>]
+<./images/smallds_gw_state_241.png, id=490, 462.528pt x 346.896pt>
+File: ./images/smallds_gw_state_241.png Graphic file (type png)
+
+<use ./images/smallds_gw_state_241.png>
+Package pdftex.def Info: ./images/smallds_gw_state_241.png used on input line 7
+6.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+
+<./images/smallds_gw_state_244.png, id=491, 462.528pt x 346.896pt>
+File: ./images/smallds_gw_state_244.png Graphic file (type png)
+
+<use ./images/smallds_gw_state_244.png>
+Package pdftex.def Info: ./images/smallds_gw_state_244.png used on input line 8
+1.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+
+<./images/smallds_gw_state_248.png, id=492, 462.528pt x 346.896pt>
+File: ./images/smallds_gw_state_248.png Graphic file (type png)
+
+<use ./images/smallds_gw_state_248.png>
+Package pdftex.def Info: ./images/smallds_gw_state_248.png used on input line 8
+6.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
 
-Overfull \hbox (78.75168pt too wide) in paragraph at lines 47--63
+Package caption Warning: \label without proper reference on input line 117.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:cks_small' on page 28 undefined on input line 93.
+
+
+<./images/str_innovation_small.png, id=494, 462.528pt x 346.896pt>
+File: ./images/str_innovation_small.png Graphic file (type png)
+
+<use ./images/str_innovation_small.png>
+Package pdftex.def Info: ./images/str_innovation_small.png used on input line 9
+7.
+(pdftex.def)             Requested size: 216.81pt x 162.60709pt.
+
+<./images/smallds_ck0_241.png, id=495, 722.7pt x 722.7pt>
+File: ./images/smallds_ck0_241.png Graphic file (type png)
+
+<use ./images/smallds_ck0_241.png>
+Package pdftex.def Info: ./images/smallds_ck0_241.png used on input line 106.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+<./images/smallds_ck1_241.png, id=496, 722.7pt x 722.7pt>
+File: ./images/smallds_ck1_241.png Graphic file (type png)
+
+<use ./images/smallds_ck1_241.png>
+Package pdftex.def Info: ./images/smallds_ck1_241.png used on input line 107.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+<./images/smallds_ck2_241.png, id=497, 722.7pt x 722.7pt>
+File: ./images/smallds_ck2_241.png Graphic file (type png)
+
+<use ./images/smallds_ck2_241.png>
+Package pdftex.def Info: ./images/smallds_ck2_241.png used on input line 108.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+<./images/smallds_ck0_244.png, id=498, 722.7pt x 722.7pt>
+File: ./images/smallds_ck0_244.png Graphic file (type png)
+
+<use ./images/smallds_ck0_244.png>
+Package pdftex.def Info: ./images/smallds_ck0_244.png used on input line 109.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+<./images/smallds_ck1_244.png, id=499, 722.7pt x 722.7pt>
+File: ./images/smallds_ck1_244.png Graphic file (type png)
+
+<use ./images/smallds_ck1_244.png>
+Package pdftex.def Info: ./images/smallds_ck1_244.png used on input line 110.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+<./images/smallds_ck2_244.png, id=500, 722.7pt x 722.7pt>
+File: ./images/smallds_ck2_244.png Graphic file (type png)
+
+<use ./images/smallds_ck2_244.png>
+Package pdftex.def Info: ./images/smallds_ck2_244.png used on input line 111.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+<./images/smallds_ck0_248.png, id=501, 722.7pt x 722.7pt>
+File: ./images/smallds_ck0_248.png Graphic file (type png)
+
+<use ./images/smallds_ck0_248.png>
+Package pdftex.def Info: ./images/smallds_ck0_248.png used on input line 112.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+<./images/smallds_ck1_248.png, id=502, 722.7pt x 722.7pt>
+File: ./images/smallds_ck1_248.png Graphic file (type png)
+
+<use ./images/smallds_ck1_248.png>
+Package pdftex.def Info: ./images/smallds_ck1_248.png used on input line 113.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+<./images/smallds_ck2_248.png, id=503, 722.7pt x 722.7pt>
+File: ./images/smallds_ck2_248.png Graphic file (type png)
+
+<use ./images/smallds_ck2_248.png>
+Package pdftex.def Info: ./images/smallds_ck2_248.png used on input line 114.
+(pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
+
+Overfull \hbox (31.66615pt too wide) in paragraph at lines 104--118
 [][]
  []
 
-) [25]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 121.
+
+
+Overfull \hbox (77.61029pt too wide) in paragraph at lines 123--139
+[][]
+ []
+
+<./images/smallds_swe_state_241.png, id=504, 462.528pt x 346.896pt>
+File: ./images/smallds_swe_state_241.png Graphic file (type png)
+
+<use ./images/smallds_swe_state_241.png>
+Package pdftex.def Info: ./images/smallds_swe_state_241.png used on input line 
+147.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+
+<./images/smallds_swe_state_244.png, id=505, 462.528pt x 346.896pt>
+File: ./images/smallds_swe_state_244.png Graphic file (type png)
+
+<use ./images/smallds_swe_state_244.png>
+Package pdftex.def Info: ./images/smallds_swe_state_244.png used on input line 
+152.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+
+<./images/smallds_swe_state_248.png, id=506, 462.528pt x 346.896pt>
+File: ./images/smallds_swe_state_248.png Graphic file (type png)
+
+<use ./images/smallds_swe_state_248.png>
+Package pdftex.def Info: ./images/smallds_swe_state_248.png used on input line 
+157.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+ [28 <./images/smallds_gw_state_241.png> <./images/smallds_gw_state_244.png> <.
+/images/smallds_gw_state_248.png> <./images/str_innovation_small.png>] [29 <./i
+mages/smallds_ck0_241.png> <./images/smallds_ck1_241.png> <./images/smallds_ck2
+_241.png> <./images/smallds_ck0_244.png> <./images/smallds_ck1_244.png> <./imag
+es/smallds_ck2_244.png> <./images/smallds_ck0_248.png> <./images/smallds_ck1_24
+8.png> <./images/smallds_ck2_248.png>]
+<./images/swe_innovation_small.png, id=533, 462.528pt x 346.896pt>
+File: ./images/swe_innovation_small.png Graphic file (type png)
+
+<use ./images/swe_innovation_small.png>
+Package pdftex.def Info: ./images/swe_innovation_small.png used on input line 1
+67.
+(pdftex.def)             Requested size: 216.81pt x 162.60709pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package caption Warning: \label without proper reference on input line 199.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:swe_params_small' on page 30 undefined on input l
+ine 172.
+
+<./images/smallds_ddf_241.png, id=538, 722.7pt x 722.7pt>
+File: ./images/smallds_ddf_241.png Graphic file (type png)
+
+<use ./images/smallds_ddf_241.png>
+Package pdftex.def Info: ./images/smallds_ddf_241.png used on input line 179.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/smallds_pp_241.png, id=539, 722.7pt x 722.7pt>
+File: ./images/smallds_pp_241.png Graphic file (type png)
+
+<use ./images/smallds_pp_241.png>
+Package pdftex.def Info: ./images/smallds_pp_241.png used on input line 180.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/smallds_ddf_244.png, id=540, 722.7pt x 722.7pt>
+File: ./images/smallds_ddf_244.png Graphic file (type png)
+
+<use ./images/smallds_ddf_244.png>
+Package pdftex.def Info: ./images/smallds_ddf_244.png used on input line 181.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/smallds_pp_244.png, id=541, 722.7pt x 722.7pt>
+File: ./images/smallds_pp_244.png Graphic file (type png)
+
+<use ./images/smallds_pp_244.png>
+Package pdftex.def Info: ./images/smallds_pp_244.png used on input line 182.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/smallds_ddf_248.png, id=542, 722.7pt x 722.7pt>
+File: ./images/smallds_ddf_248.png Graphic file (type png)
+
+<use ./images/smallds_ddf_248.png>
+Package pdftex.def Info: ./images/smallds_ddf_248.png used on input line 183.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/smallds_pp_248.png, id=543, 722.7pt x 722.7pt>
+File: ./images/smallds_pp_248.png Graphic file (type png)
+
+<use ./images/smallds_pp_248.png>
+Package pdftex.def Info: ./images/smallds_pp_248.png used on input line 184.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 177--188
+[][]
+ []
+
+
+LaTeX Warning: Float too large for page by 58.26904pt on input line 189.
+
+<./images/group17swe_ddf_small.png, id=544, 722.7pt x 722.7pt>
+File: ./images/group17swe_ddf_small.png Graphic file (type png)
+
+<use ./images/group17swe_ddf_small.png>
+Package pdftex.def Info: ./images/group17swe_ddf_small.png used on input line 1
+94.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/group17swe_pp_small.png, id=545, 722.7pt x 722.7pt>
+File: ./images/group17swe_pp_small.png Graphic file (type png)
+
+<use ./images/group17swe_pp_small.png>
+Package pdftex.def Info: ./images/group17swe_pp_small.png used on input line 19
+5.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 192--198
+[][]
+ []
+
+[30 <./images/smallds_swe_state_241.png> <./images/smallds_swe_state_244.png> <
+./images/smallds_swe_state_248.png>]
+<./images/ds_str_state_296.png, id=559, 462.528pt x 346.896pt>
+File: ./images/ds_str_state_296.png Graphic file (type png)
+
+<use ./images/ds_str_state_296.png>
+Package pdftex.def Info: ./images/ds_str_state_296.png used on input line 215.
+(pdftex.def)             Requested size: 203.97214pt x 152.97876pt.
+
+<./images/ds_str_state_296_innovation.png, id=560, 462.528pt x 346.896pt>
+File: ./images/ds_str_state_296_innovation.png Graphic file (type png)
+
+<use ./images/ds_str_state_296_innovation.png>
+Package pdftex.def Info: ./images/ds_str_state_296_innovation.png used on input
+ line 220.
+(pdftex.def)             Requested size: 203.97214pt x 152.97876pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31 <./images/swe_innovation_small.png>] [32 <./images/smallds_ddf_241.png> <.
+/images/smallds_pp_241.png> <./images/smallds_ddf_244.png> <./images/smallds_pp
+_244.png> <./images/smallds_ddf_248.png> <./images/smallds_pp_248.png>] [33 <./
+images/group17swe_ddf_small.png> <./images/group17swe_pp_small.png> <./images/d
+s_str_state_296.png> <./images/ds_str_state_296_innovation.png>]
+
+Package caption Warning: \label without proper reference on input line 298.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:swe_params' on page 34 undefined on input line 23
+2.
+
+
+Package caption Warning: \label without proper reference on input line 199.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:swe_params_small' on page 34 undefined on input l
+ine 232.
+
+<./images/ds_swe_state_241.png, id=590, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_241.png Graphic file (type png)
+
+<use ./images/ds_swe_state_241.png>
+Package pdftex.def Info: ./images/ds_swe_state_241.png used on input line 238.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+
+<./images/ds_swe_state_302.png, id=591, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_302.png Graphic file (type png)
+
+<use ./images/ds_swe_state_302.png>
+Package pdftex.def Info: ./images/ds_swe_state_302.png used on input line 243.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+
+<./images/ds_swe_state_305.png, id=592, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_305.png Graphic file (type png)
+
+<use ./images/ds_swe_state_305.png>
+Package pdftex.def Info: ./images/ds_swe_state_305.png used on input line 248.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+
+<./images/ds_swe_state_193.png, id=593, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_193.png Graphic file (type png)
+
+<use ./images/ds_swe_state_193.png>
+Package pdftex.def Info: ./images/ds_swe_state_193.png used on input line 259.
+(pdftex.def)             Requested size: 203.97214pt x 152.97876pt.
+
+<./images/ds_swe_state_193_innovation.png, id=594, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_193_innovation.png Graphic file (type png)
+
+<use ./images/ds_swe_state_193_innovation.png>
+Package pdftex.def Info: ./images/ds_swe_state_193_innovation.png used on input
+ line 264.
+(pdftex.def)             Requested size: 203.97214pt x 152.97876pt.
+
+<./images/ds_ddf_193.png, id=595, 722.7pt x 722.7pt>
+File: ./images/ds_ddf_193.png Graphic file (type png)
+
+<use ./images/ds_ddf_193.png>
+Package pdftex.def Info: ./images/ds_ddf_193.png used on input line 275.
+(pdftex.def)             Requested size: 207.92613pt x 207.92351pt.
+
+<./images/ds_pp_193.png, id=596, 722.7pt x 722.7pt>
+File: ./images/ds_pp_193.png Graphic file (type png)
+
+<use ./images/ds_pp_193.png>
+Package pdftex.def Info: ./images/ds_pp_193.png used on input line 280.
+(pdftex.def)             Requested size: 207.92613pt x 207.92351pt.
+
+<./images/group10swe_ddf.png, id=597, 722.7pt x 722.7pt>
+File: ./images/group10swe_ddf.png Graphic file (type png)
+
+<use ./images/group10swe_ddf.png>
+Package pdftex.def Info: ./images/group10swe_ddf.png used on input line 290.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/group10swe_pp.png, id=598, 722.7pt x 722.7pt>
+File: ./images/group10swe_pp.png Graphic file (type png)
+
+<use ./images/group10swe_pp.png>
+Package pdftex.def Info: ./images/group10swe_pp.png used on input line 291.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/group17swe_ddf.png, id=599, 722.7pt x 722.7pt>
+File: ./images/group17swe_ddf.png Graphic file (type png)
+
+<use ./images/group17swe_ddf.png>
+Package pdftex.def Info: ./images/group17swe_ddf.png used on input line 292.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/group17swe_pp.png, id=600, 722.7pt x 722.7pt>
+File: ./images/group17swe_pp.png Graphic file (type png)
+
+<use ./images/group17swe_pp.png>
+Package pdftex.def Info: ./images/group17swe_pp.png used on input line 293.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 288--297
+[][]
+ []
+
+<./images/327str_1yr125i.png, id=601, 642.4pt x 481.8pt>
+File: ./images/327str_1yr125i.png Graphic file (type png)
+
+<use ./images/327str_1yr125i.png>
+Package pdftex.def Info: ./images/327str_1yr125i.png used on input line 304.
+(pdftex.def)             Requested size: 207.92613pt x 155.94354pt.
+
+<./images/327str_2yr80i.png, id=602, 642.4pt x 481.8pt>
+File: ./images/327str_2yr80i.png Graphic file (type png)
+
+<use ./images/327str_2yr80i.png>
+Package pdftex.def Info: ./images/327str_2yr80i.png used on input line 309.
+(pdftex.def)             Requested size: 207.92613pt x 155.94354pt.
+) [34 <./images/ds_swe_state_241.png> <./images/ds_swe_state_302.png> <./images
+/ds_swe_state_305.png> <./images/ds_swe_state_193.png> <./images/ds_swe_state_1
+93_innovation.png>] [35 <./images/ds_ddf_193.png> <./images/ds_pp_193.png>] [36
+ <./images/group10swe_ddf.png> <./images/group10swe_pp.png> <./images/group17sw
+e_ddf.png> <./images/group17swe_pp.png>]
+[37 <./images/327str_1yr125i.png> <./images/327str_2yr80i.png>]
 \openout2 = `apx_daw.aux'.
 
- (./apx_daw.tex [26
+ (./apx_daw.tex
+[38
 
 
 
@@ -854,51 +1527,51 @@ Appendix A.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 6.
 
-[27]
+[39]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 11.
 
-[28] [29] [30]
+[40] [41] [42]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-[32])
+ [43]
+[44])
 Underfull \vbox (badness 2772) has occurred while \output is active []
 
- [33]
-[34]
+ [45]
+[46]
 \openout2 = `apx_daw_marko.aux'.
 
  (./apx_daw_marko.tex
 Appendix B.
 
-LaTeX Warning: Citation `Bergstrom1995' on page 35 undefined on input line 12.
+LaTeX Warning: Citation `Bergstrom1995' on page 47 undefined on input line 12.
 
 
-LaTeX Warning: Citation `Bergstrom1973' on page 35 undefined on input line 12.
+LaTeX Warning: Citation `Bergstrom1973' on page 47 undefined on input line 12.
 
 
-LaTeX Warning: Citation `Chow1988' on page 35 undefined on input line 12.
+LaTeX Warning: Citation `Chow1988' on page 47 undefined on input line 12.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 14.
 
 
-LaTeX Warning: Citation `Bergstrom1995' on page 35 undefined on input line 16.
+LaTeX Warning: Citation `Bergstrom1995' on page 47 undefined on input line 16.
 
 
-LaTeX Warning: Citation `Bergstrom1973' on page 35 undefined on input line 16.
+LaTeX Warning: Citation `Bergstrom1973' on page 47 undefined on input line 16.
 
-[35
+[47
 
 
 
-] [36]
+] [48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [49]
 Overfull \hbox (2.58868pt too wide) in paragraph at lines 80--81
  []\T1/cmr/bx/n/12 Percolation and runoff gen-er-a-tion[] \T1/cmr/m/n/12 Ex-ces
 s wa-ter in the top-soil and in two ground-
@@ -907,30 +1580,30 @@ s wa-ter in the top-soil and in two ground-
 
 Underfull \vbox (badness 2253) has occurred while \output is active []
 
- [38]
+ [50]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
+ [51]
 Underfull \vbox (badness 7540) has occurred while \output is active []
 
- [40])
-[41]
+ [52])
+[53]
 \openout2 = `biblio.aux'.
 
- (./biblio.tex (./main.bbl [42
+ (./biblio.tex (./main.bbl [54
 
 
 
-] [43] [44])) [45]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
+] [55] [56] [57])) [58]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
  (./main.aux
 (./contents.aux) (./chap1.aux) (./chap2.aux) (./chap3.aux) (./chap4.aux)
 (./apx_daw.aux) (./apx_daw_marko.aux) (./biblio.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B83633849F3AEEBD26C000F51EEA9E87;2030.
+(rerunfilecheck)             Checksum: 8E1D2AFE900FF335F83E45F0E92140B5;2596.
 
 
 LaTeX Warning: There were undefined references.
@@ -938,16 +1611,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 17320 strings out of 492995
- 329676 string characters out of 6132704
- 373437 words of memory out of 5000000
- 20415 multiletter control sequences out of 15000+600000
- 20320 words of font info for 52 fonts, out of 8000000 for 9000
+ 24789 strings out of 492995
+ 474407 string characters out of 6132704
+ 577162 words of memory out of 5000000
+ 27648 multiletter control sequences out of 15000+600000
+ 21716 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,15n,41p,10383b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,15n,86p,10383b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
@@ -964,14 +1637,17 @@ e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 17/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017
 /texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dis
-t/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (45 pages, 1586438 bytes).
+mf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/
+fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (58 pages, 4098982 bytes).
 PDF statistics:
- 688 PDF objects out of 1000 (max. 8388607)
- 600 compressed objects within 6 object streams
- 212 named destinations out of 1000 (max. 500000)
- 282 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 944 PDF objects out of 1000 (max. 8388607)
+ 752 compressed objects within 8 object streams
+ 262 named destinations out of 1000 (max. 500000)
+ 553 words of extra memory for PDF output out of 10000 (max. 10000000)
 

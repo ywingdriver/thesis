@@ -4,6 +4,12 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter*{Symbols}
 
-dog = dog
+\glsxtrnewsymbol[
+ description={vector of states, pre-correction}]{x-}{\ensuremath{x^{-}}}
+\glsxtrnewsymbol[description={vector of states, post-correction}]{x+}{\ensuremath{x^{+}}}
+\glsxtrnewsymbol[description={vector of predicted states}]{y}{\ensuremath{y}}
+\glsxtrnewsymbol[description={vector of parameters, pre-correction}]{theta-}{\ensuremath{\theta^{-}}}
+\glsxtrnewsymbol[description={vector of parameters, post-correction}]{theta+}{\ensuremath{\theta^{+}}}
+\glsxtrnewsymbol[description={forcing data}]{u}{\ensuremath{u}}
+\glsxtrnewsymbol[description={vector of observed states}]{z}{\ensuremath{z}}

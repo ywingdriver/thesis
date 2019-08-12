@@ -48,12 +48,18 @@
     urlcolor=blue
 }
 
+%%\usepackage[colorlinks]{hyperref}
+\usepackage[symbols,nogroupskip,record]{glossaries-extra} %% symbols page
+
 \pagestyle{plain}
 
 
 %% This bit allows you to either specify only the files which you wish to
 %% process, or `all' to process all files which you \include.
 %% Krishna Sethuraman (1990).
+
+
+\include{symbols} %% Have to be included before document begins
 
 \begin{document}
 \pagestyle{plain}

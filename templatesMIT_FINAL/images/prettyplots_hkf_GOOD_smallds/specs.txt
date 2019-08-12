@@ -1,0 +1,1 @@
+-i 12 --small_dataset -sma .009 --use_spun_up_states  -t 1800 -initdate 9/01/2010  -sma .009 -rstr .35 -minvar .0001 -uprecip .75 -ustr .5 -uinitialstates .8

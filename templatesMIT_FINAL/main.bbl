@@ -42,6 +42,11 @@ Geir Evensen.
   model using Monte Carlo methods to forecast error statistics}.
 \newblock {\em Journal of Geophysical Research}, 99(C5):10143, may 1994.
 
+\bibitem{Evensen1997}
+Geir Evensen and Geir Evensen.
+\newblock {Advanced Data Assimilation for Strongly Nonlinear Dynamics}.
+\newblock {\em Monthly Weather Review}, 125(6):1342--1354, jun 1997.
+
 \bibitem{Gelman2013}
 Andrew Gelman, John~B. Carlin, Hal~S. Stern, David~B. Dunson, Aki Vehtari,
   Donald~B. Rubin, John~B. Carlin, Hal~S. Stern, David~B. Dunson, Aki Vehtari,
@@ -54,6 +59,11 @@ H.~J. {Hendricks Franssen} and W.~Kinzelbach.
 \newblock {Real-time groundwater flow modeling with the Ensemble Kalman Filter:
   Joint estimation of states and parameters and the filter inbreeding problem}.
 \newblock {\em Water Resources Research}, 44(9), sep 2008.
+
+\bibitem{Jakeman1993}
+A.~J. Jakeman and G.~M. Hornberger.
+\newblock {How much complexity is warranted in a rainfall‐runoff model?}
+\newblock {\em Water Resources Research}, 1993.
 
 \bibitem{Jazwinski1970}
 Andrew~H. Jazwinski.
@@ -83,6 +93,12 @@ Yuqiong Liu and Hoshin~V. Gupta.
   assimilation framework}.
 \newblock {\em Water Resources Research}, 43(7), jul 2007.
 
+\bibitem{Maneta2008}
+Marco Maneta, Susanne Schnabel, and Victor Jetten.
+\newblock {Continuous spatially distributed simulation of surface and
+  subsurface hydrological processes in a small semiarid catchment}.
+\newblock {\em Hydrological Processes}, 22(13):2196--2214, jun 2008.
+
 \bibitem{Mariani2005}
 Stefano Mariani and Alberto Corigliano.
 \newblock {Impact induced composite delamination: state and parameter
@@ -95,6 +111,13 @@ Robert~N. Miller, Michael Ghil, and Fran{\c{c}}ois Gauthiez.
 \newblock {Advanced Data Assimilation in Strongly Nonlinear Dynamical Systems}.
 \newblock {\em Journal of the Atmospheric Sciences}, 51(8):1037--1056, apr
   1994.
+
+\bibitem{Montero2016}
+Rodolfo~Alvarado Montero, Dirk Schwanenberg, Peter Krahe, and Peer Helmke.
+\newblock {Unified Hydrological Flow Routing for Variational Data Assimilation
+  and Model Predictive Control}.
+\newblock In {\em Procedia Engineering}, volume 154, pages 1341--1348. Elsevier
+  Ltd, 2016.
 
 \bibitem{Moradkhani2005}
 Hamid Moradkhani, Soroosh Sorooshian, Hoshin~V. Gupta, and Paul~R. Houser.
@@ -118,6 +141,11 @@ Rolf~H. Reichle, Dennis~B. McLaughlin, Dara Entekhabi, Rolf~H. Reichle,
 \newblock {Hydrologic Data Assimilation with the Ensemble Kalman Filter}.
 \newblock {\em Monthly Weather Review}, 130(1):103--114, jan 2002.
 
+\bibitem{Seibert1997}
+Jan Seibert.
+\newblock {Estimation of Parameter Uncertainty in the HBV Model}.
+\newblock {\em Hydrology Research}, 28(4-5):247--262, aug 1997.
+
 \bibitem{Shi2014}
 Yuning Shi, Kenneth~J. Davis, Fuqing Zhang, Christopher~J. Duffy, and Xuan Yu.
 \newblock {Parameter estimation of a physically based land surface hydrologic
@@ -136,6 +164,13 @@ Soroosh Sorooshian, Qingyun Duan, and Vijai~Kumar Gupta.
   optimization to the Sacramento Soil Moisture Accounting Model}.
 \newblock {\em Water Resources Research}, 29(4):1185--1194, apr 1993.
 
+\bibitem{TodiniESzollosi-NagyA1976}
+Wood~EF. {Todini E, Szollosi-Nagy A}.
+\newblock {Adaptive state–parameter estimation algorithm for real time
+  hydrologic forecasting; a case study.}
+\newblock {\em IISA/WMO Workshop on the Recent Developments in Real Time
+  Forecasting/Control of Water Resources Systems}, 1976.
+
 \bibitem{Troch2003}
 Peter~A. Troch, Claudio Paniconi, and Dennis McLaughlin.
 \newblock {Catchment-scale hydrological modeling and data assimilation}.
@@ -153,6 +188,12 @@ Thorsten Wagener and Howard~S. Wheater.
 \newblock {Parameter estimation and regionalization for continuous
   rainfall-runoff models including uncertainty}.
 \newblock {\em Journal of Hydrology}, 320(1-2):132--154, mar 2006.
+
+\bibitem{Wallner2013}
+Markus Wallner, Uwe Haberlandt, and J{\"{o}}rg Dietrich.
+\newblock {A one-step similarity approach for the regionalization of
+  hydrological model parameters based on self-organizing maps}.
+\newblock {\em Journal of Hydrology}, 2013.
 
 \bibitem{Wen2006}
 Xian-Huan Wen and Wen~H. Chen.
