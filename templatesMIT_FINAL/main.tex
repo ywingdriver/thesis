@@ -74,7 +74,7 @@
 \vspace*{\fill}
 \begin{center}
 \begin{LARGE}
-Thesis Paper - A Hierarchical Dual Ensemble Kalman Filter
+A Dual State Hierarchical Ensemble Kalman Filter Algorithm
 \end{LARGE}
 \\
 {\large William Cook}
@@ -87,17 +87,18 @@ Thesis Paper - A Hierarchical Dual Ensemble Kalman Filter
 
 %%The \textbf{daWUAP} team at the University of Montana has created a hydrological rainfall-runoff model that predicts streamflows across the state of Montana. \textbf{daWUAPhydroengine} is informed by a variety of smaller components, including a HBV rainfall runoff component that models precipitation, snowpack, and  groundwater, Muskingum-Cunge routing component, and an agricultural component. This paper uses the calibration of \textbf{daWUAPhydroengine} to introduce a new filtering algorithm: the Dual State Hierarchical Ensemble Kalman Filter. Uniquely, this filter uses hierarchical modeling techniques to calibrate high dimensional parameters according to their spatial distributions.
 
-Dynamic models that simulate processes across large geographic locations, such as hydrologic models, are often informed by empirical parameters that are distributed across a geographical area and segmented by geological features such as watersheds. These parameters may be referred to as spatially distributed parameters. Spatially distributed parameters are frequently spatially correlated and any techniques utilized in their calibration ideally incorporate existing spatial hierarchical relationships into their structure. In this paper, a parameter estimation method based on the Dual State Ensemble Kalman Filter called the Dual State Hierarchical Ensemble Kalman Filter (DSHKEnKF) is presented. This modified filter is innovative in that it allows parameters to be placed into a set of groups that are smoothed using hierarchical modeling techniques. The usability and effectiveness of this new technique is demonstrated by applying it to a rainfall-runoff model that simulates subcatchment-scale hydrologic processes and contains high dimensional spatially distributed empirical parameters.
+Dynamic models that simulate processes across large geographic locations, such as hydrologic models, are often informed by empirical parameters that are distributed across a geographical area and segmented by geological features such as watersheds. These parameters may be referred to as spatially distributed parameters. Spatially distributed parameters are frequently spatially correlated and any techniques utilized in their calibration ideally incorporate existing spatial hierarchical relationships into their structure. In this paper, a parameter estimation method based on the Dual State Ensemble Kalman Filter called the Dual State Hierarchical Ensemble Kalman Filter (DSHEnKF) is presented. This modified filter is innovative in that it allows parameters to be placed into a set of groups that are smoothed using hierarchical modeling techniques. The usability and effectiveness of this new technique is demonstrated by applying it to a rainfall-runoff model that simulates subcatchment-scale hydrologic processes and contains high dimensional spatially distributed empirical parameters.
 
 \include{contents}
 \include{chap1}
 \include{chap2}
 \include{chap3}
 \include{chap4}
+\include{chap5}
 \appendix
 %\include{apx_dekf}
 \include{apx_daw}
-\include{apx_daw_marko}
+%\include{apx_daw_marko}
 \include{biblio}
 \end{document}
 

@@ -4,6 +4,12 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter{Comparison of DEnKF and DEnHKF results}
+\chapter{Further Research Opportunities and Conclusion}
 
-WRITE THIS
+While the Dual State Hierarchical Ensemble Kalman Filtering algorithm calibrated the snow-water equivalent and streamflow values of the small dataset and the snow-water equivalent component of the large dataset very effectively, research must be done to compare the accuracy and efficiency of the DSHEnKF method to other filtering algorithms such as the vanilla Dual-State Ensemble Kalman Filter, the Particle Filter, the Joint Ensemble Kalman Filter, or the Unscented Kalman Filter.
+
+Due to computational limitations, certain essential tests and comparisons (such as the optimal ensemble size for the DSHEnKF, the filtering of very large datasets over large time periods, or the expansion of state correction to other outputs of the hydrologic model such as groundwater) were not attempted. Further research using a different model or more capable computer will help flesh out the advantages and disadvantages of the DSHEnKF method.
+
+One negative aspect of this project's computational limitations is the unknown utility of the hierarchical component on large, complex systems such as the hydrologic model's streamflow and snowfall model. All 3 catchments in the small dataset converge quickly to a singular value. While this may be an optimal for a small geographic area, the area covered by the large dataset should have demonstrated variability between all catchments within the hierarchical groupings. Since calibration after a year could not be witnessed it is unknown if the large dataset would also have collapsed to a single value or if, as would be optimal, the posterior parameter correction would have been sufficient to keep each catchment at its unique value. This further research area is the most important, as the hierarchical component is the major innovation of the DSHEnKF method.
+
+In conclusion, the DSHEnKF method has been proven to be a useful calibration procedure on hierarchically structured datasets, and particularly on small datasets or simple systems. However, its application to very large, complex models is computationally expensive and further research is needed to understand this method's usefulness when compared to other filtering methods and the effectiveness of the hierarchical component when filtering large, complex models.

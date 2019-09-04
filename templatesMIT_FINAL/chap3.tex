@@ -4,27 +4,27 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter{Application of DEnHKF to Hydrologic Model}
+\chapter{Application of DHEnKF to Hydrologic Model}
 
 \section{The Hydrologic Model}
 
-The hydrologic model is used to test the viability of the DEnHKF method. The hydrologic model takes parameters related to streamflows and groundwater, precipitation, minimum daily temperatures, and maximum daily temperatures as inputs and outputs streamflow values along with some additional states such as the amount of water precipitated as snowfall (henceforth referred to as \textit{SWE} or snow water equivalent.) The hydrologic model was designed to be implemented in any geographic location. For this study it was utilized to model streamflows throughout the state of Montana.
+The hydrologic model is used to test the viability of the DSHEnKF method. The hydrologic model takes parameters related to streamflows and groundwater, precipitation, minimum daily temperatures, and maximum daily temperatures as inputs and outputs streamflow values along with some additional states such as the amount of water precipitated as snowfall (henceforth referred to as \texttt{swe} or snow water equivalent.) The hydrologic model was designed to be implemented in any geographic location. For this study it was utilized to model streamflows throughout the state of Montana.
 
 \begin{table}[]
 \caption{States} 
-\begin{tabular}{lll}
-State ($x$) & Purpose                              & Dimensions  \\ \hline
-streamflow  & Streamflow (in cubic meters per second)               & 330 (nodes) \\
-swe         & Snow Water Equivalent  (in $mm^{3}$) & 45012 (pixels)
+\begin{tabular}{ll}
+State                              & Dimensions  \\ \hline
+Streamflow (in cubic meters per second)               & 330 (nodes) \\
+Snow Water Equivalent  (in mm$^{3}$) & 45012 (pixels)
 \end{tabular}
 \label{tab:states}
 \end{table}
 
-Configuring the hydrologic model to model streamflows throughout Montana is advantageous because it allows for the calibration of a very large number of spatially distributed, high dimensional parameters. These parameters can be expected to vary significantly across the entirety of Montana, a state which covers an area of 380,800 $km^{2}$ and sports diverse terrain.
+Configuring the hydrologic model to model streamflows throughout Montana is advantageous because it allows for the calibration of a very large number of spatially distributed, high dimensional parameters. These parameters can be expected to vary significantly across the entirety of Montana, a state which covers an area of 380,800 km$^{2}$ and sports diverse terrain.
 
 \subsection{Input Data}
 
-The hydrologic model takes rasterized precipitation data and temperature data from meteorological databases as input. This data can be utilized as a vector forcing data in the ensemble kalman filter framework (e.g: $u_{t} = [precip_{t},Tmin_{t}, Tmax_{t}]$.)
+The hydrologic model takes rasterized precipitation data and temperature data from meteorological databases as input. This data (Table \ref{tab:u_params}) was utilized as a vector of forcing data in the ensemble kalman filter framework (e.g: $u_{t} = [precip_{t},Tmin_{t}, Tmax_{t}]$.)
 
 \begin{table}[]
 \caption{Forcing Data} 
@@ -39,23 +39,23 @@ precipitation      & Amount of rainfall for timestep & 45012  (pixels)
 
 \subsection{Calibrated Parameters}
 
-The hydrologic model utilizes a HBV rainfall-runoff component and a Muskingum-Cunge routing component. The HBV component includes a precipitation and snowpack process that utilizes the empirical parameters \textit{degree day factor} (mm$^\circ$C$^{-1}$d$^{-1}$) and \textit{temperature threshold} ($^\circ$C), a soil process that utilizes the empirical parameters \textit{potential evapo-transpiration} (dimensionless), \textit{soil beta} (dimensionless), and \textit{soil max water content} (mm), and a runoff generation process that utilizes the empirical parameters $ck0$ (d$^{-1}$), $ck1$ (d$^{-1}$), $ck2$ (d$^{-1}$), $hl1$ (mm), and $perc$ (d), all of which control various aspects of groundwater percolation and runoff. The Muskingum-Cunge routing component utilizes parameters that control \textit{wave dispersion} (dimensionless) and \textit{wave celerity} (seconds). To learn more about the hydrologic model, its algorithms, and the parameters that control it refer to \autoref{chap:daWUAPhydroengine}.
+The hydrologic model utilizes a HBV rainfall-runoff component and a Muskingum-Cunge routing component. The HBV component includes a precipitation and snowpack process that utilizes the empirical parameters degree day factor (mm$^\circ$C$^{-1}$d$^{-1}$) and temperature threshold ($^\circ$C), a soil process that utilizes the empirical parameters otential evapo-transpiration (dimensionless), soil beta (dimensionless), and soil max water content (mm), and a runoff generation process that utilizes the empirical parameters $ck0$ (d$^{-1}$), $ck1$ (d$^{-1}$), $ck2$ (d$^{-1}$), $hl1$ (mm), and $perc$ (d), all of which control various aspects of groundwater percolation and runoff. The Muskingum-Cunge routing component utilizes parameters that control wave dispersion (dimensionless) and wave celerity (seconds). Wave celerity was not calibrated in this project. To learn more about the hydrologic model, its algorithms, and the parameters that control it refer to \autoref{chap:daWUAPhydroengine}.
 
 \begin{table}[]
 \caption{Calibrated Parameters} 
 \begin{tabular}{lll}
 Parameter ($\theta$) & Purpose \\ \hline
-\textit{ddf}                  & Degree Day Factor \\
-\textit{aet\_lp}              & Potential Evapo-Transpiration  \\
-\textit{soil\_beta}          & Portion of ponded water that goes into soil storage \\
-\textit{soil\_max\_wat}       & Soil compartment maximum water capacity \\
-\textit{ck0}       & Immediate runoff \\
-\textit{ck1}      & Fast runoff \\
-\textit{ck2}       & Groundwater runoff \\
-\textit{hl1}       & Groundwater water storage threshold \\
-\textit{perc}       & Groundwater peculation \\
-\textit{K}        & Wave celerity \\
-\textit{e}       & Wave dispersion \\
+\texttt{ddf}                  & Degree Day Factor \\
+\texttt{aet\_lp}              & Potential Evapo-Transpiration  \\
+\texttt{soil\_beta}          & Portion of ponded water that goes into soil storage \\
+\texttt{soil\_max\_wat}       & Soil compartment maximum water capacity \\
+\texttt{ck0}       & Immediate runoff \\
+\texttt{ck1}      & Fast runoff \\
+\texttt{ck2}       & Groundwater runoff \\
+\texttt{hl1}       & Groundwater water storage threshold \\
+\texttt{perc}       & Groundwater peculation \\
+%\texttt{K}        & Wave celerity \\
+\texttt{e}       & Wave dispersion \\
 \end{tabular}
 \label{tab:t_params}
 \end{table}
@@ -72,7 +72,7 @@ A Kalman Filter relies on one or more observed states for correction. Accordingl
 \begin{tabular}{lll}
 Observed State ($x$) & Source                              & Dimensions  \\ \hline
 streamflow  & USGS & 82   \\
-swe         & NRCS & 90
+snow water equivalent         & NRCS & 90
 \end{tabular}
 \label{tab:obs}
 \end{table}
@@ -80,13 +80,13 @@ swe         & NRCS & 90
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.95\textwidth]{stations}
-    \caption{all SWE stations plotted against modeled streamflows}
+    \caption{all \texttt{swe} stations (orange dots) and modeled streamflows}
     \label{fig:stations}
 \end{figure}
 
 \section{Catchment Data and Hierarchical Groups}
 
-The hydrologic model utilizes the Watershed Boundary Dataset (WBD), a national hydrologic unit from the USGS that defines the areas of the United States landscape that drain to portions of the stream network, to separate Montana into 330 watersheds Fig. \ref{fig:huc8}. Each watershed is associated with one of each type of parameter from Table \ref{tab:t_params}. These 330 watersheds fall into 3 larger watershed zones (called HUC4, or 4-digit hydrologic unit boundaries) that were utilized to classify each watershed into one of 3 hierarchical zones Fig. \ref{fig:huc4}.
+The hydrologic model utilizes the Watershed Boundary Dataset (WBD), a national hydrologic unit from the USGS that defines the areas of the United States landscape that drain to portions of the stream network, to separate Montana into 330 watersheds (Figure \ref{fig:huc8}.) Each watershed is associated with one of each type of parameter from Table \ref{tab:t_params}. These 330 watersheds fall into 3 larger watershed zones (called HUC4, or 4-digit hydrologic unit boundaries) that were utilized to classify each watershed into one of 3 hierarchical zones (Figure \ref{fig:huc4}.)
 
 \begin{figure}[h]
     \centering
@@ -104,7 +104,7 @@ The hydrologic model utilizes the Watershed Boundary Dataset (WBD), a national h
 
 \section{Filter Modifications}
 
-The DEnHKF filter was implemented with a series of modifications that streamlined the filtering process.
+The DHEnKF filter was implemented with a series of modifications that streamlined the filtering process.
 
 \subsection{Parameter Ranges}
 
@@ -158,4 +158,4 @@ $\gamma = 1$ allows for unhindered movement for theta, while $\gamma = 0$ does n
 
 \section{Small Testset}
 
-A filtering run could take anywhere between 20 hours and a week depending on the date range and number of ensembles used. In order to efficiently test new equations and code additions a small 3 node dataset was developed. This dataset covered the Bitterroot area of Montana and only held 3 subbasins.
+A filtering run could take anywhere between 20 hours and a week depending on calibration duration and number of ensembles used. In order to efficiently test new equations and starting parameters a small 3 node dataset was developed. This dataset covered the Bitterroot area of Montana and only held 3 subbasins.

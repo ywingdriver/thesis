@@ -7,38 +7,33 @@
 \contentsline {subsection}{\numberline {2.2.1}Prediction Phase}{12}{subsection.2.2.1}
 \contentsline {subsubsection}{Parameter Perturbation}{13}{section*.4}
 \contentsline {subsubsection}{Hierarchical Parameter Perturbation}{13}{section*.5}
-\contentsline {subsection}{\numberline {2.2.2}Parameter Correction Phase}{14}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}State Correction Phase}{15}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}Application of DEnHKF to Hydrologic Model}{17}{chapter.3}
+\contentsline {subsection}{\numberline {2.2.2}Parameter Correction Phase}{15}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}State Correction Phase}{16}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Application of DHEnKF to Hydrologic Model}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}The Hydrologic Model}{17}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Input Data}{18}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Calibrated Parameters}{18}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Observation Data}{18}{section.3.2}
+\contentsline {section}{\numberline {3.2}Observation Data}{19}{section.3.2}
 \contentsline {section}{\numberline {3.3}Catchment Data and Hierarchical Groups}{19}{section.3.3}
 \contentsline {section}{\numberline {3.4}Filter Modifications}{20}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Parameter Ranges}{20}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Normalization Feature}{22}{subsection.3.4.2}
 \contentsline {section}{\numberline {3.5}Small Testset}{23}{section.3.5}
 \contentsline {chapter}{\numberline {4}Results}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Perturation of States}{25}{section.4.1}
+\contentsline {section}{\numberline {4.1}Runtime Modifications: Perturation of States}{25}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Perturbation of Groundwater States}{25}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Continuous perturbation of streamflow and swe states}{26}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Small dataset}{27}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Streamflow states and parameters}{27}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Snow-water equivalent states and parameters}{30}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Complete Dataset}{30}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Streamflow states and parameters}{31}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Streamflow states and parameters}{32}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Snow-water equivalent states and parameters}{34}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Effects of the Hierarchical Blending Component}{34}{section.4.4}
-\contentsline {chapter}{\numberline {A}The Hydrologic Model}{39}{appendix.A}
-\contentsline {subsection}{\numberline {A.0.1}Rainfall Runoff component}{39}{subsection.A.0.1}
-\contentsline {paragraph}{Precipitation/Snowpack}{40}{section*.30}
-\contentsline {paragraph}{Soil processes}{41}{section*.31}
-\contentsline {paragraph}{Groundwater Compartments and runoff generation}{42}{section*.32}
-\contentsline {subsection}{\numberline {A.0.2}Routing component}{44}{subsection.A.0.2}
-\contentsline {chapter}{\numberline {B}daWUAPhydroengine}{47}{appendix.B}
-\contentsline {subsection}{\numberline {B.0.1}Rainfall Runoff component}{47}{subsection.B.0.1}
-\contentsline {paragraph}{Precipitation and snowpack processes}{48}{section*.33}
-\contentsline {paragraph}{Soil processes}{49}{section*.34}
-\contentsline {paragraph}{Percolation and runoff generation}{50}{section*.35}
-\contentsline {subsection}{\numberline {B.0.2}Routing component}{52}{subsection.B.0.2}
+\contentsline {section}{\numberline {4.4}Effects of the Hierarchical Blending Component}{35}{section.4.4}
+\contentsline {chapter}{\numberline {5}Further Research Opportunities and Conclusion}{41}{chapter.5}
+\contentsline {chapter}{\numberline {A}The Hydrologic Model}{43}{appendix.A}
+\contentsline {subsection}{\numberline {A.0.1}Rainfall Runoff component}{43}{subsection.A.0.1}
+\contentsline {paragraph}{Precipitation/Snowpack}{44}{section*.33}
+\contentsline {paragraph}{Soil processes}{46}{section*.34}
+\contentsline {paragraph}{Groundwater Compartments and runoff generation}{47}{section*.35}
+\contentsline {subsection}{\numberline {A.0.2}Routing component}{48}{subsection.A.0.2}

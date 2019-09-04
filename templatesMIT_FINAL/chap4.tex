@@ -6,15 +6,15 @@
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Results}
 
-\section{Perturation of States}
+\section{Runtime Modifications: Perturation of States}
 \label{sec:perturbation_of_states}
-Early attempts at running the DSHKEnKF on the hydrologic model were marked by the complete collapse of posterior ensemble covariance to the mean and erratic jumps from the minimum to the maximum bounds for all streamflow parameters. Snow water equivalent parameters and states, however, converged in a stable fashion. It was determined that these erratic jumps were due to the hydrologic model's dependence on the value of the catchments' lowest groundwater reservoir, an unobserved and uncorrected state, which was integral to the production of streamflow in each timestep. White noise added to the forcing data (precipitation and min/max temperature) was unable to generate adequately diverse ensemble behavior when groundwater states were uniform across ensembles. To account for this, perturbation of groundwater and streamflow states was implemented.
+Early attempts at running the DSHEnKF on the hydrologic model were marked by the complete collapse of posterior ensemble covariance to the mean and erratic jumps from the minimum to the maximum bounds for all streamflow parameters. Snow water equivalent parameters and states, however, converged in a stable fashion. It was determined that these erratic jumps were due to the hydrologic model's dependence on the value of the catchments' lowest groundwater reservoir, an unobserved and uncorrected state, which was integral to the production of streamflow in each timestep. White noise added to the forcing data (precipitation and min/max temperature) was unable to generate adequately diverse ensemble behavior when groundwater states were uniform across ensembles. To account for this, perturbation of groundwater and streamflow states was implemented.
 
 \subsection{Perturbation of Groundwater States}
 
-The hydrologic model was extremely sensitive to its starting states, in particular the lower groundwater reservoir. A low groundwater would lead to underwhelming groundwater, incentivising the parameters \texttt{ck0}, \texttt{ck1}, and \texttt{ck2} to converge towards values that emptied all water pouring into the reservoirs so modeled streamflow could match the observations. Conversely, high starting groundwater caused \texttt{ck0}, \texttt{ck1}, and \texttt{ck2} to converge towards parameters that let very little groundwater out of the reservoirs, further exasperating the problem and causing higher and higher values for \texttt{ck0}, \texttt{ck1}, and \texttt{ck2} to be chosen. 
+The hydrologic model was extremely sensitive to its starting states, in particular the lower groundwater reservoir. Underwhelming starting groundwater caused the parameters \texttt{ck0}, \texttt{ck1}, and \texttt{ck2} to converge towards values that emptied all water pouring into the reservoirs so modeled streamflow could match the observations. Conversely, high starting groundwater caused \texttt{ck0}, \texttt{ck1}, and \texttt{ck2} to converge towards parameters that let very little groundwater out of the reservoirs, further exasperating the problem and causing higher and higher values for \texttt{ck0}, \texttt{ck1}, and \texttt{ck2} to be chosen. 
 
-To solve this issue and find a reliable blanket starting value for groundwater subcatchments in an efficient amount of time the small dataset was utilized alongside the parameter boundaries specified by \cite{Maneta2008}. Trial and error was utilized on the dataset until groundwater stabilized. To encourage the model to explore different parameter values for different amounts of groundwater, initial states for the large dataset were perturbed across all ensembles and catchments using a $\mu$ equal to the average stable value of the small dataset, which for this model was roughly calculated to be 100mm, and a $\sigma$ of 80mm. During the prediction phase groundwater was treated as forcing data and was perturbed slightly at a $\sigma$ of $u_{gw} * gw$, with $u_{gw}$  at .05%.
+To solve this issue and find a reliable blanket starting value for groundwater subcatchments in an efficient amount of time the small dataset was run using the parameter boundaries specified by \cite{Maneta2008}. Trial and error was utilized on the dataset until groundwater stabilized. To encourage the model to explore different parameter values for different amounts of groundwater, initial states for the large dataset were perturbed across all ensembles and catchments using a $\mu$ equal to the average stable value of the small dataset, which for this model was roughly calculated to be 100mm, and a $\sigma$ of 80mm. During the prediction phase groundwater was treated as forcing data and was perturbed slightly at a $\sigma$ of $u_{gw} * gw$, with $u_{gw} = .05$.
 
 \begin{figure}
 \centering
@@ -35,12 +35,21 @@ To solve this issue and find a reliable blanket starting value for groundwater s
 
 \subsection{Continuous perturbation of streamflow and swe states}
 
-Another method of decoupling the model's calibration process from its over-reliance on groundwater was through the direct perturbation of streamflow and swe states. This perturbation guaranteed that ensemble collapse was never fully realized.
+Another method of smoothing the model's calibration process despite its over-reliance on groundwater was through the direct perturbation of streamflow and swe states. This perturbation guaranteed that ensemble collapse was never fully realized. Gaussian noise was added to the state vector $\mathbf{x^{i-}_{t}}$ before the parameter correction state and the state correction stage such that
 
+\begin{equation}\label{eq:perturbation_str}
+\mathbf{x^{i-}_{t,str}} + N(0,\mathbf{x^{i-}_{t,str}} \cdot -;pq_{str})
+\end{equation}
+and
+\begin{equation}\label{eq:perturbation_swe}
+\mathbf{x^{i-}_{t,swe}} + N(0,\mathbf{x^{i-}_{t,swe}} \cdot q_{swe})
+\end{equation}
+
+where $q_{str}$ and $q_{swe}$ are values between 0 and 1 representing model uncertainty. While the continuous perturation of streamflow and swe states was a useful debugging technique, large values for $q_{str}$ and $q_{swe}$ reduced the effectiveness of model calibration and were avoided.
 
 \section{Small dataset}
 
-To expedite the discovery of optimal initial values, errors, and minimum and maximum bounds for the complete dataset (see Table \ref{tab:t_param_min_max_initial}) the small dataset was run and compared with the ranges proposed by \cite{Seibert1997} and \cite{Wallner2013}.  The small dataset, which was comprised of 3 catchments around the Biterroot valley and consisted of one gauged catchment (henceforth referred to as catchment 241) and 2 ungauged catchments (catchments 244 and 248), was run over a period of 1800 days, or a little under 5 years. Simulations began in September so modeled snowfall accumulation could be corrected first, allowing accurate snow melts to inform streamflow runoff in the Spring and Summer. All parameters in the small dataset converged to a set of values within the first 250-500 days and did not deviate significantly from those chosen values for the remainder of the filtering process.
+To expedite the discovery of optimal initial values, errors, and minimum and maximum bounds for the complete dataset (see Table \ref{tab:t_param_min_max_initial} and table  \ref{tab:t_param_initial}) the small dataset was run and compared with the ranges proposed by \cite{Seibert1997} and \cite{Wallner2013}.  The small dataset, which was comprised of 3 catchments around the Biterroot valley and consisted of one gauged catchment (henceforth referred to as catchment 241) and 2 ungauged catchments (catchments 244 and 248), was run over a period of 1800 days, or a little under 5 years. Simulations began in September so modeled snowfall accumulation could be corrected first, allowing accurate snow melts to inform streamflow runoff in the Spring and Summer. All parameters in the small dataset converged to a set of values within the first 200-400 days and did not deviate significantly from those chosen values for the remainder of the filtering process.
 
 \subsection{Streamflow states and parameters}
 
@@ -61,7 +70,7 @@ To expedite the discovery of optimal initial values, errors, and minimum and max
   \includegraphics[width=.98\linewidth]{smallds_str_state_248}
   \label{fig:248st}
 \end{minipage}
-\captionof{figure}{Streamflow states for the 3 catchments}
+\captionof{figure}{Streamflow states for the 3 small dataset catchments}
 \label{fig:str_state_small}
 \end{figure}
 
@@ -114,8 +123,8 @@ As seen in the plots in Figure \ref{fig:cks_small}, parameter ensembles converge
 \subcaptionbox{248:\texttt{ck2}\label{2}}{\includegraphics[width = .33\linewidth]{smallds_ck2_248}}
 
 \end{tabular}
-\label{fig:cks_small}
 \captionof{figure}{Convergence of \texttt{ck} parameters for all 3 catchments}
+\label{fig:cks_small}
 \end{figure}
 
 \begin{table}[]
@@ -132,10 +141,29 @@ Fast runoff (\texttt{ck1})      & 25d$^{-1}$ & 3.33d$^{-1}$ & 50d$^{-1}$\\
 Groundwater runoff (\texttt{ck2})       & 350d$^{-1}$ & 50d$^{-1}$ & 650d$^{-1}$ \\
 Groundwater water storage threshold (\texttt{hl1})       & 25mm & 0mm & 50mm \\
 Groundwater peculation (\texttt{perc})       & 1.5d & 3d & 50d \\
-Wave celerity (\texttt{K})         & 82400 & 81576 & 84872 \\
+%Wave celerity (\texttt{K})         & 82400 & 81576 & 84872 \\
 Wave dispersion (\texttt{e})       & .35 & .25 & .4 \\
 \end{tabular}
 \label{tab:t_param_min_max_initial}
+\end{table}
+
+\begin{table}[]
+\caption{Initial parameter values} 
+\begin{tabular}{ll}
+Parameter ($\theta$) & Starting Value \\ \hline
+Degree Day Factor (\texttt{ddf})                 & .4mm$^\circ$C$^{-1}$d$^{-1}$ \\
+Tempature Threshold (\texttt{thres})                & 2$^\circ$C \\
+Potential Evapo-Transpiration (\texttt{aet\_lp})              & .5\\
+Ponded water to soil storage (\texttt{soil\_beta})          & 4.8 \\
+Soil compartment max capacity (\texttt{soil\_max\_wat})       & 400mm \\
+Immediate runoff (\texttt{ck0})       & 20d$^{-1}$ \\
+Fast runoff (\texttt{ck1})      & 200d$^{-1}$ \\
+Groundwater runoff (\texttt{ck2})       & 300d$^{-1}$ \\
+Groundwater water storage threshold (\texttt{hl1})       & 20mm \\
+Groundwater peculation (\texttt{perc})       & 10d \\
+Wave dispersion (\texttt{e})       & .37 \\
+\end{tabular}
+\label{tab:t_param_initial}
 \end{table}
 
 \subsection{Snow-water equivalent states and parameters}
@@ -194,18 +222,18 @@ Snow-water equivalent states and parameters behaved similarly to their streamflo
 \subcaptionbox{All catchments:\texttt{ddf}\label{group17swe_ddf_small}}{\includegraphics[width = .48\linewidth]{group17swe_ddf_small}} &
 \subcaptionbox{All catchments:\texttt{pp}\label{group17swe_pp_small}}{\includegraphics[width = .48\linewidth]{group17swe_pp_small}}
 \end{tabular}
-\label{fig:swe_params_small}
 \captionof{figure}{All SWE parameters throughout the small dataset converged to a similar value. \texttt{a} blending value = .009}
+\label{fig:swe_params_small}
 \end{figure}
 
 
 \section{Complete Dataset}
 
-After workable initial values, errors, and boundaries and had been selected the complete dataset was calibarated. Calibration of the complete dataset was computationally expensive and a balance had to be struck between ensemble size, time run, and data collected per timestep. For these results a full year (365 days) was run with 125 ensemble members. Running periods larger then one year came at the price of reducing the ensemble members, which led to unstable and unusable posterior corrections (Figure \ref{fig:327str_1yr2yr_compare}). Running the DSHKEnKF on the large dataset produced mixed results that point to both strengths in the hierarchical design and further research opportunities.
+After workable initial values, errors, and boundaries and had been selected the complete dataset was calibarated. Calibration of the complete dataset was computationally expensive and a balance had to be struck between ensemble size, time run, and data collected per timestep. For these results a full year (365 days) was run with 125 ensemble members. Running periods larger then one year came at the price of reducing the ensemble members, which led to unstable and unusable posterior corrections (Figure \ref{fig:327str_1yr2yr_compare}). Running the DSHEnKF on the large dataset produced mixed results that point to both strengths in the hierarchical design and further research opportunities.
 
 \subsection{Streamflow states and parameters}
 
-Streamflow calibration on the large dataset proved to be a difficult process. While the posterior state vector matched the observations, innovation was heavily biased and both the prior and post-parameter correction prior had trouble locking onto parameters during the Summer months, resulting in an unstable prior and biased innovation (Figure \ref{fig:str_state_296}.) This erratic behavior was more pronounced before it was reduced by the changes referenced in \autoref{sec:perturbation_of_states}. Unfortunately, these techniques could not be utilized to entirely balance the innovation since excessive state noise resulted in overly weak and unreliable parameter correction.
+Streamflow calibration on the large dataset proved to be a difficult process and while the analysis of the calibration results is a useful exercise insomuch that it demonstrates the initial behavior of the filter when used on a large, complex model, definitive results were not obtained such that the effectiveness of the approach can be ascertained. This is due to computational limitations not allowing for a longer filtering runtime. While the posterior state vector matched the observations, innovation was heavily biased and both the prior and post-parameter correction prior had trouble locking onto parameters during the Summer months, resulting in an unstable prior and biased innovation (Figure \ref{fig:str_state_296}.) This erratic behavior was more pronounced before it was reduced by the changes referenced in \autoref{sec:perturbation_of_states}. Unfortunately, these techniques could not be utilized to entirely balance the innovation since excessive state noise resulted in overly weak and unreliable parameter correction. It is possible that a larger ensemble size could correct these issues.
 
 
 \begin{figure}
@@ -229,7 +257,7 @@ Streamflow calibration on the large dataset proved to be a difficult process. Wh
 
 Snow-water equivalent calibration on the large dataset was similar to the calibration of the small dataset and is a better demonstration of the successful calibration of a large-scale model component then streamflow calibration.
 
-While \texttt{ddf} and \texttt{pp} were not run in a sufficient amount of time to stabilize to a value due to the aforementioned computational limitations, all catchments (Figure \ref{fig:swe_params}) are seen behaving in a similar fashion to their small dataset counterparts (Figure \ref{fig:swe_params_small}.)
+Figure \ref{fig:swe_params} shows the \texttt{ddf} and \texttt{pp} parameter convergence in the two major hierarchical groups in Montana (the Western group is shown in blue in Figure \ref{fig:huc4} while the Eastern is shown in green)  While \texttt{ddf} and \texttt{pp} were not run in a sufficient amount of time to definitively stabilize to a value due to the aforementioned computational limitations, all catchments are seen behaving in a similar fashion to their small dataset counterparts (Figure \ref{fig:swe_params_small}.)
 
 \begin{figure}
 \centering
@@ -287,14 +315,14 @@ While \texttt{ddf} and \texttt{pp} were not run in a sufficient amount of time t
 \begin{figure}
 \begin{tabular}{cc}
 
-\subcaptionbox{Hierarchical Group 1:\texttt{ddf}\label{2}}{\includegraphics[width = .48\linewidth]{group10swe_ddf}} &
-\subcaptionbox{Hierarchical Group 1:\texttt{pp}\label{2}}{\includegraphics[width = .48\linewidth]{group10swe_pp}}\\
-\subcaptionbox{Hierarchical Group 2:\texttt{ddf}\label{2}}{\includegraphics[width = .48\linewidth]{group17swe_ddf}} &
-\subcaptionbox{Hierarchical Group 2:\texttt{pp}\label{2}}{\includegraphics[width = .48\linewidth]{group17swe_pp}}
+\subcaptionbox{Western Hierarchical Group:\texttt{ddf}\label{2}}{\includegraphics[width = .48\linewidth]{group10swe_ddf}} &
+\subcaptionbox{Western Hierarchical Group:\texttt{pp}\label{2}}{\includegraphics[width = .48\linewidth]{group10swe_pp}}\\
+\subcaptionbox{Eastern Hierarchical Group:\texttt{ddf}\label{2}}{\includegraphics[width = .48\linewidth]{group17swe_ddf}} &
+\subcaptionbox{Eastern Hierarchical Group:\texttt{pp}\label{2}}{\includegraphics[width = .48\linewidth]{group17swe_pp}}
 
 \end{tabular}
+\captionof{figure}{All catchment parameters converging to a similar value. Blending value \texttt{a} = .009}
 \label{fig:swe_params}
-\captionof{figure}{All catchment parameters converging to a similar value. \texttt{a} blending value = .009}
 \end{figure}
 
 \begin{figure}
@@ -309,11 +337,25 @@ While \texttt{ddf} and \texttt{pp} were not run in a sufficient amount of time t
   \includegraphics[width=.999\linewidth]{327str_2yr80i}
   \label{fig:327str_2yr80i}
 \end{minipage}
-\captionof{figure}{Ungaged catchment 327 - 125 ensemble members over 1 year (left) compared to 80 ensemble members over 2 years (right)}
+\captionof{figure}{Ungaged catchment 327. 125 ensemble members over 1 year (left) compared to 80 ensemble members over 2 years (right)}
 \label{fig:327str_1yr2yr_compare}
 \end{figure}
 
 
 \section{Effects of the Hierarchical Blending Component}
 
-To observe the effects of the hierarchical component the small dataset was used. 
+To observe the effects of the hierarchical component on the filtering process the small dataset was run over 600 timesteps with different blending ratios. It was ascertained that an \texttt{a} > .009 could cause parameters to converge too quickly, with high values of \texttt{a} causing ensembles to not converge, while a very low to nonexistent \texttt{a}  value would allow no transfer of data between catchments and limit data to the mean. The difference in parameter convergence rates  are shown in Figure \ref{fig:hie_params_small}.
+
+
+\begin{figure}
+\begin{tabular}{cc}
+
+\subcaptionbox{\texttt{a} = .9\label{2}}{\includegraphics[width = .48\linewidth]{h9}} &
+\subcaptionbox{\texttt{a} = .45\label{2}}{\includegraphics[width = .48\linewidth]{h45}}\\
+\subcaptionbox{\texttt{a} = .09\label{2}}{\includegraphics[width = .48\linewidth]{h09}} &
+\subcaptionbox{\texttt{a} = .009\label{2}}{\includegraphics[width = .48\linewidth]{h009}}
+
+\end{tabular}
+\captionof{figure}{Effect of different values for the blending component \texttt{a}}
+\label{fig:hie_params_small}
+\end{figure}

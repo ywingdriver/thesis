@@ -3,14 +3,15 @@
 
 This model is a hydrologic system that couples a rainfall-runoff model to a routing component that simulates streamflows within a regional stream network. An HBV model \cite{Bergstrom1992, Bergstrom1976} was modified to simulate hydrologic processes like snowmelt, evapotranspiration, and infiltration at the subcatchment level and transform the resulting precipitation into runoff and streamflow. This streamflow is then routed via the Muskingum-Cunge routing algorithm \cite{V.TChowD.RMaidment1988}. Below is a description of the implementation of those algorithms.
 
+
 \subsection{Rainfall Runoff component}
 
-The HBV model \cite{Bergstrom1992, Bergstrom1976} contains a mixture of raster-based and vector-based operations. Raster-based operations utilize spatially distributed data drawn from meteorological databases (precipitation and temperature data.)  The raster grid is also used to calculate snow accumulation, melt, and soil processes. These are informed both by input from the meteorological databases and by a series of spatially distributed parameters, such as potential evapotranspiration. Vector-based operations increase computational efficiency through the use of polygons. Unique polygons are indexed by $k$ later in this appendix while grid points are indexed by $j$. Uniform hydrologic response units (HRUs) are implemented to aggregate runoff production over these polygons and thus act as the bridge between the vector based operations and raster based output. Table \ref{tab:t_outputs_raster_or_vector} categorizes each model output as a vector based (one value per polygon) or raster-based (one value per pixel) output.
+The HBV model \cite{Bergstrom1992, Bergstrom1976} contains a mixture of raster-based and vector-based operations. Raster-based operations utilize spatially distributed data drawn from meteorological databases (precipitation and temperature data.)  The raster grid is also used to calculate snow accumulation, melt, and soil processes. These are informed both by input from the meteorological databases and by a series of spatially distributed parameters, such as potential evapotranspiration. Vector-based operations increase computational efficiency through the use of polygons. Unique polygons are indexed by $k$ later in this appendix while grid points are indexed by $j$. Uniform hydrologic response units (HRUs) are implemented to aggregate runoff production over these polygons and thus act as the bridge between the vector based operations and raster based output. Table \ref{tab:t_outputs_raster_or_vector} categorizes each model output as a vector based (one value per polygon) or raster-based (one value per pixel) output, while Table \ref{tab:t_grid_cm} does the same for parameters.
 
 
 \begin{table}[]
 \caption{Hydrologic Model Outputs - Raster or Vector} 
-\begin{tabular}{lll}
+\begin{tabular}{ll}
 Name & Category  \\ \hline
 Snow Water Equivalent & Raster \\
 Evapo-Transpiration & Raster \\
@@ -22,6 +23,26 @@ Lower Soil Storage & Vector \\
 Runoff & Vector \\
 \end{tabular}
 \label{tab:t_outputs_raster_or_vector}
+\end{table}
+
+\begin{table}[]
+\caption{Hydrologic Model Parameters - Raster or Vector} 
+\begin{tabular}{lll}
+Name & Purpose & Type \\ \hline
+\texttt{ddf}                  & Degree Day Factor & Raster \\
+\texttt{thres}        & Temperature Threshold & Raster \\
+\texttt{aet\_lp}              & Potential Evapo-Transpiration & Raster \\
+\texttt{soil\_beta}          & Portion of ponded water that goes into soil storage & Raster \\
+\texttt{soil\_max\_wat}       & Soil compartment maximum water capacity & Raster \\
+\texttt{ck0}       & Immediate runoff & Vector \\
+\texttt{ck1}      & Fast runoff & Vector \\
+\texttt{ck2}       & Groundwater runoff & Vector \\
+\texttt{hl1}       & Groundwater water storage threshold & Vector \\
+\texttt{perc}       & Groundwater peculation & Vector \\
+\texttt{K}        & Wave celerity & Vector \\
+\texttt{e}       & Wave dispersion & Vector \\
+\end{tabular}
+\label{tab:t_grid_cm}
 \end{table}
 
 \paragraph{Precipitation/Snowpack}
@@ -86,7 +107,7 @@ OVL_j^t &= Pond_j^t - \Delta SM_j^t
 \noindent where $OVL$ (\si{\milli\metre}) represents water that recharges the near-surface runoff-generating compartment.
 
 \paragraph{Groundwater Compartments and runoff generation}
-The groundwater system is comprised of two ground-water compartments that generate outflow. The top compartment's outflow represents both immediate runoff and fast runoff. The lower compartment's outflow represents baseflow. These processes are performed at the HRU level, which means that overland flow and soil moisture values, both of which are represented over the raster grid, are averaged over overlaid polygonal subwatersheds representing HRUs. Spatial arithmetic that averages soil water storage over all grid cells $j$ contained within a given polygonal HRU $k$ is indicated by angle brackets $<.>$. The mass balance and percolation of water from the upper to the lower compartment of the groundwater system is implemented as:
+The groundwater system is comprised of two ground-water compartments that generate outflow. The top compartment's outflow represents both immediate runoff, which joins runoff in the current timestep, and fast runoff, which joins runoff through the runoff rates $Q0$ and $Q1$. The lower compartment's outflow represents baseflow. These processes are performed at the HRU level, which means that overland flow and soil moisture values, both of which are represented over the raster grid, are averaged over overlaid polygonal subwatersheds representing HRUs. Spatial arithmetic that averages soil water storage over all grid cells $j$ contained within a given polygonal HRU $k$ is indicated by angle brackets $<.>$. The mass balance and percolation of water from the upper to the lower compartment of the groundwater system is implemented as:
 
 \begin{align}
 Rech_k^t &= <OVL_j^t>_k + <max(SM_j^t - FC_j, 0)>_k\\
@@ -121,15 +142,15 @@ U(i) &= \left\{
 
 \subsection{Routing component}
 
-The runoff responses generated from each $HRU$ are routed through the stream network via the Muskingum-Cunge routing model. Each stream reach $k$ has a storage given by the proceeding discharge-storage equation.
+Muskingum-Cunge routing model is utilized to route runoff responses generated from the $HRU$s through the stream network. Each stream reach $k$ has a storage given by:
 
 \begin{align}
 S_k^t &= K\left[eQ_{in} + (1 - e)Q_{out} \right],
 \end{align}
 
-where $K$ (\si{\day}) and $e$ (dimensionless) are empirical parameters controlling the celerity and dispersion of the wave routed through the channel respectively.
+which is a discharge-storage equation where $K$ (\si{\day}) and $e$ (dimensionless) are parameters controlling the celerity and dispersion of the wave routed through the channel respectively. 
 
-Substituting this relationship in a finite-difference form of the continuity equation $\frac{S_j^{t+1} - S_j^{t}}{\Delta t} = Q_{in} - Q_{out}$ for a multi-reach system with lateral inflows injected to the upstream of reach dreaming $HRU$ $j$ at an average constant rate through timestep $t$ $q_{j}^{t+1}$ results in:
+In this model, the discharge-storage relationship is substituted with a finite-difference form of the continuity equation $\frac{S_j^{t+1} - S_j^{t}}{\Delta t} = Q_{in} - Q_{out}$ to facilitate a multi-reach system with lateral inflows injected to the upstream of reach dreaming $HRU$ $j$ at an average constant rate through timestep $t$ $q_{j}^{t+1}$. The result of this is:
 
 \begin{align}
 &Q_j^{t+1}\left[K_j(1 - e_j) + 0.5\Delta t  \right] + Q_{j-1}^{t+1}\left[K_je_j - 0.5\Delta t  \right]  \\
@@ -137,13 +158,13 @@ Substituting this relationship in a finite-difference form of the continuity equ
 &+ q_{j}^{t+1}\left[K_j(1 - e_j) + 0.5\Delta t  \right]
 \end{align}
 
-Each $HRU$ contains one reach with an upstream and a downstream node. Streamflow reaches $j=1,...,J$ are integrated with respect to time using a first-order explicit finite difference scheme. The system of $J$ equations can be assembled as a linear system of the form:   
+Each $HRU$ contains one reach with both an upstream and a downstream node. Streamflow reaches $j=1,...,J$ are integrated with respect to time using a first-order explicit finite difference scheme. The system of $J$ equations can be assembled as a linear system:   
 
 \begin{align}\label{eq:linearsystem}
 \mathbf{A}\mathbf{Q^{t+1}} = \mathbf{B}
 \end{align}
 
-$\mathbf{Q^{t+1}}$ is a vector of unknown streamflows at time $t+1$ solved each time step for every reach in $J$. The matrices $\mathbf{A}$ and $\mathbf{B}$ are functions of the model parameters and streamflows at $t$:
+$\mathbf{Q^{t+1}}$ is a vector of unknown streamflows at time $t+1$ solved each time step for every reach in $J$. The vectors $\mathbf{A}$ and $\mathbf{B}$ are functions of the model states and parameters at $t$:
 
 \begin{align}
 \mathbf{A}&\equiv (\mathbf{a} + \mathbf{\Phi} \mathbf{b})^T\\
@@ -160,7 +181,7 @@ where $\mathbf{\Phi}$ is a $JxJ$ sparse connectivity (0,1)-matrix defining which
 \end{align}
 
 
-$\mathbf{K}$ is an identity matrix of order $J$. $e$ and $\mathbf{K}$ are column vectors holding parameters $e$ and $K$ for every reach in $N$. The $\odot$ operator denotes the Schur (elementwise) product between two vectors. The solution of \eqref{eq:linearsystem} will become unstable if $\Delta t > 2 * K_j * (1 - e_j)$. To guard against this an an adaptive time stepping scheme was implemented. In this adaptive scheme the default timestep is reduced by an integer fraction until the stability condition is satisfied for all reaches.
+$\mathbf{K}$ is an identity matrix of order $J$. $e$ and $\mathbf{K}$ are column vectors holding parameters $e$ and $K$ for every reach in $N$. The $\odot$ operator denotes the Schur (elementwise) product between two vectors. The solution of \eqref{eq:linearsystem} will become unstable if $\Delta t > 2 * K_j * (1 - e_j)$. To guard against this an an adaptive time stepping scheme was implemented. In this adaptive scheme the default timestep is reduced by an integer fraction until the stability condition is satisfied within all reaches.
 
 
 
