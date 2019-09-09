@@ -69,10 +69,10 @@ y_{j,g} = \alpha_{g} x_{j,g} + \beta_{g}, \quad \alpha_{g} \sim N( \mu_{\alpha},
 
 where $\alpha$ and $\beta$ are determined to be hierarchically related properties drawn from their respective normal distributions. For a simple overview of hierarchical models refer to Osborne \cite{Osborne2000}, while \cite{Gelman2013} is a more in-depth reference.
 
-In a Hierarchical Duel Ensemble Kalman Filter, parameter perturbation has been modified to have properties of a hierarchical linear regressive system. First, members of $\theta$ are sorted into a series of group vectors $G$. A subset of $G$ is henceforth referred to as $\upsilon_g$. Each member $j$ of a group vector $\upsilon_g$, where $g$ is the specific group number, is related to other members through shared hierarchical characteristics (spatial or otherwise.) Algorithms \eqref{eq:hdekf_thetaminus_old} and \eqref{eq:hdekf_tau_old} are then updated to conform to the hierarchical structure described in \eqref{eq:hiearch_standard}:
+In a Hierarchical Duel Ensemble Kalman Filter, parameter perturbation has been modified to have properties of a hierarchical linear regressive system. First, members of $\theta$ are sorted into a series of groups in set $G$. A subset of $G$ where all selected members are in the same group is henceforth referred to as $G_g$. Each member $j$ of a group vector $G_g$, where $g$ is the specific group number, is related to other members through shared hierarchical characteristics (spatial or otherwise.) Algorithms \eqref{eq:hdekf_thetaminus_old} and \eqref{eq:hdekf_tau_old} are then updated to conform to the hierarchical structure described in \eqref{eq:hiearch_standard}:
 
 \begin{equation}\label{eq:hdekf_theta}
-\mathbf{\theta_{t+1,g}^{i-}} = a \upsilon_{t,g}^{i} + (1-a)\mathbf{\bar{\theta}_{t,g}^{+}} + \mathbf{\tau_{t,g}^{i}}
+\mathbf{\theta_{t+1,g}^{i-}} = a \Upsilon_{t,g}^{i} + (1-a)\mathbf{\bar{\theta}_{t,g}^{+}} + \mathbf{\tau_{t,g}^{i}}
 \end{equation}
 
 %%\begin{equation}\label{eq:hdekf_theta}
@@ -80,7 +80,7 @@ In a Hierarchical Duel Ensemble Kalman Filter, parameter perturbation has been m
 %%\end{equation}
 
 \begin{equation}\label{eq:hdekf_tau}
-\upsilon_{t,g}^{i} = N( \mu_{\theta}, \sigma_{\theta} )
+\Upsilon_{t,g}^{i} = N( \mu_{g}, \sigma_{g} )
 \end{equation}
 
 \begin{equation}\label{eq:hdekf_tau}
@@ -91,9 +91,9 @@ In a Hierarchical Duel Ensemble Kalman Filter, parameter perturbation has been m
 %%V_{t}^{i} = a * var(\theta_{t,g}) + (1-a) var(\theta_{t}^{i-})
 %%\end{equation}
 
-Where $\mathbf{\bar{\theta}_{t,g}^{i+}}$ is the mean over all ensembles for all members of group $g$, $\mu_{\theta}$ and $\sigma_{\theta}$ are the grand mean and grand standard deviation respectively of all ensembles and points in group $\mathbf{\theta_{t,g}^{+}}$ (for clarity, the calculation of the grand mean and grand standard deviation returns a scalar value for each), and $V_{g,t}$ is the variance matrix with respect to the ensembles of all members of group $g$.
+Where $\mathbf{\bar{\theta}_{t,g}^{i+}}$ is the mean over all ensembles for all members of group $g$, $\mu_{g}$ and $\sigma_{g}$ are the grand mean and grand standard deviation respectively of all ensembles and locations in the set of vectors in $G_g$ (for clarity, the calculation of the grand mean and grand standard deviation returns a scalar value), and $V_{g,t}$ is the variance matrix with respect to the ensembles of all members of group $g$.
 
-The final modification to be made involves the dynamic calculation of the shrinkage factor $a$. Since $\mathbf{\tau_{t}^{i}}$ is dependent on the standard deviation of the ensemble $\mathbf{\theta_{t,g}^{i+}}$, a group of ensembles that have tightened around a group of parameters will be increasingly be drawn to the grand mean $\mu_{\theta}$, decoupling tight ensembles from their chosen values and ultimately causing all values across a hierarchical group to collapse to one value. To prevent this, a vector $\alpha$ is substituted for $a$ such that
+The final modification to be made allows for the dynamic calculation of the shrinkage factor $a$. Since $\mathbf{\tau_{t}^{i}}$ is dependent on the standard deviation of the ensemble $\mathbf{\theta_{t,g}^{i+}}$, a group of ensembles that have tightened around a group of parameters will be increasingly be drawn to the grand mean $\mu_{\theta}$, decoupling tight ensembles from their chosen values and ultimately causing all values across a hierarchical group to collapse to one value. To prevent this, a vector $\alpha$ is substituted for $a$ such that
 
 %\begin{equation}\label{eq:hdekf_new_alpha}
 %\mathbf{\alpha_{t,g}^{i}} = a * \frac{\mathbf{\sigma_{t,g}}}{s}
@@ -102,15 +102,15 @@ The final modification to be made involves the dynamic calculation of the shrink
 %where $\mathbf{\sigma_{t,g}}$ is a vector of standard deviations with respect to the ensembles of all members of group $g$ and $s$ represents the largest possible value for $\mathbf{\sigma_{t,g}}$, generally drawn from minimum and maximum boundary parameters for $\theta$. All members of vector $\mathbf{\alpha_{t,g}^{i}}$ should fall between 0 and 1, with $a$ acting as a tuning parameter.
 
 \begin{equation}\label{eq:hdekf_new_alpha}
-\mathbf{\alpha_{t,g}^{i}} = a * \frac{2}{1+e^{-b*\mathbf{V}}}
+\mathbf{\alpha_{t,g}^{i}} = a * (\frac{2}{1+e^{-b\mathbf{v}}} - 1)
 \end{equation}
 
-where $\mathbf{\sigma_{t,g}}$ is a vector of standard deviations with respect to the ensembles of all members of group $g$ and $s$ represents the largest possible value for $\mathbf{\sigma_{t,g}}$, generally drawn from minimum and maximum boundary parameters for $\theta$. All members of vector $\mathbf{\alpha_{t,g}^{i}}$ should fall between 0 and 1, with $a$ acting as a tuning parameter.
+where $\mathbf{v}$ is a vector of variances with respect to the ensembles of all members in group $g$ and $b$ is a tuning parameter that controls how quickly $e^{-b\mathbf{v}}$ converges to 0. $b$ must be chosen very carefully and will vary from parameter to parameter, with the simple equation $b = 1/totalrange$ acting as a possible starting point. All members of vector $\mathbf{\alpha_{t,g}^{i}}$ will fall between 0 and $a$, with $a$ being a value < 1.
 
 Thus, the final equation is
 
 \begin{equation}\label{eq:hdekf_theta_final}
-\mathbf{\theta_{t+1,g}^{i-}} = \alpha \upsilon_{t,g}^{i} + (1-\alpha)\mathbf{\bar{\theta}_{t,g}^{+}} + \mathbf{\tau_{t,g}^{i}}
+\mathbf{\theta_{t+1,g}^{i-}} = \alpha \Upsilon_{t,g}^{i} + (1-\alpha)\mathbf{\bar{\theta}_{t,g}^{+}} + \mathbf{\tau_{t,g}^{i}}
 \end{equation}
 
 \subsection{Parameter Correction Phase}
