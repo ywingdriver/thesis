@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 SEP 2019 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 SEP 2019 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -772,7 +772,12 @@ Package: glossary-tree 2017/01/19 v4.29 (NLCT)
 \@input{symbols.aux}
 \openout2 = `symbols.aux'.
 
-(./symbols.tex) (./main.aux (./contents.aux) (./chap1.aux) (./chap2.aux
+(./symbols.tex
+
+Package glossaries-extra Warning: Glossary entry `Upsilon' has already been def
+ined on input line 15.
+
+) (./main.aux (./contents.aux) (./chap1.aux) (./chap2.aux
 
 LaTeX Warning: Label `eq:hdekf_tau' multiply defined.
 
@@ -906,7 +911,95 @@ LaTeX Warning: Label `2' multiply defined.
 
 LaTeX Warning: Label `sub@2' multiply defined.
 
-) (./chap5.aux) (./apx_daw.aux) (./biblio.aux))
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+) (./chap5.aux
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `2' multiply defined.
+
+
+LaTeX Warning: Label `sub@2' multiply defined.
+
+
+LaTeX Warning: Label `fig:str_unfiltered_gw' multiply defined.
+
+) (./apx_daw.aux) (./biblio.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
@@ -1006,37 +1099,47 @@ LaTeX Info: Redefining \nameref on input line 64.
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [4]) [5
+ [4] [5
 
 
-]
+]) [6]
 \openout2 = `chap1.aux'.
 
- (./chap1.tex [6
+ (./chap1.tex
+Chapter 1.
+[7
 
 
 
 ]
-Chapter 1.
-[7]
 Underfull \vbox (badness 5652) has occurred while \output is active []
 
  [8]
-Overfull \hbox (4.47443pt too wide) in paragraph at lines 15--16
+
+LaTeX Warning: Citation `Bloschl1995' on page 9 undefined on input line 14.
+
+
+LaTeX Warning: Citation `Peel2000' on page 9 undefined on input line 14.
+
+
+LaTeX Warning: Citation `Bardossy2007' on page 9 undefined on input line 14.
+
+[9]
+Overfull \hbox (4.47443pt too wide) in paragraph at lines 17--18
 []\T1/cmr/m/n/12 Chapter 2 cov-ers the meth-ods be-hind the Dual State Hi-er-ar
 -chi-cal En-sem-ble Kalman
  []
 
-) [9]
+) [10]
 \openout2 = `chap2.aux'.
 
- (./chap2.tex [10
+ (./chap2.tex
+Chapter 2.
+[11
 
 
 
 ]
-Chapter 2.
-[11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
@@ -1087,7 +1190,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 70.
 
-<stations.png, id=410, 847.66183pt x 599.4301pt>
+<stations.png, id=455, 847.66183pt x 599.4301pt>
 File: stations.png Graphic file (type png)
  <use stations.png>
 Package pdftex.def Info: stations.png used on input line 82.
@@ -1096,17 +1199,17 @@ Package pdftex.def Info: stations.png used on input line 82.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] <./images/huc8.png, id=424, 847.66183pt x 599.4301pt>
+[19] <./images/huc8.png, id=472, 1189.44376pt x 619.31375pt>
 File: ./images/huc8.png Graphic file (type png)
 
 <use ./images/huc8.png>
 Package pdftex.def Info: ./images/huc8.png used on input line 93.
-(pdftex.def)             Requested size: 411.93767pt x 291.29948pt.
+(pdftex.def)             Requested size: 411.93767pt x 214.48561pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./images/huc4.png, id=425, 847.66183pt x 599.4301pt>
+<./images/huc4.png, id=473, 847.66183pt x 599.4301pt>
 File: ./images/huc4.png Graphic file (type png)
  <use ./images/huc4.png>
 Package pdftex.def Info: ./images/huc4.png used on input line 100.
@@ -1115,29 +1218,37 @@ Package pdftex.def Info: ./images/huc4.png used on input line 100.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20 <./stations.png>]
-Underfull \vbox (badness 6284) has occurred while \output is active []
-
- [21 <./images/huc8.png>]
+[20 <./stations.png>] [21 <./images/huc8.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22 <./images/huc4.png>]) [23]
+ [22 <./images/huc4.png>]
+<./images/small_ds_basins.png, id=499, 342.27875pt x 390.45876pt>
+File: ./images/small_ds_basins.png Graphic file (type png)
+
+<use ./images/small_ds_basins.png>
+Package pdftex.def Info: ./images/small_ds_basins.png used on input line 165.
+(pdftex.def)             Requested size: 411.93767pt x 469.96017pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [23] [24 <./images/small_ds_basins.png>]
 \openout2 = `chap4.aux'.
 
- (./chap4.tex [24
-
-
-
-]
+ (./chap4.tex
 Chapter 4.
-[25] <./images/bad_gw.png, id=466, 462.528pt x 346.896pt>
+[25
+
+
+
+] <./images/bad_gw.png, id=517, 462.528pt x 346.896pt>
 File: ./images/bad_gw.png Graphic file (type png)
 
 <use ./images/bad_gw.png>
 Package pdftex.def Info: ./images/bad_gw.png used on input line 23.
 (pdftex.def)             Requested size: 212.47287pt x 159.35707pt.
 
-<./images/good_gw.png, id=467, 462.528pt x 346.896pt>
+<./images/good_gw.png, id=518, 462.528pt x 346.896pt>
 File: ./images/good_gw.png Graphic file (type png)
 
 <use ./images/good_gw.png>
@@ -1147,436 +1258,622 @@ Package pdftex.def Info: ./images/good_gw.png used on input line 29.
 Underfull \vbox (badness 3058) has occurred while \output is active []
 
  [26 <./images/bad_gw.png> <./images/good_gw.png>]
-<./images/smallds_str_state_241.png, id=479, 642.4pt x 481.8pt>
+<./images/smallds_str_state_241.png, id=530, 462.528pt x 346.896pt>
 File: ./images/smallds_str_state_241.png Graphic file (type png)
 
 <use ./images/smallds_str_state_241.png>
 Package pdftex.def Info: ./images/smallds_str_state_241.png used on input line 
-60.
-(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+62.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/smallds_str_state_244.png, id=480, 642.4pt x 481.8pt>
+<./images/smallds_str_state_244.png, id=531, 462.528pt x 346.896pt>
 File: ./images/smallds_str_state_244.png Graphic file (type png)
 
 <use ./images/smallds_str_state_244.png>
 Package pdftex.def Info: ./images/smallds_str_state_244.png used on input line 
-65.
-(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+67.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/smallds_str_state_248.png, id=481, 642.4pt x 481.8pt>
+<./images/smallds_str_state_248.png, id=532, 462.528pt x 346.896pt>
 File: ./images/smallds_str_state_248.png Graphic file (type png)
 
 <use ./images/smallds_str_state_248.png>
 Package pdftex.def Info: ./images/smallds_str_state_248.png used on input line 
-70.
-(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+72.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
  [27]
-<./images/smallds_gw_state_241.png, id=497, 462.528pt x 346.896pt>
+Overfull \hbox (8.07639pt too wide) in paragraph at lines 81--82
+[]\T1/cmr/m/n/12 The lower ground-wa-ter reser-voir in all three catch-ments ro
+se 20mm-200mm through-
+ []
+
+<./images/smallds_gw_state_241.png, id=549, 462.528pt x 346.896pt>
 File: ./images/smallds_gw_state_241.png Graphic file (type png)
 
 <use ./images/smallds_gw_state_241.png>
 Package pdftex.def Info: ./images/smallds_gw_state_241.png used on input line 8
-5.
+7.
 (pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/smallds_gw_state_244.png, id=498, 462.528pt x 346.896pt>
+<./images/smallds_gw_state_244.png, id=550, 462.528pt x 346.896pt>
 File: ./images/smallds_gw_state_244.png Graphic file (type png)
 
 <use ./images/smallds_gw_state_244.png>
 Package pdftex.def Info: ./images/smallds_gw_state_244.png used on input line 9
-0.
+2.
 (pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/smallds_gw_state_248.png, id=499, 462.528pt x 346.896pt>
+<./images/smallds_gw_state_248.png, id=551, 462.528pt x 346.896pt>
 File: ./images/smallds_gw_state_248.png Graphic file (type png)
 
 <use ./images/smallds_gw_state_248.png>
 Package pdftex.def Info: ./images/smallds_gw_state_248.png used on input line 9
-5.
+7.
 (pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/str_innovation_small.png, id=501, 462.528pt x 346.896pt>
+Underfull \vbox (badness 4168) has occurred while \output is active []
+
+ [28 <./images/smallds_str_state_241.png> <./images/smallds_str_state_244.png> 
+<./images/smallds_str_state_248.png> <./images/smallds_gw_state_241.png> <./ima
+ges/smallds_gw_state_244.png> <./images/smallds_gw_state_248.png>]
+<./images/str_innovation_small.png, id=565, 462.528pt x 346.896pt>
 File: ./images/str_innovation_small.png Graphic file (type png)
 
 <use ./images/str_innovation_small.png>
 Package pdftex.def Info: ./images/str_innovation_small.png used on input line 1
-06.
+08.
 (pdftex.def)             Requested size: 216.81pt x 162.60709pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<./images/smallds_ck0_241.png, id=502, 722.7pt x 722.7pt>
+<./images/smallds_ck0_241.png, id=566, 722.7pt x 722.7pt>
 File: ./images/smallds_ck0_241.png Graphic file (type png)
 
 <use ./images/smallds_ck0_241.png>
-Package pdftex.def Info: ./images/smallds_ck0_241.png used on input line 115.
+Package pdftex.def Info: ./images/smallds_ck0_241.png used on input line 117.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-<./images/smallds_ck1_241.png, id=503, 722.7pt x 722.7pt>
+<./images/smallds_ck1_241.png, id=567, 722.7pt x 722.7pt>
 File: ./images/smallds_ck1_241.png Graphic file (type png)
 
 <use ./images/smallds_ck1_241.png>
-Package pdftex.def Info: ./images/smallds_ck1_241.png used on input line 116.
+Package pdftex.def Info: ./images/smallds_ck1_241.png used on input line 118.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-<./images/smallds_ck2_241.png, id=504, 722.7pt x 722.7pt>
+<./images/smallds_ck2_241.png, id=568, 722.7pt x 722.7pt>
 File: ./images/smallds_ck2_241.png Graphic file (type png)
 
 <use ./images/smallds_ck2_241.png>
-Package pdftex.def Info: ./images/smallds_ck2_241.png used on input line 117.
+Package pdftex.def Info: ./images/smallds_ck2_241.png used on input line 119.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-<./images/smallds_ck0_244.png, id=505, 722.7pt x 722.7pt>
+<./images/smallds_ck0_244.png, id=569, 722.7pt x 722.7pt>
 File: ./images/smallds_ck0_244.png Graphic file (type png)
 
 <use ./images/smallds_ck0_244.png>
-Package pdftex.def Info: ./images/smallds_ck0_244.png used on input line 118.
+Package pdftex.def Info: ./images/smallds_ck0_244.png used on input line 120.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-<./images/smallds_ck1_244.png, id=506, 722.7pt x 722.7pt>
+<./images/smallds_ck1_244.png, id=570, 722.7pt x 722.7pt>
 File: ./images/smallds_ck1_244.png Graphic file (type png)
 
 <use ./images/smallds_ck1_244.png>
-Package pdftex.def Info: ./images/smallds_ck1_244.png used on input line 119.
+Package pdftex.def Info: ./images/smallds_ck1_244.png used on input line 121.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-<./images/smallds_ck2_244.png, id=507, 722.7pt x 722.7pt>
+<./images/smallds_ck2_244.png, id=571, 722.7pt x 722.7pt>
 File: ./images/smallds_ck2_244.png Graphic file (type png)
 
 <use ./images/smallds_ck2_244.png>
-Package pdftex.def Info: ./images/smallds_ck2_244.png used on input line 120.
+Package pdftex.def Info: ./images/smallds_ck2_244.png used on input line 122.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-<./images/smallds_ck0_248.png, id=508, 722.7pt x 722.7pt>
+<./images/smallds_ck0_248.png, id=572, 722.7pt x 722.7pt>
 File: ./images/smallds_ck0_248.png Graphic file (type png)
 
 <use ./images/smallds_ck0_248.png>
-Package pdftex.def Info: ./images/smallds_ck0_248.png used on input line 121.
+Package pdftex.def Info: ./images/smallds_ck0_248.png used on input line 123.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-<./images/smallds_ck1_248.png, id=509, 722.7pt x 722.7pt>
+<./images/smallds_ck1_248.png, id=573, 722.7pt x 722.7pt>
 File: ./images/smallds_ck1_248.png Graphic file (type png)
 
 <use ./images/smallds_ck1_248.png>
-Package pdftex.def Info: ./images/smallds_ck1_248.png used on input line 122.
+Package pdftex.def Info: ./images/smallds_ck1_248.png used on input line 124.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-<./images/smallds_ck2_248.png, id=510, 722.7pt x 722.7pt>
+<./images/smallds_ck2_248.png, id=574, 722.7pt x 722.7pt>
 File: ./images/smallds_ck2_248.png Graphic file (type png)
 
 <use ./images/smallds_ck2_248.png>
-Package pdftex.def Info: ./images/smallds_ck2_248.png used on input line 123.
+Package pdftex.def Info: ./images/smallds_ck2_248.png used on input line 125.
 (pdftex.def)             Requested size: 143.09538pt x 143.09283pt.
 
-Overfull \hbox (31.66615pt too wide) in paragraph at lines 113--126
+Overfull \hbox (31.66615pt too wide) in paragraph at lines 115--128
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 130.
+               Default added (so using `tbp') on input line 132.
 
 
-Overfull \hbox (77.61029pt too wide) in paragraph at lines 132--148
+Overfull \hbox (77.61029pt too wide) in paragraph at lines 134--150
 [][]
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 150.
+               Default added (so using `tbp') on input line 152.
 
-<./images/smallds_swe_state_241.png, id=511, 462.528pt x 346.896pt>
+<./images/smallds_swe_state_241.png, id=575, 462.528pt x 346.896pt>
 File: ./images/smallds_swe_state_241.png Graphic file (type png)
 
 <use ./images/smallds_swe_state_241.png>
 Package pdftex.def Info: ./images/smallds_swe_state_241.png used on input line 
-175.
+177.
 (pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/smallds_swe_state_244.png, id=512, 462.528pt x 346.896pt>
+<./images/smallds_swe_state_244.png, id=576, 462.528pt x 346.896pt>
 File: ./images/smallds_swe_state_244.png Graphic file (type png)
 
 <use ./images/smallds_swe_state_244.png>
 Package pdftex.def Info: ./images/smallds_swe_state_244.png used on input line 
-180.
+182.
 (pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/smallds_swe_state_248.png, id=513, 462.528pt x 346.896pt>
+<./images/smallds_swe_state_248.png, id=577, 462.528pt x 346.896pt>
 File: ./images/smallds_swe_state_248.png Graphic file (type png)
 
 <use ./images/smallds_swe_state_248.png>
 Package pdftex.def Info: ./images/smallds_swe_state_248.png used on input line 
-185.
+187.
 (pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28 <./images/smallds_str_state_241.png> <./images/smallds_str_state_244.png> 
-<./images/smallds_str_state_248.png> <./images/smallds_gw_state_241.png> <./ima
-ges/smallds_gw_state_244.png> <./images/smallds_gw_state_248.png>] [29]
-<./images/swe_innovation_small.png, id=530, 462.528pt x 346.896pt>
+<./images/swe_innovation_small.png, id=578, 462.528pt x 346.896pt>
 File: ./images/swe_innovation_small.png Graphic file (type png)
 
 <use ./images/swe_innovation_small.png>
 Package pdftex.def Info: ./images/swe_innovation_small.png used on input line 1
-95.
+97.
 (pdftex.def)             Requested size: 216.81pt x 162.60709pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./images/smallds_ddf_241.png, id=535, 722.7pt x 722.7pt>
+[29 <./images/str_innovation_small.png>] [30 <./images/smallds_ck0_241.png> <./
+images/smallds_ck1_241.png> <./images/smallds_ck2_241.png> <./images/smallds_ck
+0_244.png> <./images/smallds_ck1_244.png> <./images/smallds_ck2_244.png> <./ima
+ges/smallds_ck0_248.png> <./images/smallds_ck1_248.png> <./images/smallds_ck2_2
+48.png>] [31 <./images/smallds_swe_state_241.png> <./images/smallds_swe_state_2
+44.png> <./images/smallds_swe_state_248.png>]
+<./images/smallds_ddf_241.png, id=616, 722.7pt x 722.7pt>
 File: ./images/smallds_ddf_241.png Graphic file (type png)
 
 <use ./images/smallds_ddf_241.png>
-Package pdftex.def Info: ./images/smallds_ddf_241.png used on input line 207.
+Package pdftex.def Info: ./images/smallds_ddf_241.png used on input line 209.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-<./images/smallds_pp_241.png, id=536, 722.7pt x 722.7pt>
+<./images/smallds_pp_241.png, id=617, 722.7pt x 722.7pt>
 File: ./images/smallds_pp_241.png Graphic file (type png)
 
 <use ./images/smallds_pp_241.png>
-Package pdftex.def Info: ./images/smallds_pp_241.png used on input line 208.
+Package pdftex.def Info: ./images/smallds_pp_241.png used on input line 210.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-<./images/smallds_ddf_244.png, id=537, 722.7pt x 722.7pt>
+<./images/smallds_ddf_244.png, id=618, 722.7pt x 722.7pt>
 File: ./images/smallds_ddf_244.png Graphic file (type png)
 
 <use ./images/smallds_ddf_244.png>
-Package pdftex.def Info: ./images/smallds_ddf_244.png used on input line 209.
+Package pdftex.def Info: ./images/smallds_ddf_244.png used on input line 211.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-<./images/smallds_pp_244.png, id=538, 722.7pt x 722.7pt>
+<./images/smallds_pp_244.png, id=619, 722.7pt x 722.7pt>
 File: ./images/smallds_pp_244.png Graphic file (type png)
 
 <use ./images/smallds_pp_244.png>
-Package pdftex.def Info: ./images/smallds_pp_244.png used on input line 210.
+Package pdftex.def Info: ./images/smallds_pp_244.png used on input line 212.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-<./images/smallds_ddf_248.png, id=539, 722.7pt x 722.7pt>
+<./images/smallds_ddf_248.png, id=620, 722.7pt x 722.7pt>
 File: ./images/smallds_ddf_248.png Graphic file (type png)
 
 <use ./images/smallds_ddf_248.png>
-Package pdftex.def Info: ./images/smallds_ddf_248.png used on input line 211.
+Package pdftex.def Info: ./images/smallds_ddf_248.png used on input line 213.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-<./images/smallds_pp_248.png, id=540, 722.7pt x 722.7pt>
+<./images/smallds_pp_248.png, id=621, 722.7pt x 722.7pt>
 File: ./images/smallds_pp_248.png Graphic file (type png)
 
 <use ./images/smallds_pp_248.png>
-Package pdftex.def Info: ./images/smallds_pp_248.png used on input line 212.
+Package pdftex.def Info: ./images/smallds_pp_248.png used on input line 214.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-Overfull \hbox (6.65149pt too wide) in paragraph at lines 205--216
-[][]
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 207--217
+[][] 
  []
 
 
-LaTeX Warning: Float too large for page by 58.26904pt on input line 217.
+LaTeX Warning: Float too large for page by 57.26904pt on input line 219.
 
-<./images/group17swe_ddf_small.png, id=541, 722.7pt x 722.7pt>
+<./images/group17swe_ddf_small.png, id=622, 722.7pt x 722.7pt>
 File: ./images/group17swe_ddf_small.png Graphic file (type png)
 
 <use ./images/group17swe_ddf_small.png>
 Package pdftex.def Info: ./images/group17swe_ddf_small.png used on input line 2
-22.
+24.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-<./images/group17swe_pp_small.png, id=542, 722.7pt x 722.7pt>
+<./images/group17swe_pp_small.png, id=623, 722.7pt x 722.7pt>
 File: ./images/group17swe_pp_small.png Graphic file (type png)
 
 <use ./images/group17swe_pp_small.png>
 Package pdftex.def Info: ./images/group17swe_pp_small.png used on input line 22
-3.
+5.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-Overfull \hbox (6.65149pt too wide) in paragraph at lines 220--225
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 222--227
 [][] 
  []
 
 
-Underfull \vbox (badness 2213) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30 <./images/str_innovation_small.png>] [31 <./images/smallds_ck0_241.png> <.
-/images/smallds_ck1_241.png> <./images/smallds_ck2_241.png> <./images/smallds_c
-k0_244.png> <./images/smallds_ck1_244.png> <./images/smallds_ck2_244.png> <./im
-ages/smallds_ck0_248.png> <./images/smallds_ck1_248.png> <./images/smallds_ck2_
-248.png>]
-<./images/ds_str_state_296.png, id=572, 462.528pt x 346.896pt>
-File: ./images/ds_str_state_296.png Graphic file (type png)
+ [32 <./images/swe_innovation_small.png>] [33 <./images/smallds_ddf_241.png> <.
+/images/smallds_pp_241.png> <./images/smallds_ddf_244.png> <./images/smallds_pp
+_244.png> <./images/smallds_ddf_248.png> <./images/smallds_pp_248.png>] [34 <./
+images/group17swe_ddf_small.png> <./images/group17swe_pp_small.png>]
+<./images/ds_str_state_198.png, id=651, 462.528pt x 346.896pt>
+File: ./images/ds_str_state_198.png Graphic file (type png)
 
-<use ./images/ds_str_state_296.png>
-Package pdftex.def Info: ./images/ds_str_state_296.png used on input line 243.
+<use ./images/ds_str_state_198.png>
+Package pdftex.def Info: ./images/ds_str_state_198.png used on input line 247.
 (pdftex.def)             Requested size: 203.97214pt x 152.97876pt.
 
-<./images/ds_str_state_296_innovation.png, id=573, 462.528pt x 346.896pt>
-File: ./images/ds_str_state_296_innovation.png Graphic file (type png)
+<./images/ds_str_state_198_innovation.png, id=652, 462.528pt x 346.896pt>
+File: ./images/ds_str_state_198_innovation.png Graphic file (type png)
 
-<use ./images/ds_str_state_296_innovation.png>
-Package pdftex.def Info: ./images/ds_str_state_296_innovation.png used on input
- line 248.
+<use ./images/ds_str_state_198_innovation.png>
+Package pdftex.def Info: ./images/ds_str_state_198_innovation.png used on input
+ line 252.
 (pdftex.def)             Requested size: 203.97214pt x 152.97876pt.
- [32 <./images/smallds_swe_state_241.png> <./images/smallds_swe_state_244.png> 
-<./images/smallds_swe_state_248.png> <./images/swe_innovation_small.png>] [33 <
-./images/smallds_ddf_241.png> <./images/smallds_pp_241.png> <./images/smallds_d
-df_244.png> <./images/smallds_pp_244.png> <./images/smallds_ddf_248.png> <./ima
-ges/smallds_pp_248.png>] [34 <./images/group17swe_ddf_small.png> <./images/grou
-p17swe_pp_small.png> <./images/ds_str_state_296.png> <./images/ds_str_state_296
-_innovation.png>]
-<./images/ds_swe_state_241.png, id=606, 462.528pt x 346.896pt>
+
+<./images/group17streamflow_ck0.png, id=653, 722.7pt x 722.7pt>
+File: ./images/group17streamflow_ck0.png Graphic file (type png)
+
+<use ./images/group17streamflow_ck0.png>
+Package pdftex.def Info: ./images/group17streamflow_ck0.png used on input line 
+262.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/group17streamflow_ck1.png, id=654, 722.7pt x 722.7pt>
+File: ./images/group17streamflow_ck1.png Graphic file (type png)
+
+<use ./images/group17streamflow_ck1.png>
+Package pdftex.def Info: ./images/group17streamflow_ck1.png used on input line 
+263.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/group17streamflow_ck2.png, id=655, 722.7pt x 722.7pt>
+File: ./images/group17streamflow_ck2.png Graphic file (type png)
+
+<use ./images/group17streamflow_ck2.png>
+Package pdftex.def Info: ./images/group17streamflow_ck2.png used on input line 
+264.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+<./images/group17streamflow_soil_beta.png, id=656, 722.7pt x 722.7pt>
+File: ./images/group17streamflow_soil_beta.png Graphic file (type png)
+
+<use ./images/group17streamflow_soil_beta.png>
+Package pdftex.def Info: ./images/group17streamflow_soil_beta.png used on input
+ line 265.
+(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
+
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 260--268
+[][] 
+ []
+
+<./images/ds_ck0_198.png, id=657, 722.7pt x 722.7pt>
+File: ./images/ds_ck0_198.png Graphic file (type png)
+
+<use ./images/ds_ck0_198.png>
+Package pdftex.def Info: ./images/ds_ck0_198.png used on input line 276.
+(pdftex.def)             Requested size: 203.97214pt x 203.96463pt.
+
+<./images/ds_soil_beta_198.png, id=658, 722.7pt x 722.7pt>
+File: ./images/ds_soil_beta_198.png Graphic file (type png)
+
+<use ./images/ds_soil_beta_198.png>
+Package pdftex.def Info: ./images/ds_soil_beta_198.png used on input line 281.
+(pdftex.def)             Requested size: 203.97214pt x 203.96463pt.
+
+Overfull \hbox (5.13535pt too wide) in paragraph at lines 291--292
+\T1/cmr/m/n/12 Snow-water equiv-a-lent cal-i-bra-tion on the com-plete dataset 
+be-haved sim-i-larly to stream-
+ []
+
+<./images/ds_swe_state_42.png, id=662, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_42.png Graphic file (type png)
+
+<use ./images/ds_swe_state_42.png>
+Package pdftex.def Info: ./images/ds_swe_state_42.png used on input line 299.
+(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
+
+<./images/ds_swe_state_241.png, id=663, 462.528pt x 346.896pt>
 File: ./images/ds_swe_state_241.png Graphic file (type png)
 
 <use ./images/ds_swe_state_241.png>
-Package pdftex.def Info: ./images/ds_swe_state_241.png used on input line 266.
+Package pdftex.def Info: ./images/ds_swe_state_241.png used on input line 304.
 (pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/ds_swe_state_302.png, id=607, 462.528pt x 346.896pt>
-File: ./images/ds_swe_state_302.png Graphic file (type png)
+<./images/ds_swe_state_137.png, id=664, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_137.png Graphic file (type png)
 
-<use ./images/ds_swe_state_302.png>
-Package pdftex.def Info: ./images/ds_swe_state_302.png used on input line 271.
+<use ./images/ds_swe_state_137.png>
+Package pdftex.def Info: ./images/ds_swe_state_137.png used on input line 309.
 (pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
 
-<./images/ds_swe_state_305.png, id=608, 462.528pt x 346.896pt>
-File: ./images/ds_swe_state_305.png Graphic file (type png)
+<./images/ds_swe_state_170.png, id=665, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_170.png Graphic file (type png)
 
-<use ./images/ds_swe_state_305.png>
-Package pdftex.def Info: ./images/ds_swe_state_305.png used on input line 276.
-(pdftex.def)             Requested size: 140.23285pt x 105.17587pt.
-
-<./images/ds_swe_state_193.png, id=609, 462.528pt x 346.896pt>
-File: ./images/ds_swe_state_193.png Graphic file (type png)
-
-<use ./images/ds_swe_state_193.png>
-Package pdftex.def Info: ./images/ds_swe_state_193.png used on input line 287.
+<use ./images/ds_swe_state_170.png>
+Package pdftex.def Info: ./images/ds_swe_state_170.png used on input line 320.
 (pdftex.def)             Requested size: 203.97214pt x 152.97876pt.
 
-<./images/ds_swe_state_193_innovation.png, id=610, 462.528pt x 346.896pt>
-File: ./images/ds_swe_state_193_innovation.png Graphic file (type png)
+<./images/ds_swe_state_170_innovation.png, id=666, 462.528pt x 346.896pt>
+File: ./images/ds_swe_state_170_innovation.png Graphic file (type png)
 
-<use ./images/ds_swe_state_193_innovation.png>
-Package pdftex.def Info: ./images/ds_swe_state_193_innovation.png used on input
- line 292.
+<use ./images/ds_swe_state_170_innovation.png>
+Package pdftex.def Info: ./images/ds_swe_state_170_innovation.png used on input
+ line 325.
 (pdftex.def)             Requested size: 203.97214pt x 152.97876pt.
 
-<./images/ds_ddf_193.png, id=611, 722.7pt x 722.7pt>
-File: ./images/ds_ddf_193.png Graphic file (type png)
+<./images/ds_ddf_170.png, id=667, 722.7pt x 722.7pt>
+File: ./images/ds_ddf_170.png Graphic file (type png)
 
-<use ./images/ds_ddf_193.png>
-Package pdftex.def Info: ./images/ds_ddf_193.png used on input line 303.
+<use ./images/ds_ddf_170.png>
+Package pdftex.def Info: ./images/ds_ddf_170.png used on input line 336.
 (pdftex.def)             Requested size: 207.92613pt x 207.92351pt.
 
-<./images/ds_pp_193.png, id=612, 722.7pt x 722.7pt>
-File: ./images/ds_pp_193.png Graphic file (type png)
+<./images/ds_pp_170.png, id=668, 722.7pt x 722.7pt>
+File: ./images/ds_pp_170.png Graphic file (type png)
 
-<use ./images/ds_pp_193.png>
-Package pdftex.def Info: ./images/ds_pp_193.png used on input line 308.
+<use ./images/ds_pp_170.png>
+Package pdftex.def Info: ./images/ds_pp_170.png used on input line 341.
 (pdftex.def)             Requested size: 207.92613pt x 207.92351pt.
 
-<./images/group10swe_ddf.png, id=613, 722.7pt x 722.7pt>
-File: ./images/group10swe_ddf.png Graphic file (type png)
-
-<use ./images/group10swe_ddf.png>
-Package pdftex.def Info: ./images/group10swe_ddf.png used on input line 318.
-(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
-
-<./images/group10swe_pp.png, id=614, 722.7pt x 722.7pt>
-File: ./images/group10swe_pp.png Graphic file (type png)
-
-<use ./images/group10swe_pp.png>
-Package pdftex.def Info: ./images/group10swe_pp.png used on input line 319.
-(pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
-
-<./images/group17swe_ddf.png, id=615, 722.7pt x 722.7pt>
+<./images/group17swe_ddf.png, id=669, 722.7pt x 722.7pt>
 File: ./images/group17swe_ddf.png Graphic file (type png)
 
 <use ./images/group17swe_ddf.png>
-Package pdftex.def Info: ./images/group17swe_ddf.png used on input line 320.
+Package pdftex.def Info: ./images/group17swe_ddf.png used on input line 351.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-<./images/group17swe_pp.png, id=616, 722.7pt x 722.7pt>
+<./images/group17swe_pp.png, id=670, 722.7pt x 722.7pt>
 File: ./images/group17swe_pp.png Graphic file (type png)
 
 <use ./images/group17swe_pp.png>
-Package pdftex.def Info: ./images/group17swe_pp.png used on input line 321.
+Package pdftex.def Info: ./images/group17swe_pp.png used on input line 352.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-Overfull \hbox (6.65149pt too wide) in paragraph at lines 316--324
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 349--355
 [][] 
  []
 
-<./images/327str_1yr125i.png, id=617, 642.4pt x 481.8pt>
-File: ./images/327str_1yr125i.png Graphic file (type png)
 
-<use ./images/327str_1yr125i.png>
-Package pdftex.def Info: ./images/327str_1yr125i.png used on input line 332.
-(pdftex.def)             Requested size: 207.92613pt x 155.94354pt.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<./images/327str_2yr80i.png, id=618, 642.4pt x 481.8pt>
-File: ./images/327str_2yr80i.png Graphic file (type png)
+ [35 <./images/ds_str_state_198.png> <./images/ds_str_state_198_innovation.png>
+] [36 <./images/group17streamflow_ck0.png> <./images/group17streamflow_ck1.png>
+ <./images/group17streamflow_ck2.png> <./images/group17streamflow_soil_beta.png
+>] [37 <./images/ds_ck0_198.png> <./images/ds_soil_beta_198.png> <./images/ds_s
+we_state_42.png> <./images/ds_swe_state_241.png> <./images/ds_swe_state_137.png
+> <./images/ds_swe_state_170.png> <./images/ds_swe_state_170_innovation.png>] [
+38 <./images/ds_ddf_170.png> <./images/ds_pp_170.png> <./images/group17swe_ddf.
+png> <./images/group17swe_pp.png>] <./images/a1.png, id=713, 722.7pt x 722.7pt>
+File: ./images/a1.png Graphic file (type png)
 
-<use ./images/327str_2yr80i.png>
-Package pdftex.def Info: ./images/327str_2yr80i.png used on input line 337.
-(pdftex.def)             Requested size: 207.92613pt x 155.94354pt.
- <./images/h9.png, id=620, 722.7pt x 722.7pt>
-File: ./images/h9.png Graphic file (type png)
-
-<use ./images/h9.png>
-Package pdftex.def Info: ./images/h9.png used on input line 353.
+<use ./images/a1.png>
+Package pdftex.def Info: ./images/a1.png used on input line 369.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
- <./images/h45.png, id=621, 722.7pt x 722.7pt>
-File: ./images/h45.png Graphic file (type png)
+ <./images/a4.png, id=714, 722.7pt x 722.7pt>
+File: ./images/a4.png Graphic file (type png)
 
-<use ./images/h45.png>
-Package pdftex.def Info: ./images/h45.png used on input line 354.
+<use ./images/a4.png>
+Package pdftex.def Info: ./images/a4.png used on input line 370.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
- <./images/h09.png, id=622, 722.7pt x 722.7pt>
-File: ./images/h09.png Graphic file (type png)
+ <./images/a65.png, id=715, 722.7pt x 722.7pt>
+File: ./images/a65.png Graphic file (type png)
 
-<use ./images/h09.png>
-Package pdftex.def Info: ./images/h09.png used on input line 355.
+<use ./images/a65.png>
+Package pdftex.def Info: ./images/a65.png used on input line 371.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
- <./images/h009.png, id=623, 722.7pt x 722.7pt>
-File: ./images/h009.png Graphic file (type png)
+ <./images/a99.png, id=716, 722.7pt x 722.7pt>
+File: ./images/a99.png Graphic file (type png)
 
-<use ./images/h009.png>
-Package pdftex.def Info: ./images/h009.png used on input line 356.
+<use ./images/a99.png>
+Package pdftex.def Info: ./images/a99.png used on input line 372.
 (pdftex.def)             Requested size: 208.13574pt x 208.13303pt.
 
-Overfull \hbox (6.65149pt too wide) in paragraph at lines 351--359
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 367--375
 [][] 
  []
 
-[35 <./images/ds_swe_state_241.png> <./images/ds_swe_state_302.png> <./images/d
-s_swe_state_305.png> <./images/ds_swe_state_193.png> <./images/ds_swe_state_193
-_innovation.png>]) [36 <./images/ds_ddf_193.png> <./images/ds_pp_193.png>]
-[37 <./images/group10swe_ddf.png> <./images/group10swe_pp.png> <./images/group1
-7swe_ddf.png> <./images/group17swe_pp.png>] [38 <./images/327str_1yr125i.png> <
-./images/327str_2yr80i.png>] [39 <./images/h9.png> <./images/h45.png> <./images
-/h09.png> <./images/h009.png>]
+) [39] [40 <./images/a1.png> <./images/a4.png> <./images/a65.png> <./images/a99
+.png>]
 \openout2 = `chap5.aux'.
 
- (./chap5.tex [40
+ (./chap5.tex
+Chapter 5.
+<./images/194_ens25.png, id=734, 642.4pt x 481.8pt>
+File: ./images/194_ens25.png Graphic file (type png)
+
+<use ./images/194_ens25.png>
+Package pdftex.def Info: ./images/194_ens25.png used on input line 19.
+(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+
+<./images/194_ens50.png, id=735, 642.4pt x 481.8pt>
+File: ./images/194_ens50.png Graphic file (type png)
+
+<use ./images/194_ens50.png>
+Package pdftex.def Info: ./images/194_ens50.png used on input line 24.
+(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+
+<./images/194_ens100.png, id=736, 642.4pt x 481.8pt>
+File: ./images/194_ens100.png Graphic file (type png)
+
+<use ./images/194_ens100.png>
+Package pdftex.def Info: ./images/194_ens100.png used on input line 29.
+(pdftex.def)             Requested size: 140.23285pt x 105.17293pt.
+
+<./images/str194_UNGAGED.png, id=737, 642.4pt x 481.8pt>
+File: ./images/str194_UNGAGED.png Graphic file (type png)
+
+<use ./images/str194_UNGAGED.png>
+Package pdftex.def Info: ./images/str194_UNGAGED.png used on input line 38.
+(pdftex.def)             Requested size: 411.93767pt x 308.96112pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41
 
 
 
 ]
-Chapter 5.
-[41]) [42]
+<./images/str115.png, id=748, 462.528pt x 346.896pt>
+File: ./images/str115.png Graphic file (type png)
+ <use ./images/str115.png>
+Package pdftex.def Info: ./images/str115.png used on input line 52.
+(pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
+
+<./images/str139.png, id=749, 462.528pt x 346.896pt>
+File: ./images/str139.png Graphic file (type png)
+ <use ./images/str139.png>
+Package pdftex.def Info: ./images/str139.png used on input line 53.
+(pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
+
+<./images/str165.png, id=750, 462.528pt x 346.896pt>
+File: ./images/str165.png Graphic file (type png)
+ <use ./images/str165.png>
+Package pdftex.def Info: ./images/str165.png used on input line 54.
+(pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
+
+<./images/str173.png, id=751, 462.528pt x 346.896pt>
+File: ./images/str173.png Graphic file (type png)
+ <use ./images/str173.png>
+Package pdftex.def Info: ./images/str173.png used on input line 55.
+(pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
+
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 50--58
+[][] 
+ []
+
+[42 <./images/194_ens25.png> <./images/194_ens50.png> <./images/194_ens100.png>
+] <./images/correlatedck2perc.png, id=764, 462.528pt x 346.896pt>
+File: ./images/correlatedck2perc.png Graphic file (type png)
+
+<use ./images/correlatedck2perc.png>
+Package pdftex.def Info: ./images/correlatedck2perc.png used on input line 68.
+(pdftex.def)             Requested size: 411.93767pt x 308.96936pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/ck2100.png, id=765, 2323.68124pt x 2489.3pt>
+File: ./images/ck2100.png Graphic file (type png)
+
+<use ./images/ck2100.png>
+Package pdftex.def Info: ./images/ck2100.png used on input line 76.
+(pdftex.def)             Requested size: 208.13574pt x 222.96379pt.
+
+<./images/ck250.png, id=766, 2323.68124pt x 2489.3pt>
+File: ./images/ck250.png Graphic file (type png)
+ <use ./images/ck250.png>
+Package pdftex.def Info: ./images/ck250.png used on input line 77.
+(pdftex.def)             Requested size: 208.13574pt x 222.96379pt.
+
+<./images/perc100.png, id=767, 2323.68124pt x 2489.3pt>
+File: ./images/perc100.png Graphic file (type png)
+
+<use ./images/perc100.png>
+Package pdftex.def Info: ./images/perc100.png used on input line 78.
+(pdftex.def)             Requested size: 208.13574pt x 222.96379pt.
+
+<./images/perc50.png, id=768, 847.66183pt x 599.4301pt>
+File: ./images/perc50.png Graphic file (type png)
+
+<use ./images/perc50.png>
+Package pdftex.def Info: ./images/perc50.png used on input line 79.
+(pdftex.def)             Requested size: 208.13574pt x 147.17722pt.
+
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 74--82
+[][] 
+ []
+
+<./images/str115gw.png, id=769, 462.528pt x 346.896pt>
+File: ./images/str115gw.png Graphic file (type png)
+
+<use ./images/str115gw.png>
+Package pdftex.def Info: ./images/str115gw.png used on input line 89.
+(pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
+
+<./images/str139gw.png, id=770, 462.528pt x 346.896pt>
+File: ./images/str139gw.png Graphic file (type png)
+
+<use ./images/str139gw.png>
+Package pdftex.def Info: ./images/str139gw.png used on input line 90.
+(pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
+
+<./images/str165gw.png, id=771, 462.528pt x 346.896pt>
+File: ./images/str165gw.png Graphic file (type png)
+
+<use ./images/str165gw.png>
+Package pdftex.def Info: ./images/str165gw.png used on input line 91.
+(pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
+
+<./images/str173gw.png, id=772, 462.528pt x 346.896pt>
+File: ./images/str173gw.png Graphic file (type png)
+
+<use ./images/str173gw.png>
+Package pdftex.def Info: ./images/str173gw.png used on input line 92.
+(pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
+
+Overfull \hbox (6.65149pt too wide) in paragraph at lines 87--95
+[][] 
+ []
+
+[43 <./images/str194_UNGAGED.png>] [44 <./images/str115.png> <./images/str139.p
+ng> <./images/str165.png> <./images/str173.png>]
+<./images/seeking_param.png, id=792, 722.7pt x 722.7pt>
+File: ./images/seeking_param.png Graphic file (type png)
+
+<use ./images/seeking_param.png>
+Package pdftex.def Info: ./images/seeking_param.png used on input line 105.
+(pdftex.def)             Requested size: 411.93767pt x 411.94327pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[45 <./images/correlatedck2perc.png>] [46 <./images/ck2100.png> <./images/ck250
+.png> <./images/perc100.png> <./images/perc50.png>] [47 <./images/str115gw.png>
+ <./images/str139gw.png> <./images/str165gw.png> <./images/str173gw.png>]
+[48 <./images/seeking_param.png>]) [49]
 \openout2 = `apx_daw.aux'.
 
- (./apx_daw.tex
+ (./apx_daw.tex [50
+
+
+
+]
 Appendix A.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 7.
 
-[43
-
-
-
-]
+[51]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 12.
@@ -1588,25 +1885,25 @@ LaTeX Warning: No positions in optional float specifier.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
+ [52]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
-[46] [47]
+ [53]
+[54] [55]
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
- [48]
+ [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49])
-[50]
+ [57])
+[58]
 \openout2 = `biblio.aux'.
 
- (./biblio.tex (./main.bbl [51
+ (./biblio.tex (./main.bbl [59
 
 
 
-] [52] [53])) [54]
+] [60] [61])) [62]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
  (./main.aux
@@ -1615,7 +1912,10 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D9CC14E545279BAC86A7673CF55ED282;2492.
+(rerunfilecheck)             Checksum: E8F9C55C5D68BAB69D5228A63FA4495C;3102.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1623,13 +1923,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 25257 strings out of 492995
- 480894 string characters out of 6132704
- 583849 words of memory out of 5000000
- 28134 multiletter control sequences out of 15000+600000
+ 25521 strings out of 492995
+ 486003 string characters out of 6132704
+ 585364 words of memory out of 5000000
+ 28349 multiletter control sequences out of 15000+600000
  21716 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 52i,15n,86p,10383b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,15n,86p,10383b,966s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
@@ -1653,10 +1953,10 @@ t/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (54 pages, 4918993 bytes).
+Output written on main.pdf (62 pages, 7806813 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 712 compressed objects within 8 object streams
- 240 named destinations out of 1000 (max. 500000)
- 557 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1067 PDF objects out of 1200 (max. 8388607)
+ 817 compressed objects within 9 object streams
+ 268 named destinations out of 1000 (max. 500000)
+ 726 words of extra memory for PDF output out of 10000 (max. 10000000)
 

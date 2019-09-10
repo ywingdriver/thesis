@@ -1,6 +1,7 @@
 \contentsline {section}{\numberline {0.1}Abstract}{2}{section.0.1}
 \contentsline {chapter}{Symbols}{5}{section*.2}
 \contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
+\contentsline {section}{\numberline {1.1}Study Area}{9}{section.1.1}
 \contentsline {chapter}{\numberline {2}The Hierarchical Dual Ensemble Kalman Filter Method}{11}{chapter.2}
 \contentsline {section}{\numberline {2.1}General Dynamic Model and Observations}{11}{section.2.1}
 \contentsline {section}{\numberline {2.2}DEnHKF Method}{12}{section.2.2}
@@ -25,15 +26,22 @@
 \contentsline {subsection}{\numberline {4.1.2}Continuous perturbation of streamflow and swe states}{26}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Small dataset}{27}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Streamflow states and parameters}{27}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Snow-water equivalent states and parameters}{30}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Complete Dataset}{30}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Streamflow states and parameters}{32}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Snow-water equivalent states and parameters}{34}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Effects of the Hierarchical Blending Component}{35}{section.4.4}
-\contentsline {chapter}{\numberline {5}Further Research Opportunities and Conclusion}{41}{chapter.5}
-\contentsline {chapter}{\numberline {A}The Hydrologic Model}{43}{appendix.A}
-\contentsline {subsection}{\numberline {A.0.1}Rainfall Runoff component}{43}{subsection.A.0.1}
-\contentsline {paragraph}{Precipitation/Snowpack}{44}{section*.33}
-\contentsline {paragraph}{Soil processes}{46}{section*.34}
-\contentsline {paragraph}{Groundwater Compartments and runoff generation}{47}{section*.35}
-\contentsline {subsection}{\numberline {A.0.2}Routing component}{48}{subsection.A.0.2}
+\contentsline {subsection}{\numberline {4.2.2}Snow-water equivalent states and parameters}{29}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Complete Dataset}{34}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Streamflow states and parameters}{34}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Snow-water equivalent states and parameters}{35}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Effects of the Hierarchical Blending Component}{39}{section.4.4}
+\contentsline {chapter}{\numberline {5}Analysis, Further Research Opportunities and Conclusion}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}Analysis}{41}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}The Significance of Ensemble Size}{41}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Comparison of Filtered Parameters}{42}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Groundwater Accumulation Process and Correlated Parameters}{42}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Ensemble Variance}{43}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Further Research Opportunities}{48}{section.5.2}
+\contentsline {section}{\numberline {5.3}Summary}{49}{section.5.3}
+\contentsline {chapter}{\numberline {A}The Hydrologic Model}{51}{appendix.A}
+\contentsline {subsection}{\numberline {A.0.1}Rainfall Runoff component}{51}{subsection.A.0.1}
+\contentsline {paragraph}{Precipitation/Snowpack}{52}{section*.42}
+\contentsline {paragraph}{Soil processes}{54}{section*.43}
+\contentsline {paragraph}{Groundwater Compartments and runoff generation}{55}{section*.44}
+\contentsline {subsection}{\numberline {A.0.2}Routing component}{56}{subsection.A.0.2}
