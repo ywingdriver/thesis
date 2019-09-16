@@ -23,7 +23,7 @@
 \contentsline {chapter}{\numberline {4}Results}{25}{chapter.4}
 \contentsline {section}{\numberline {4.1}Runtime Modifications: Perturation of States}{25}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Perturbation of Groundwater States}{25}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Continuous perturbation of streamflow and swe states}{26}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.2}Continuous perturbation of streamflow and snow-water equivalent states}{26}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Small dataset}{27}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Streamflow states and parameters}{27}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Snow-water equivalent states and parameters}{29}{subsection.4.2.2}

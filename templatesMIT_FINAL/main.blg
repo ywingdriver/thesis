@@ -11,47 +11,48 @@ A level-1 auxiliary file: apx_daw.aux
 A level-1 auxiliary file: biblio.aux
 The style file: plain.bst
 Database file #1: main.bib
+Warning--empty journal in Bardossy2007
 Warning--empty booktitle in Julier1997
 Warning--empty journal in Liu2000
-You've used 36 entries,
+You've used 43 entries,
             2118 wiz_defined-function locations,
-            761 strings with 11183 characters,
-and the built_in function-call counts, 11913 in all, are:
-= -- 1169
-> -- 597
+            802 strings with 12361 characters,
+and the built_in function-call counts, 14043 in all, are:
+= -- 1380
+> -- 701
 < -- 4
-+ -- 236
-- -- 200
-* -- 936
-:= -- 2042
-add.period$ -- 111
-call.type$ -- 36
-change.case$ -- 207
++ -- 277
+- -- 234
+* -- 1096
+:= -- 2413
+add.period$ -- 132
+call.type$ -- 43
+change.case$ -- 245
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 412
-empty$ -- 879
-format.name$ -- 200
-if$ -- 2398
+cite$ -- 46
+duplicate$ -- 486
+empty$ -- 1036
+format.name$ -- 234
+if$ -- 2821
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 37
-newline$ -- 183
-num.names$ -- 72
-pop$ -- 174
+int.to.str$ -- 43
+missing$ -- 44
+newline$ -- 218
+num.names$ -- 86
+pop$ -- 206
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 203
 quote$ -- 0
-skip$ -- 287
+skip$ -- 339
 stack$ -- 0
-substring$ -- 739
-swap$ -- 56
+substring$ -- 871
+swap$ -- 62
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 142
-warning$ -- 2
-while$ -- 114
-width$ -- 38
-write$ -- 391
-(There were 2 warnings)
+type$ -- 170
+warning$ -- 3
+while$ -- 136
+width$ -- 45
+write$ -- 464
+(There were 3 warnings)

@@ -13,6 +13,18 @@ J.~D. Annan, D.~J. Lunt, J.~C. Hargreaves, and P.~J. Valdes.
   Filter}.
 \newblock {\em Nonlinear Processes in Geophysics}, 12(3):363--371, feb 2005.
 
+\bibitem{Bardossy2007}
+A.~B{\'{a}}rdossy.
+\newblock {Calibration of hydrological model parameters for ungauged
+  catchments}.
+\newblock jan 2007.
+
+\bibitem{Beldring2003}
+S.~Beldring, K.~Engeland, L.~A. Roald, N.~R. S{\ae}lthun, and A.~Voks{\o}.
+\newblock {Estimation of parameters in a distributed precipitation-runoff model
+  for Norway}.
+\newblock {\em Hydrology and Earth System Sciences}, 2003.
+
 \bibitem{Bergstrom1992}
 S.~Bergstr{\"{o}}m.
 \newblock {The HBV model - its structure and applications}.
@@ -24,6 +36,11 @@ Sten Bergstr{\"{o}}m.
 \newblock {Development and Application of a Conceptual Runoff Model for
   Scandinavian Catchments}.
 \newblock {\em Smhi}, 1976.
+
+\bibitem{Bloschl1995}
+G.~Bl{\"{o}}schl and M.~Sivapalan.
+\newblock {Scale issues in hydrological modelling: A review}.
+\newblock {\em Hydrological Processes}, 9(3-4):251--290, apr 1995.
 
 \bibitem{Chen2008}
 M.~Chen, S.~Liu, L.L. Tieszen, and D.Y. Hollinger.
@@ -53,6 +70,12 @@ Andrew Gelman, John~B. Carlin, Hal~S. Stern, David~B. Dunson, Aki Vehtari,
   and Donald~B. Rubin.
 \newblock {\em {Bayesian Data Analysis, Third Edition}}.
 \newblock Chapman and Hall/CRC, nov 2018.
+
+\bibitem{Gotzinger2007}
+J.~G{\"{o}}tzinger and A.~B{\'{a}}rdossy.
+\newblock {Comparison of four regionalisation methods for a distributed
+  hydrological model}.
+\newblock {\em Journal of Hydrology}, 333(2-4):374--384, feb 2007.
 
 \bibitem{HendricksFranssen2008}
 H.~J. {Hendricks Franssen} and W.~Kinzelbach.
@@ -106,6 +129,11 @@ Stefano Mariani and Alberto Corigliano.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
   194(50-52):5242--5272, dec 2005.
 
+\bibitem{Merz2004}
+Ralf Merz and G{\"{u}}nter Bl{\"{o}}schl.
+\newblock {Regionalisation of catchment model parameters}.
+\newblock {\em Journal of Hydrology}, 287(1-4):95--123, feb 2004.
+
 \bibitem{Miller1994}
 Robert~N. Miller, Michael Ghil, and Fran{\c{c}}ois Gauthiez.
 \newblock {Advanced Data Assimilation in Strongly Nonlinear Dynamical Systems}.
@@ -130,6 +158,13 @@ Jason~W. Osborne.
 \newblock {Advantages of hierarchical linear modeling. Osborne, Jason W.}
 \newblock {\em Research {\&} Evaluation}, 7(1), 2000.
 
+\bibitem{Peel2000}
+Mc~Peel, Fhs Chiew, Andrew~W. Western, and Thomas~a. McMahon.
+\newblock {Extension of Unimpaired Monthly Streamflow Data and Regionalisation
+  of Parameter Values to Estimate Streamflow in Ungauged Catchments}.
+\newblock {\em National Land and Water Resources Audit Theme 1-Water
+  Availability Extension}, 2000.
+
 \bibitem{Reichle2008}
 Rolf~H. Reichle.
 \newblock {Data assimilation methods in the Earth sciences}.
@@ -145,6 +180,12 @@ Rolf~H. Reichle, Dennis~B. McLaughlin, Dara Entekhabi, Rolf~H. Reichle,
 Jan Seibert.
 \newblock {Estimation of Parameter Uncertainty in the HBV Model}.
 \newblock {\em Hydrology Research}, 28(4-5):247--262, aug 1997.
+
+\bibitem{Seibert1999}
+Jan Seibert.
+\newblock {Regionalisation of parameters for a conceptual rainfall-runoff
+  model}.
+\newblock {\em Agricultural and Forest Meteorology}, 98-99:279--293, dec 1999.
 
 \bibitem{Shi2014}
 Yuning Shi, Kenneth~J. Davis, Fuqing Zhang, Christopher~J. Duffy, and Xuan Yu.

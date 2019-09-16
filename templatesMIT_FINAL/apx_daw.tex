@@ -85,7 +85,7 @@ SWE_j^t &= SWE_j^t - Melt_j^t \Delta t
 
 \paragraph{Soil processes} 
 
-Ponded water either infiltrates into the soil and is either placed in the soil system or is added to the topsoil compartment where it generates speedy runoff. The fraction of ponded water that infiltrates is an exponential function of the relative water storage already in the soil:
+Ponded water infiltrates into the soil and is either placed in the soil system or is added to the topsoil compartment where it generates speedy runoff. The fraction of ponded water that infiltrates is an exponential function of the relative water storage already in the soil:
 
 \begin{align}
 \Delta SM_j^t &= Pond_j^t * \left(1 - \frac{SM_j^t}{FC_j^t} \right)^\beta \\
@@ -107,7 +107,7 @@ OVL_j^t &= Pond_j^t - \Delta SM_j^t
 \noindent where $OVL$ (\si{\milli\metre}) represents water that recharges the near-surface runoff-generating compartment.
 
 \paragraph{Groundwater Compartments and runoff generation}
-The groundwater system is comprised of two ground-water compartments that generate outflow. The top compartment's outflow represents both immediate runoff, which joins runoff in the current timestep, and fast runoff, which joins runoff through the runoff rates $Q0$ and $Q1$. The lower compartment's outflow represents baseflow. These processes are performed at the HRU level, which means that overland flow and soil moisture values, both of which are represented over the raster grid, are averaged over overlaid polygonal subwatersheds representing HRUs. Spatial arithmetic that averages soil water storage over all grid cells $j$ contained within a given polygonal HRU $k$ is indicated by angle brackets $<.>$. The mass balance and percolation of water from the upper to the lower compartment of the groundwater system is implemented as:
+The groundwater system is comprised of two ground-water compartments that generate outflow. The top compartment's outflow represents both immediate runoff, which joins runoff in the current timestep, and fast runoff, which joins runoff through the runoff rates $Q0$ and $Q1$. The lower compartment's outflow represents baseflow. These processes are performed at the HRU level, which means overland flow and soil moisture values, both of which are represented over the raster grid, are averaged over overlaid polygonal subwatersheds representing HRUs. Spatial arithmetic that averages soil water storage over all grid cells $j$ contained within a given polygonal HRU $k$ is indicated by angle brackets $<.>$. The mass balance and percolation of water from the upper to the lower compartment of the groundwater system is implemented as:
 
 \begin{align}
 Rech_k^t &= <OVL_j^t>_k + <max(SM_j^t - FC_j, 0)>_k\\

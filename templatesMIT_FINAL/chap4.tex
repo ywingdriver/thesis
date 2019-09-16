@@ -33,7 +33,7 @@ To solve this issue and find a reliable blanket starting value for groundwater s
 \end{figure}
 
 
-\subsection{Continuous perturbation of streamflow and swe states}
+\subsection{Continuous perturbation of streamflow and snow-water equivalent states}
 
 Another method of smoothing the model's calibration process despite its over-reliance on groundwater was through the direct perturbation of streamflow and swe states. This perturbation guaranteed that ensemble collapse was never fully realized. Gaussian noise was added to the state vector $\mathbf{x^{i-}_{t}}$ before the parameter correction state and the state correction stage such that
 
@@ -76,7 +76,7 @@ To expedite the discovery of optimal initial values, errors, and minimum and max
 \label{fig:str_state_small}
 \end{figure}
 
-The gaged catchment 241's posterior streamflow state (leftmost graph in Figure \ref{fig:str_state_small}) snapped to the observations quickly. Catchment 241's post-parameter corrected streamflow values (shown in yellow on the figures in \ref{fig:str_state_small}) also closely followed the observations. Notice the slight discrepancy between the post parameter correction state and posterior state seen in the first graph in Figure \ref{fig:str_state_small} during the Winter time periods. While state correction continuously tried to move streamflow down to a match the observed Winter state, parameters were not found that allowed streamflow to perfectly match the observed states. This behavior is connected to the value of the lower groundwater reservoir and is seen to some degree in the Winter months in almost all streamflow state graphs from here on.
+The gaged catchment 241's posterior streamflow state (leftmost graph in Figure \ref{fig:str_state_small}) snapped to the observations quickly. Catchment 241's post-parameter corrected streamflow values (shown in yellow on the figures in \ref{fig:str_state_small}) also closely followed the observations. Notice the slight discrepancy between the post parameter correction state and posterior state seen in the first graph in Figure \ref{fig:str_state_small} during the Winter time periods. While state correction continuously tried to move streamflow down to a match the observed Winter state, parameters were not found that allowed streamflow to perfectly match the observed states. This behavior is connected to the value of the lower groundwater reservoir and is seen to some degree in the Winter months in almost all streamflow state graphs.
 
 The lower groundwater reservoir in all three catchments  rose 20mm-200mm throughout the 1095 day filtering period (Figure \ref{fig:gw_small}). Throughout this time the filter's values for \texttt{ck2} and \texttt{perc}, two parameters that impact the buildup and dispersion of lower groundwater, remained unchanged. The stabilization of the lower groundwater component in the hydrologic model is explored in Chapter 5.
 
