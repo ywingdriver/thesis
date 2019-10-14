@@ -1,0 +1,159 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+
+\chapter{daWUAPhydroengine}
+
+REWRITE THIS
+
+The hydrologic system is simulated using a rainfall-runoff model coupled to a routing component that simulates streamflows in the regional stream network. We adapted the HBV model \cite{Bergstrom1995, Bergstrom1973} to simulate subcatchment-scale hydrologic processes (snowmelt, evapotranspiration, infiltration) and to transform precipitation into runoff and streamflow. Runoff that reaches the channel is routed through the stream network using the Muskingum-Cunge routing algorithm \cite{Chow1988}. In this appendix we provide here a description of the implementation of the algorithms.
+
+\subsection{Rainfall Runoff component}
+
+The HVB model \cite{Bergstrom1995, Bergstrom1973} is implemented as a mixture of gridded and vector-based operations to leverage the distributed nature of raster meteorological datasets while simultaneously taking advantage of the reduced computational burden of operating over polygons that aggregate runoff production over uniform hydrologic response units (HRUs).
+
+Snowpack accumulation and melt and soil processes are calculated over the uniform raster grid imposed by the meteorological inputs (precipitation, air temperature, and potential evapotranspiration). In the next two paragraphs subscript $i$ indicates that the variable or parameter is spatially distributed and is represented at grid point $i$. Superscript $t$ indicates that the variable is dynamic and its value is represented at time step $t$. Variables with no script or superscript indicate that the variable is spatially constant or time invariant.
+
+\paragraph{Precipitation and snowpack processes}     
+
+
+Precipitation is partitioned between snowfall and rainfall using minimum and maximum daily air temperatures and a critical temperature threshold $Tc$ that determines the the snow-rain transition:
+
+\begin{align}
+Snow_i^t &= \left\{
+        \begin{array}{ll}
+        P_i^t &  Tmax_i^t < Tc_i \\  
+        P_i^t * \frac{Tc_i - Tmin_i^t}{Tmax_i^t - Tmin_i^t} & Tmin_i^t < Tc_i < Tmax_i^t \\
+        0 &  Tmin_i^t > Tc_i \\
+        \end{array}
+\right.\\
+Rain_i^t &= P_i^t - Snow_i^t     
+\end{align}
+\noindent where $P$ is precipitation (\si{\milli\metre\per\day}), $T_{max}$ and $T_{min}$ are maximum and minimum air temperature (\si{\degreeCelsius}), $Rain$ is liquid precipitation and $Snow$ is snowfall at pixel $i$ during time step $t$ (\si{\milli\metre\per\day}). Snowfall during day $t$ contributes to the snow water equivalent ($SWE$, (\si{\milli\metre})) of the snowpack:
+
+\begin{equation}
+SWE_i^t = SWE_i^{t-1} + Snow_i^t \Delta t
+\end{equation}
+
+The snowpack melt process is simulated using a degree day factor model occurs when average air temperature exceeds a air temperature threshold ($Tm$):
+
+\begin{align}
+Melt_i^t &= ddf_i * (Tav_i^t - Tm_i)  ]\text{ for } Tav_i^t > Tm_i \\
+Rain_i^t &= P_i^t - Snow_i^t     
+\end{align}
+
+\noindent where $Melt$ is the amount of water output from the snowpack (\si{\milli\metre\per\day}), $Tav$ is average air temperature over the time step (\si{\degreeCelsius}), and $ddf$ is the degree day factor (\si{\milli\metre\per\day\per\degreeCelsius}), an empirical parameter that represents the snowmelt rate per degree of air temperature above $Tm$. Any melt form the snowpack during time $t$ is subtracted from the snowpack storage ($SWE$) and added to the amount of water ponded in the surface:
+
+\begin{align}
+Pond_i^t &= Pond_i^{t-1} + (Melt_i^t + Rain_i^t)\Delta t \\
+SWE_i^t &= SWE_i^t - Melt_i^t \Delta t   
+\end{align}
+
+\noindent where $Pond$ (\si{\milli\metre}) is liquid water available on the surface to infiltrate or produce runoff.
+
+\paragraph{Soil processes} 
+Recharge into the soil system occurs when liquid water ponding the surface infiltrates into the soil. Ponded water that is not infiltrated increases the topsoil compartment that generates fast runoff. The fraction of ponded water that infiltrates into the soil is a exponential function of the relative water storage in the soil:
+
+\begin{align}
+\Delta SM_i^t &= Pond_i^t * \left(1 - \frac{SM_i^t}{FC_i^t} \right)^\beta \\
+\end{align}
+
+\noindent where $SM$ (\si{\milli\metre}) is the amount of water in the soil compartment, $FC$ (\si{\milli\metre}) is the maximum amount of water soil can hold before water starts percolating to the groundwater system, and $beta$ (dimensionless) is an empirical parameter. Simultaneously, actual evapotranspiration ($AET$, \si{\milli\metre\per\day}) reduces the amount of water storage in the soil and is also controlled by the degree of saturation of the soil (ration of $SM$ to $FC$).
+
+\begin{align}
+AET_i^t &= PET_i^t * \left(\frac{SM_i^t}{FC_i * LP_i} \right)^l  \\
+\end{align}
+
+\noindent where $PET$ is potential evapotranspiration (\si{\milli\metre\per\day})) and $l$ is an empirical dimensionless parameter. Infiltration and actual evapotranspiration control the dynamics of water storage in the soil and amount of surface water that generates fast runoff:
+
+\begin{align}
+SM_i^t &= SM_i^{t} + \Delta SM_i^t - AET_i^t \Delta t\\
+OVL_i^t &= Pond_i^t - \Delta SM_i^t
+\end{align}
+
+\noindent where $OVL$ (\si{\milli\metre}) is water that recharges the upper (near-surface) runoff-generating compartment.
+
+\paragraph{Percolation and runoff generation}
+Excess water in the topsoil and in two groundwater compartments generate outflow that represent fast and intermediate runoff and baseflow. These processes are implemented at the HRU level. For this, calculations about overland flow generation and soil moisture performed at the grid level are averaged over subwatersheds representing HRUs. Spatial arithmetic averaging soil water storage over all grid cells $i$ contained within a given HRU $j$ is represented using angle brackets $<.>$. The mass balance and percolation of water from the soil upper to the soil lower zone is implemented as:
+
+\begin{align}
+Rech_j^t &= <OVL_i^t>_j + <max(SM_i^t - FC_i, 0)>_j\\
+SUZ_j^t &= SUZ_j^{t-1} + Rech_j^t + Pond_j^t - Q0_j^t\Delta t - Q1_j\Delta t - PERC_j\\
+SLZ_j^t &= SLZ_j^{t-1} + PERC_j - Q2 \Delta t
+\end{align}
+
+\noindent $Rech$ (\si{\milli\meter}) is water storage in the near-surface compartment that generates fast runoff, $SUZ$ (\si{\milli\meter}) is the storage in the upper groundwater compartment, and $SLZ$ (\si{\milli\meter}) is water storage in the lower (deeper) groundwater compartment in HRU $j$ at time step $t$. $Q_0$, $Q_1$, and $Q_2$ (\si{\milli\meter\per\day}) are specific runoff rates from the soil surface, and the upper and lower soil zones:
+
+\begin{align}
+Q0_j^t &= max((SUZ_j - HL1_j) * \frac{1}{CK0_j}, 0.0)\\
+Q1_j^t &= SUZ_j * \frac{1}{CK1_j}\\
+Q2_j^t &= SLZ_j * \frac{1}{CK2_j}\\
+Qall_j^t &= Q0_j^t + Q1_j^t + Q2_j^t
+\end{align}
+
+\noindent where $HL1$ (\si{\milli\meter}) is an empirical water storage threshold the triggers the generation of fast runoff, and $CK0$, $C10$, $CK2$ (\si{\day}) are empirical parameters representing the characteristic drainage time of each of the compartments.
+Total outflow from HRU $j$ on day $t$ is distributed over time to produce the catchment response by convoluting the output of HRU $j$ by triangular standard unit hydrograph with base $M_{base}$.
+
+\begin{align}
+Q_j^t &= \sum_{i=1}^{M_{base}} Qall_j^{t-i+1} U(i) \\
+U(i) &= \left\{
+\begin{array}{ll}
+\frac{4}{M_{base}^2}*i & 0 < i < M_{base}/2 \\
+-\frac{4}{M_{base}^2}*i + \frac{4}{M_{base}} &  M_{base}/2 < i < M_{base} \\
+\end{array}
+\right.
+\end{align}
+
+\noindent where $U$ is a triangular hydrograph of area \num{1} and a base $MAXBAS$ (\si{\day})representing the hydrograph duration . 
+
+\subsection{Routing component}
+
+The response at the end of each $HRU$ is routed through the stream network using the Muskingum-Cunge routing model. In this model the storage in each stream reach $k$ is given by the following discharge-storage equation:
+
+\begin{align}
+S_k^t &= K\left[eQ_{in} + (1 - e)Q_{out} \right],
+\end{align}
+
+which has parameters $K$ (\si{\day}) and $e$ (dimensionless) controlling, respectively, the celerity and dispersion of the wave routed through the channel.
+
+Substituting this relationship in a finite-difference form of the continuity equation $\frac{S_j^{t+1} - S_j^{t}}{\Delta t} = Q_{in} - Q_{out}$ for a multi-reach system with lateral inflows injected upstream of reach draining $HRU$ $j$ at average constant rate through time step $t$ $q_{j}^{t+1}$ yields:
+
+\begin{align}
+&Q_j^{t+1}\left[K_j(1 - e_j) + 0.5\Delta t  \right] + Q_{j-1}^{t+1}\left[K_je_j - 0.5\Delta t  \right]  \\
+&= Q_j^{t}\left[K_j(1 - e_j) - 0.5\Delta t  \right] + Q_{j-1}^{t}\left[K_je_j + 0.5\Delta t  \right]\\
+&+ q_{j}^{t+1}\left[K_j(1 - e_j) + 0.5\Delta t  \right]
+\end{align}
+
+Each of the $HRUs$ contains one reach with an upstream and a downstream node. Streamflows for each of the $j=1,...,J$ reaches are integrated over time using a first-order explicit finite difference scheme. The system of $J$ equations can be assembled as a linear system of the form:   
+
+\begin{align}\label{eq:linearsystem}
+\mathbf{A}\mathbf{Q^{t+1}} = \mathbf{B}
+\end{align}
+
+where $\mathbf{Q^{t+1}}$ is the vector of unknown streamflows at time $t+1$ for each of the $J$ reaches of the network that is solved each time step. Matrices $\mathbf{A}$ add $\mathbf{B}$ are functions of the model parameters and streamflows at timestep $t$:
+\begin{align}
+\mathbf{A}&\equiv (\mathbf{a} + \mathbf{\Phi} \mathbf{b})^T\\
+\mathbf{B}&\equiv (\mathbf{d} + \mathbf{\Phi}\mathbf{c})^T\mathbf{Q}^t + \mathbf{I}(\mathbf{a\odot q}^{t+1})
+\end{align}
+
+where $\mathbf{\Phi}$ is a $JxJ$ sparse connectivity (0,1)-matrix where the elements indicate if two pairs of nodes are connected. Flow direction is from nodes in the rows to nodes in the columns. Rows representing the upstream node of $HRUs$ that drain an outlet node (exit the domain) are all zero. Finally,
+
+%\begin{align}
+%(\mathbf{a} + \mathbf{\Phi} \mathbf{b})\mathbf{Q^{t+1}} = (\mathbf{d} + %\mathbf{\Phi}\mathbf{c})\mathbf{Q^t} + \diag(\mathbf{a})*\mathbf{q^{t+1}}
+%\end{align}
+
+\begin{align}
+\mathbf{a} &= \mathbf{I} (\mathbf{K}-\mathbf{K\odot e}) + dt * 0.5\\
+\mathbf{b} &= \mathbf{I} (\mathbf{K\odot e}) - dt * 0.5\\
+\mathbf{c} &= \mathbf{I} (\mathbf{K}-\mathbf{K\odot e}) - dt * 0.5)\\
+\mathbf{d} &= \mathbf{I} (\mathbf{K\odot e}) + dt * 0.5
+\end{align}
+
+\noindent where $\mathbf{K}$ is the identity matrix of order $J$, $\mathbf{K}$ and $\mathbf{e}$ are column vectors holding parameters $K$ and $e$ for each of the $N$ reaches in the network. The $\odot$ operator denotes the Schur (elementwise) product between two vectors.
+The solution of \eqref{eq:linearsystem} becomes unstable if $\Delta t > 2 * K_j * (1 - e_j)$. To ensure robust and stable solution an adaptive time stepping scheme was implemented. In this scheme, the default time step is reduced by an integer fraction until the the stability condition is satisfied in all reaches. 
+
+
+

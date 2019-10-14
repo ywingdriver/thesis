@@ -1,0 +1,28 @@
+\documentclass[12pt,twoside]{mitthesis}
+\begin{document}
+\pagestyle{plain}
+
+$\mathbf{z_{t+1}^{i}} = \mathbf{z_{t+1}} + \mathbf{\eta_{t+1}^{i}},\quad \mathbf{\eta_{t+1}^{i}} = N(0,R_{t+1})$
+\\
+$\mathbf{z_{t+1}^{i}}$ - vector of observations
+\\
+$N()$ - Normal distribution based around (mean, std)
+\\
+$R_{t+1}$ - error covariance matrix of $\mathbf{z_{t+1}^{i}}$
+\\
+$\mathbf{\theta_{t+1}^{i-}}$ - vector of parameters
+\\
+$\mathbf{x_{t+1}^{i}}$ - vector of states
+\\
+$h()$ - masking function
+\\
+$\mathbf{\hat{y}_{t+1}^{i}}$ - vector of predicted states ($\mathbf{x_{t+1}^{i}}$ masked by $h()$)
+\\
+$\Sigma^{\theta,\hat{y}}_{t+1}$ - cross covariance matrix of $\mathbf{\theta_{t+1}^{i-}}$ and $\mathbf{\hat{y}_{t+1}^{i}}$
+\\
+$\Sigma^{\hat{y},\hat{y}}_{t+1}$ - error covariance matrix of $\mathbf{\hat{y}_{t+1}^{i}}$
+\\
+$t$ - timestep
+\\
+$i$ - ensemble number
+\end{document}

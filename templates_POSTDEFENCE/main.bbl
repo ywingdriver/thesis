@@ -1,0 +1,258 @@
+\begin{thebibliography}{10}
+
+\bibitem{Anderson1999}
+Jeffrey~L. Anderson, Stephen~L. Anderson, Jeffrey~L. Anderson, and Stephen~L.
+  Anderson.
+\newblock {A Monte Carlo Implementation of the Nonlinear Filtering Problem to
+  Produce Ensemble Assimilations and Forecasts}.
+\newblock {\em Monthly Weather Review}, 127(12):2741--2758, dec 1999.
+
+\bibitem{Annan2005}
+J.~D. Annan, D.~J. Lunt, J.~C. Hargreaves, and P.~J. Valdes.
+\newblock {Parameter estimation in an atmospheric GCM using the Ensemble Kalman
+  Filter}.
+\newblock {\em Nonlinear Processes in Geophysics}, 12(3):363--371, feb 2005.
+
+\bibitem{Bardossy2007}
+A.~B{\'{a}}rdossy.
+\newblock {Calibration of hydrological model parameters for ungauged
+  catchments}.
+\newblock jan 2007.
+
+\bibitem{Beldring2003}
+S.~Beldring, K.~Engeland, L.~A. Roald, N.~R. S{\ae}lthun, and A.~Voks{\o}.
+\newblock {Estimation of parameters in a distributed precipitation-runoff model
+  for Norway}.
+\newblock {\em Hydrology and Earth System Sciences}, 2003.
+
+\bibitem{Bergstrom1992}
+S.~Bergstr{\"{o}}m.
+\newblock {The HBV model - its structure and applications}.
+\newblock {\em Swedish Meteorological and Hydrological Institute Reports
+  Hydrology}, 1992.
+
+\bibitem{Bergstrom1976}
+Sten Bergstr{\"{o}}m.
+\newblock {Development and Application of a Conceptual Runoff Model for
+  Scandinavian Catchments}.
+\newblock {\em Smhi}, 1976.
+
+\bibitem{Bloschl1995}
+G.~Bl{\"{o}}schl and M.~Sivapalan.
+\newblock {Scale issues in hydrological modelling: A review}.
+\newblock {\em Hydrological Processes}, 9(3-4):251--290, apr 1995.
+
+\bibitem{Chen2008}
+M.~Chen, S.~Liu, L.L. Tieszen, and D.Y. Hollinger.
+\newblock {An improved state-parameter analysis of ecosystem models using data
+  assimilation}.
+\newblock {\em Ecological Modelling}, 219(3-4):317--326, dec 2008.
+
+\bibitem{V.TChowD.RMaidment1988}
+L.W Mays V.T~Chow {D.R Maidment}.
+\newblock {Unit Hydrograph}.
+\newblock In {\em Applied Hydrology}. McGraw-Hill, New York, 1988.
+
+\bibitem{Evensen1994}
+Geir Evensen.
+\newblock {Sequential data assimilation with a nonlinear quasi-geostrophic
+  model using Monte Carlo methods to forecast error statistics}.
+\newblock {\em Journal of Geophysical Research}, 99(C5):10143, may 1994.
+
+\bibitem{Evensen1997}
+Geir Evensen and Geir Evensen.
+\newblock {Advanced Data Assimilation for Strongly Nonlinear Dynamics}.
+\newblock {\em Monthly Weather Review}, 125(6):1342--1354, jun 1997.
+
+\bibitem{Gelman2013}
+Andrew Gelman, John~B. Carlin, Hal~S. Stern, David~B. Dunson, Aki Vehtari,
+  Donald~B. Rubin, John~B. Carlin, Hal~S. Stern, David~B. Dunson, Aki Vehtari,
+  and Donald~B. Rubin.
+\newblock {\em {Bayesian Data Analysis, Third Edition}}.
+\newblock Chapman and Hall/CRC, nov 2018.
+
+\bibitem{Gotzinger2007}
+J.~G{\"{o}}tzinger and A.~B{\'{a}}rdossy.
+\newblock {Comparison of four regionalisation methods for a distributed
+  hydrological model}.
+\newblock {\em Journal of Hydrology}, 333(2-4):374--384, feb 2007.
+
+\bibitem{HendricksFranssen2008}
+H.~J. {Hendricks Franssen} and W.~Kinzelbach.
+\newblock {Real-time groundwater flow modeling with the Ensemble Kalman Filter:
+  Joint estimation of states and parameters and the filter inbreeding problem}.
+\newblock {\em Water Resources Research}, 44(9), sep 2008.
+
+\bibitem{Jakeman1993}
+A.~J. Jakeman and G.~M. Hornberger.
+\newblock {How much complexity is warranted in a rainfall‐runoff model?}
+\newblock {\em Water Resources Research}, 1993.
+
+\bibitem{Jazwinski1970}
+Andrew~H. Jazwinski.
+\newblock {Stochastic Processes and Filtering.}
+\newblock {\em Mathematics in Science and Enginerring}, 1970.
+
+\bibitem{Julier1997}
+Simon~J. Julier and Jeffrey~K. Uhlmann.
+\newblock {New extension of the Kalman filter to nonlinear systems}.
+\newblock volume 3068, page 182. International Society for Optics and
+  Photonics, jul 1997.
+
+\bibitem{Kalman1960}
+R.~E. Kalman.
+\newblock {A New Approach to Linear Filtering and Prediction Problems}.
+\newblock {\em Journal of Basic Engineering}, 82(1):35, mar 1960.
+
+\bibitem{Liu2000}
+Fang Liu and Fang Liu.
+\newblock {Bayesian Time Series: Analysis Methods Using Simulation-Based
+  Computation}.
+\newblock 2000.
+
+\bibitem{Liu2007}
+Yuqiong Liu and Hoshin~V. Gupta.
+\newblock {Uncertainty in hydrologic modeling: Toward an integrated data
+  assimilation framework}.
+\newblock {\em Water Resources Research}, 43(7), jul 2007.
+
+\bibitem{Maneta2008}
+Marco Maneta, Susanne Schnabel, and Victor Jetten.
+\newblock {Continuous spatially distributed simulation of surface and
+  subsurface hydrological processes in a small semiarid catchment}.
+\newblock {\em Hydrological Processes}, 22(13):2196--2214, jun 2008.
+
+\bibitem{Mariani2005}
+Stefano Mariani and Alberto Corigliano.
+\newblock {Impact induced composite delamination: state and parameter
+  identification via joint and dual extended Kalman filters}.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  194(50-52):5242--5272, dec 2005.
+
+\bibitem{Merz2004}
+Ralf Merz and G{\"{u}}nter Bl{\"{o}}schl.
+\newblock {Regionalisation of catchment model parameters}.
+\newblock {\em Journal of Hydrology}, 287(1-4):95--123, feb 2004.
+
+\bibitem{Miller1994}
+Robert~N. Miller, Michael Ghil, and Fran{\c{c}}ois Gauthiez.
+\newblock {Advanced Data Assimilation in Strongly Nonlinear Dynamical Systems}.
+\newblock {\em Journal of the Atmospheric Sciences}, 51(8):1037--1056, apr
+  1994.
+
+\bibitem{Montero2016}
+Rodolfo~Alvarado Montero, Dirk Schwanenberg, Peter Krahe, and Peer Helmke.
+\newblock {Unified Hydrological Flow Routing for Variational Data Assimilation
+  and Model Predictive Control}.
+\newblock In {\em Procedia Engineering}, volume 154, pages 1341--1348. Elsevier
+  Ltd, 2016.
+
+\bibitem{Moradkhani2005}
+Hamid Moradkhani, Soroosh Sorooshian, Hoshin~V. Gupta, and Paul~R. Houser.
+\newblock {Dual state-parameter estimation of hydrological models using
+  ensemble Kalman filter}.
+\newblock {\em Advances in Water Resources}, 28(2):135--147, feb 2005.
+
+\bibitem{Osborne2000}
+Jason~W. Osborne.
+\newblock {Advantages of hierarchical linear modeling. Osborne, Jason W.}
+\newblock {\em Research {\&} Evaluation}, 7(1), 2000.
+
+\bibitem{Peel2000}
+Mc~Peel, Fhs Chiew, Andrew~W. Western, and Thomas~a. McMahon.
+\newblock {Extension of Unimpaired Monthly Streamflow Data and Regionalisation
+  of Parameter Values to Estimate Streamflow in Ungauged Catchments}.
+\newblock {\em National Land and Water Resources Audit Theme 1-Water
+  Availability Extension}, 2000.
+
+\bibitem{Reichle2008}
+Rolf~H. Reichle.
+\newblock {Data assimilation methods in the Earth sciences}.
+\newblock {\em Advances in Water Resources}, 31(11):1411--1418, nov 2008.
+
+\bibitem{Reichle2002}
+Rolf~H. Reichle, Dennis~B. McLaughlin, Dara Entekhabi, Rolf~H. Reichle,
+  Dennis~B. McLaughlin, and Dara Entekhabi.
+\newblock {Hydrologic Data Assimilation with the Ensemble Kalman Filter}.
+\newblock {\em Monthly Weather Review}, 130(1):103--114, jan 2002.
+
+\bibitem{Seibert1997}
+Jan Seibert.
+\newblock {Estimation of Parameter Uncertainty in the HBV Model}.
+\newblock {\em Hydrology Research}, 28(4-5):247--262, aug 1997.
+
+\bibitem{Seibert1999}
+Jan Seibert.
+\newblock {Regionalisation of parameters for a conceptual rainfall-runoff
+  model}.
+\newblock {\em Agricultural and Forest Meteorology}, 98-99:279--293, dec 1999.
+
+\bibitem{Shi2014}
+Yuning Shi, Kenneth~J. Davis, Fuqing Zhang, Christopher~J. Duffy, and Xuan Yu.
+\newblock {Parameter estimation of a physically based land surface hydrologic
+  model using the ensemble Kalman filter: A synthetic experiment}.
+\newblock {\em Water Resources Research}, 50(1):706--724, jan 2014.
+
+\bibitem{Sorooshian1980}
+Soroosh Sorooshian and John~A. Dracup.
+\newblock {Stochastic parameter estimation procedures for hydrologie
+  rainfall-runoff models: Correlated and heteroscedastic error cases}.
+\newblock {\em Water Resources Research}, 16(2):430--442, apr 1980.
+
+\bibitem{Sorooshian1993}
+Soroosh Sorooshian, Qingyun Duan, and Vijai~Kumar Gupta.
+\newblock {Calibration of rainfall‐runoff models: Application of global
+  optimization to the Sacramento Soil Moisture Accounting Model}.
+\newblock {\em Water Resources Research}, 29(4):1185--1194, apr 1993.
+
+\bibitem{TodiniESzollosi-NagyA1976}
+Wood~EF. {Todini E, Szollosi-Nagy A}.
+\newblock {Adaptive state–parameter estimation algorithm for real time
+  hydrologic forecasting; a case study.}
+\newblock {\em IISA/WMO Workshop on the Recent Developments in Real Time
+  Forecasting/Control of Water Resources Systems}, 1976.
+
+\bibitem{Troch2003}
+Peter~A. Troch, Claudio Paniconi, and Dennis McLaughlin.
+\newblock {Catchment-scale hydrological modeling and data assimilation}.
+\newblock {\em Advances in Water Resources}, 26(2):131--135, feb 2003.
+
+\bibitem{Vrugt2005}
+Jasper~A. Vrugt, Cees G.~H. Diks, Hoshin~V. Gupta, Willem Bouten, and
+  Jacobus~M. Verstraten.
+\newblock {Improved treatment of uncertainty in hydrologic modeling: Combining
+  the strengths of global optimization and data assimilation}.
+\newblock {\em Water Resources Research}, 41(1), jan 2005.
+
+\bibitem{Wagener2006}
+Thorsten Wagener and Howard~S. Wheater.
+\newblock {Parameter estimation and regionalization for continuous
+  rainfall-runoff models including uncertainty}.
+\newblock {\em Journal of Hydrology}, 320(1-2):132--154, mar 2006.
+
+\bibitem{Wallner2013}
+Markus Wallner, Uwe Haberlandt, and J{\"{o}}rg Dietrich.
+\newblock {A one-step similarity approach for the regionalization of
+  hydrological model parameters based on self-organizing maps}.
+\newblock {\em Journal of Hydrology}, 2013.
+
+\bibitem{Wen2006}
+Xian-Huan Wen and Wen~H. Chen.
+\newblock {Real-Time Reservoir Model Updating Using Ensemble Kalman Filter With
+  Confirming Option}.
+\newblock {\em SPE Journal}, 11(04):431--442, dec 2006.
+
+\bibitem{West1993}
+Mike West.
+\newblock {Mixture models, Monte Carlo, Bayesian updating, and dynamic models}.
+\newblock {\em Computing Science and Statistics}, 1993.
+
+\bibitem{Xiong2019}
+Mengsi Xiong, Pan Liu, Lei Cheng, Chao Deng, Ziling Gui, Xiaojing Zhang, and
+  Yanghe Liu.
+\newblock {Identifying time-varying hydrological model parameters to improve
+  simulation efficiency by the ensemble Kalman filter: A joint assimilation of
+  streamflow and actual evapotranspiration}.
+\newblock {\em Journal of Hydrology}, 568:758--768, jan 2019.
+
+\end{thebibliography}

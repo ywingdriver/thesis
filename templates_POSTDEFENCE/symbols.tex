@@ -1,0 +1,32 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+
+\glsxtrnewsymbol[
+ description={vector of states, pre-correction}]{x-}{\ensuremath{\mathbf{x^{-}}}}
+\glsxtrnewsymbol[description={vector of states, post-correction}]{x+}{\ensuremath{\mathbf{x^{+}}}}
+\glsxtrnewsymbol[description={vector of predicted states}]{y}{\ensuremath{\mathbf{y}}}
+\glsxtrnewsymbol[description={vector of parameters, pre-correction}]{theta-}{\ensuremath{\mathbf{\theta^{-}}}}
+\glsxtrnewsymbol[description={vector of parameters, post-correction}]{theta+}{\ensuremath{\mathbf{\theta^{+}}}}
+\glsxtrnewsymbol[description={A vector of size $\theta$ sampled from the grand mean and grand standard deviation of all members of $\theta$ across all ensembles of $\theta$}]{Upsilon}{\ensuremath{\Upsilon}}
+\glsxtrnewsymbol[description={A vector of theta taken from the grand mean and grand standard deviation of all thetas across all ensembles}]{Upsilon}{\ensuremath{\Upsilon}}
+\glsxtrnewsymbol[description={vector of forcing data}]{u}{\ensuremath{\mathbf{u}}}
+\glsxtrnewsymbol[description={vector of observed states}]{z}{\ensuremath{\mathbf{z}}}
+\glsxtrnewsymbol[description={ensemble member}]{i}{\ensuremath{i}}
+\glsxtrnewsymbol[description={timestep}]{t}{\ensuremath{t}}
+\glsxtrnewsymbol[description={vector of error: model uncertainty}]{epsilon}{\ensuremath{\varepsilon}}
+\glsxtrnewsymbol[description={vector of error: observed uncertainty}]{delta}{\ensuremath{\delta}}
+\glsxtrnewsymbol[description={forcing data error covariance matrix}]{Q}{\ensuremath{Q}}
+\glsxtrnewsymbol[description={observation error covariance matrix}]{R}{\ensuremath{R}}
+\glsxtrnewsymbol[description={Kernel smoothing mixing parameter}]{a}{\ensuremath{a}}
+\glsxtrnewsymbol[description={Hierarchical parameter perturbation mixing parameter vector}]{alpha}{\ensuremath{\alpha}}
+\glsxtrnewsymbol[description={Hierarchical parameter perturbation mixing parameter}]{b}{\ensuremath{b}}
+\glsxtrnewsymbol[description={Hierarchical group}]{g}{\ensuremath{g}}
+\glsxtrnewsymbol[description={Set of vectors in hierarchical group $g$}]{G}{\ensuremath{G_{g}}}
+\glsxtrnewsymbol[description={Model function}]{ffunc}{\ensuremath{f()}}
+\glsxtrnewsymbol[description={Masking function (allows comparison of observations and matching states)}]{hfunc}{\ensuremath{h()}}
+\glsxtrnewsymbol[description={Kalman gain matrix}]{K}{\ensuremath{K}}
+\glsxtrnewsymbol[description={Shorthand for covariance}]{Sigma}{\ensuremath{\Sigma}}
